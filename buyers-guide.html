@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Water Filter Buying Guide: How to Choose the Perfect Filter for Your Home (2026) - YourBlog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       THEME VARIABLES
+       ============================================================ */
+    :root {
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --accent-light: #eff6ff;
+      --accent-rgb: 59, 130, 246;
+      --text: #1a1a2e;
+      --text-secondary: #64748b;
+      --text-light: #94a3b8;
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --bg-dark: #0f172a;
+      --border: #e2e8f0;
+      --container: 1122px;
+      --radius: 8px;
+      --radius-lg: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+      --transition: 0.25s ease;
+      --green: #16a34a;
+      --red: #dc2626;
+    }
+    html.dark {
+      --text: #e2e8f0;
+      --text-secondary: #94a3b8;
+      --text-light: #64748b;
+      --bg: #0f172a;
+      --bg-alt: #1e293b;
+      --bg-dark: #020617;
+      --border: #334155;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+      --shadow: 0 4px 12px rgba(0,0,0,0.4);
+      --shadow-lg: 0 8px 30px rgba(0,0,0,0.5);
+      --accent-light: rgba(59, 130, 246, 0.15);
+    }
+
+    /* ============================================================
+       RESET & BASE
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--accent-hover); }
+    ul, ol { list-style: none; }
+    h1, h2, h3, h4, h5, h6 { line-height: 1.25; font-weight: 800; color: var(--text); }
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 20px; width: 100%; }
+
+    .animate-on-scroll {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============================================================
+       HEADER
+       ============================================================ */
+    .header {
+      position: sticky; top: 0; z-index: 1000;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow var(--transition);
+    }
+    .header.scrolled { box-shadow: var(--shadow); }
+    .scroll-progress {
+      position: absolute; bottom: 0; left: 0;
+      height: 3px; background: var(--accent);
+      width: 0%; transition: width 0.1s linear; z-index: 10;
+    }
+    .header-main {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px; gap: 20px;
+      max-width: var(--container); margin: 0 auto;
+    }
+    .logo { font-size: 1.6rem; font-weight: 900; color: var(--text); letter-spacing: -0.02em; white-space: nowrap; }
+    .logo span { color: var(--accent); }
+    .nav { display: flex; align-items: center; gap: 6px; }
+    .nav a {
+      color: var(--text); font-size: 15px; font-weight: 600;
+      padding: 8px 14px; border-radius: var(--radius);
+      transition: background var(--transition), color var(--transition);
+    }
+    .nav a:hover { color: var(--accent); }
+    .nav a.nav-start-here { background: var(--accent); color: #fff; padding: 8px 18px; }
+    .nav a.nav-start-here:hover { background: var(--accent-hover); color: #fff; }
+    .header-actions { display: flex; align-items: center; gap: 6px; }
+    .header-btn {
+      background: none; border: none; cursor: pointer; color: var(--text-secondary);
+      font-size: 20px; padding: 8px; border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .header-btn:hover { color: var(--accent); background: var(--accent-light); }
+    .menu-toggle {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 6px; flex-direction: column; gap: 5px;
+    }
+    .menu-toggle span { display: block; width: 24px; height: 2.5px; background: var(--text); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+    .menu-toggle.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    /* Mobile drawer */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0; right: -100%;
+      width: 280px; height: 100vh;
+      background: var(--bg);
+      z-index: 999;
+      box-shadow: var(--shadow-lg);
+      padding: 80px 24px 24px;
+      flex-direction: column;
+      gap: 4px;
+      transition: right 0.3s ease;
+    }
+    .mobile-nav.open { right: 0; }
+    .mobile-nav a {
+      display: block;
+      font-size: 16px; font-weight: 600;
+      color: var(--text);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color var(--transition);
+    }
+    .mobile-nav a:hover { color: var(--accent); }
+    .mobile-nav a.nav-start-here {
+      background: var(--accent); color: #fff;
+      padding: 12px 18px; border-radius: var(--radius);
+      text-align: center; margin-top: 12px; border-bottom: none;
+    }
+    .mobile-nav a.nav-start-here:hover { background: var(--accent-hover); color: #fff; }
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 998;
+    }
+    .mobile-nav-overlay.open { display: block; }
+    @media (max-width: 768px) {
+      .mobile-nav { display: flex; }
+    }
+
+    /* Search overlay */
+    .search-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+      z-index: 9999; display: none; align-items: flex-start;
+      justify-content: center; padding-top: 120px; backdrop-filter: blur(4px);
+    }
+    .search-overlay.open { display: flex; }
+    .search-box {
+      background: var(--bg); border-radius: var(--radius-lg); padding: 8px;
+      width: 90%; max-width: 600px; box-shadow: var(--shadow-lg);
+      display: flex; align-items: center; gap: 12px;
+      animation: searchSlideDown 0.25s ease;
+    }
+    @keyframes searchSlideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .search-box svg { margin-left: 12px; color: var(--text-light); flex-shrink: 0; }
+    .search-box input {
+      flex: 1; border: none; outline: none; font-size: 18px;
+      font-family: inherit; background: transparent; color: var(--text); padding: 12px 0;
+    }
+    .search-box input::placeholder { color: var(--text-light); }
+    .search-close {
+      background: none; border: none; font-size: 24px; cursor: pointer;
+      color: var(--text-light); padding: 8px 12px; transition: color var(--transition);
+    }
+    .search-close:hover { color: var(--text); }
+
+    /* ============================================================
+       BREADCRUMBS
+       ============================================================ */
+    .breadcrumbs {
+      padding: 16px 0;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .breadcrumbs a { color: var(--text-secondary); }
+    .breadcrumbs a:hover { color: var(--accent); }
+    .breadcrumbs span { margin: 0 8px; opacity: 0.5; }
+
+    /* ============================================================
+       ARTICLE LAYOUT
+       ============================================================ */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 750px 340px;
+      gap: 32px;
+      align-items: start;
+      padding-bottom: 60px;
+      min-width: 0;
+    }
+    .article-layout > article { min-width: 0; }
+
+    /* ============================================================
+       ARTICLE HEADER
+       ============================================================ */
+    .article-header { margin-bottom: 32px; }
+    .article-cat {
+      display: inline-block;
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .article-title {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .article-excerpt {
+      font-size: 18px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-author {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .article-author-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--accent); display: flex; align-items: center;
+      justify-content: center; color: #fff; font-weight: 700; font-size: 16px;
+    }
+    .article-author-info { font-size: 14px; }
+    .article-author-name { font-weight: 700; color: var(--text); }
+    .article-author-date { color: var(--text-light); font-size: 13px; }
+    /* Featured image */
+    .article-featured-img {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 32px;
+      aspect-ratio: 750 / 422;
+    }
+    .article-featured-img img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+
+    /* ============================================================
+       ARTICLE CONTENT
+       ============================================================ */
+    .article-content { font-size: 17px; line-height: 1.75; color: var(--text); overflow-wrap: break-word; word-wrap: break-word; }
+    .article-content h2 {
+      font-size: 1.7rem; margin: 28px 0 14px;
+    }
+    .article-content h3 { font-size: 1.3rem; margin: 28px 0 12px; }
+    .article-content p { margin-bottom: 18px; }
+    .article-content ul, .article-content ol {
+      margin: 0 0 20px 0; padding-left: 24px;
+    }
+    .article-content ul { list-style: disc; }
+    .article-content ol { list-style: decimal; }
+    .article-content li { margin-bottom: 8px; }
+    .article-content a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+    .article-content a:hover { color: var(--accent-hover); }
+    .article-content strong { font-weight: 700; }
+    .article-content blockquote {
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      margin: 24px 0;
+      background: var(--accent-light);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    /* Quick answer box */
+    .quick-answer {
+      background: var(--accent-light);
+      border: 2px solid var(--accent);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin-bottom: 32px;
+    }
+    .quick-answer-label {
+      font-size: 12px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px;
+    }
+    .quick-answer h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .quick-answer p { font-size: 15px; color: var(--text-secondary); margin: 0 0 14px; line-height: 1.6; }
+    .quick-answer-cta {
+      display: inline-block;
+      padding: 10px 22px;
+      background: var(--accent);
+      color: #fff !important;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: var(--radius);
+      text-decoration: none !important;
+      transition: background var(--transition);
+    }
+    .quick-answer-cta:hover { background: var(--accent-hover); color: #fff !important; text-decoration: none !important; }
+
+    /* ============================================================
+       TABLE OF CONTENTS
+       ============================================================ */
+    .toc {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px 26px;
+      margin-bottom: 32px;
+      display: none;
+    }
+    .toc-title {
+      font-size: 15px; font-weight: 800; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 8px;
+      cursor: pointer; user-select: none;
+    }
+    .toc-title svg { transition: transform var(--transition); }
+    .toc-title.collapsed svg { transform: rotate(-90deg); }
+    .toc-list { display: flex; flex-direction: column; gap: 0; }
+    .toc-list a {
+      display: block;
+      font-size: 14px; font-weight: 500;
+      color: var(--text-secondary);
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color var(--transition), padding-left var(--transition);
+    }
+    .toc-list a:last-child { border-bottom: none; }
+    .toc-list a:hover { color: var(--accent); padding-left: 6px; }
+    .toc-list a.active { color: var(--accent); font-weight: 700; }
+
+    /* ============================================================
+       COMPARISON TABLE
+       ============================================================ */
+    .comparison-table-wrap {
+      overflow: hidden;
+      margin: 28px 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      table-layout: fixed;
+    }
+    .comparison-table th {
+      background: var(--bg-dark);
+      color: #fff;
+      font-weight: 700;
+      padding: 14px 18px;
+      text-align: left;
+    }
+    .comparison-table td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr:nth-child(even) td { background: var(--bg-alt); }
+    .comparison-table .table-col-rank,
+    .comparison-table .table-rank { width: 36px; text-align: center; }
+    .comparison-table .table-rank {
+      font-size: 15px; font-weight: 800; color: var(--text-secondary);
+    }
+    .comparison-table .table-stars { white-space: nowrap; }
+    .comparison-table .table-stars .stars { color: #f59e0b; font-size: 13px; letter-spacing: 1px; }
+    .comparison-table .table-stars .rating-num { font-size: 13px; color: var(--text-secondary); font-weight: 600; margin-left: 2px; }
+    .comparison-table .table-col-img,
+    .comparison-table .table-img { width: 68px; padding: 8px !important; }
+    .comparison-table .table-img img {
+      width: 54px; height: 54px; object-fit: cover;
+      border-radius: 6px; display: block;
+      background: var(--bg-alt);
+    }
+    .comparison-table .table-product-name { font-weight: 700; color: var(--text); }
+    .comparison-table td:last-child, .comparison-table th:last-child { text-align: right; }
+    .comparison-table .table-best {
+      background: var(--accent-light);
+      font-weight: 700;
+    }
+    .comparison-table .hide-always { display: none; }
+    .comparison-table .table-cta {
+      display: inline-block;
+      padding: 6px 16px;
+      background: var(--accent);
+      color: #fff !important;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 13px;
+      transition: background var(--transition);
+      white-space: nowrap;
+      text-decoration: none !important;
+    }
+    .comparison-table .table-cta:hover { background: var(--accent-hover); color: #fff !important; text-decoration: none !important; }
+
+    /* ============================================================
+       KEY TAKEAWAY BOX
+       ============================================================ */
+    .key-takeaway {
+      background: var(--bg-alt);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .key-takeaway-label {
+      font-size: 12px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent); margin-bottom: 6px;
+    }
+    .key-takeaway p { font-size: 15px; color: var(--text-secondary); margin: 0; line-height: 1.6; }
+
+    /* ============================================================
+       SOCIAL SHARE
+       ============================================================ */
+    .share-bar {
+      display: flex; align-items: center; gap: 12px;
+      padding: 20px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin: 32px 0;
+    }
+    .share-label { font-size: 14px; font-weight: 700; color: var(--text); }
+    .share-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--bg-alt); border: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 15px; font-weight: 700;
+      transition: all var(--transition); cursor: pointer;
+    }
+    .share-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    /* ============================================================
+       AUTHOR BOX
+       ============================================================ */
+    .author-box {
+      display: flex; gap: 20px;
+      padding: 28px;
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      margin: 32px 0;
+    }
+    .author-box-avatar {
+      width: 72px; height: 72px; border-radius: 50%; flex-shrink: 0;
+      background: var(--accent); display: flex; align-items: center;
+      justify-content: center; color: #fff; font-size: 28px; font-weight: 800;
+    }
+    .author-box-info { flex: 1; }
+    .author-box-name { font-size: 1.1rem; font-weight: 800; margin-bottom: 4px; }
+    .author-box-role { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+    .author-box-bio { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px; }
+    .author-box-link {
+      font-size: 13px; font-weight: 700; color: var(--accent);
+      text-decoration: none; display: inline-block;
+    }
+    .author-box-link:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* ============================================================
+       RELATED POSTS
+       ============================================================ */
+    .related-section {
+      padding: 55px 0 60px;
+      background: var(--bg-alt);
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .related-card {
+      background: var(--bg);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition), transform var(--transition);
+      display: block; color: var(--text);
+    }
+    .related-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+      color: var(--text);
+    }
+    .related-card-img { height: 180px; overflow: hidden; }
+    .related-card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .related-card:hover .related-card-img img { transform: scale(1.05); }
+    .related-card-body { padding: 20px; }
+    .related-card-cat {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; color: var(--accent); margin-bottom: 8px;
+    }
+    .related-card-title { font-size: 1.05rem; font-weight: 800; line-height: 1.35; margin-bottom: 8px; }
+    .related-card-meta { font-size: 13px; color: var(--text-light); }
+
+    /* ============================================================
+       SIDEBAR
+       ============================================================ */
+    .sidebar {
+      display: flex; flex-direction: column; gap: 28px;
+      position: sticky;
+      align-self: start;
+    }
+
+    .widget {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+    }
+    .widget-title {
+      font-size: 1rem; font-weight: 800; margin-bottom: 16px;
+      padding-bottom: 10px; border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    /* TOC sidebar widget */
+    .sidebar-toc {
+      padding: 14px 18px;
+    }
+    .sidebar-toc .widget-title {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      user-select: none;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      font-size: 14px;
+      transition: border-color 0.35s ease 0s, margin-bottom 0.35s ease, padding-bottom 0.35s ease;
+    }
+    .sidebar-toc.expanded .widget-title {
+      border-bottom-color: var(--accent);
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      transition: border-color 0s ease 0s, margin-bottom 0.35s ease, padding-bottom 0.35s ease;
+    }
+    .sidebar-toc .widget-title::after {
+      content: '';
+      width: 8px; height: 8px;
+      border-right: 2px solid var(--text-secondary);
+      border-bottom: 2px solid var(--text-secondary);
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform 0.25s;
+      flex-shrink: 0;
+      margin-left: 10px;
+    }
+    .sidebar-toc.expanded .widget-title::after {
+      transform: rotate(-135deg) translateY(-2px);
+    }
+    .sidebar-toc-list {
+      display: flex; flex-direction: column; gap: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .sidebar-toc.expanded .sidebar-toc-list {
+      max-height: 600px;
+    }
+    .sidebar-toc-list a {
+      display: block; font-size: 13px; font-weight: 500;
+      color: var(--text-secondary); padding: 8px 0 8px 14px;
+      border-left: 2px solid var(--border);
+      transition: color var(--transition), border-left-color var(--transition), background var(--transition);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .sidebar-toc-list a:hover { color: var(--accent); border-left-color: var(--accent); }
+    .sidebar-toc-list a.active {
+      color: var(--accent); font-weight: 700;
+      border-left-color: var(--accent);
+      background: var(--accent-light);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    /* Popular posts widget */
+    .widget-post {
+      display: flex; gap: 12px; padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .widget-post:first-of-type { padding-top: 0; }
+    .widget-post:last-of-type { border-bottom: none; }
+    .widget-post-img {
+      flex-shrink: 0; width: 70px; height: 52px;
+      border-radius: 6px; overflow: hidden;
+    }
+    .widget-post-img img { width: 100%; height: 100%; object-fit: cover; }
+    .widget-post-title { font-size: 13px; font-weight: 700; line-height: 1.4; }
+    .widget-post-title a { color: var(--text); }
+    .widget-post-title a:hover { color: var(--accent); }
+    .widget-post-date { font-size: 12px; color: var(--text-light); margin-top: 3px; }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .footer {
+      background: var(--bg-dark); color: rgba(255,255,255,0.6); padding: 55px 0 0;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr;
+      gap: 40px; padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand .logo { color: #fff; margin-bottom: 14px; display: inline-block; }
+    .footer-brand p { font-size: 14px; line-height: 1.7; margin-bottom: 18px; }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.08); display: flex;
+      align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6); font-size: 14px;
+      transition: background var(--transition), color var(--transition);
+    }
+    .footer-social a:hover { background: var(--accent); color: #fff; }
+    .footer-col h4 { color: #fff; font-size: 15px; font-weight: 700; margin-bottom: 18px; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul a { color: rgba(255,255,255,0.5); font-size: 14px; transition: color var(--transition); }
+    .footer-col ul a:hover { color: var(--accent); }
+    .footer-bottom {
+      padding: 20px 0; display: flex; justify-content: space-between;
+      align-items: center; font-size: 13px;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: var(--accent); }
+    .footer-links { display: flex; gap: 20px; }
+
+    /* ============================================================
+       BACK TO TOP
+       ============================================================ */
+    .back-to-top {
+      position: fixed; bottom: 30px; right: 30px;
+      width: 44px; height: 44px; background: var(--accent); color: #fff;
+      border: none; border-radius: 50%; cursor: pointer; font-size: 20px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow); opacity: 0; transform: translateY(20px);
+      transition: opacity var(--transition), transform var(--transition), background var(--transition);
+      z-index: 900;
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { background: var(--accent-hover); }
+
+    /* ============================================================
+       AFFILIATE DISCLOSURE & TRUST BAR
+       ============================================================ */
+    .affiliate-disclosure {
+      font-size: 12px;
+      color: var(--text-light);
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+
+    .trust-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      background: var(--accent-light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 20px;
+      margin-bottom: 28px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+    .trust-bar span {
+      white-space: nowrap;
+    }
+    .trust-bar .trust-sep {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--text-light);
+      flex-shrink: 0;
+    }
+
+    /* Table row hover highlight */
+    .comparison-table tbody tr:hover td { background: var(--accent-light); }
+    .comparison-table tbody tr { cursor: pointer; }
+
+    /* ============================================================
+       FILTER TYPE CARDS (Buyer's Guide unique)
+       ============================================================ */
+    .filter-type-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      margin: 20px 0;
+      background: var(--bg);
+    }
+    .filter-type-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .filter-type-name {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .filter-type-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .filter-type-badge.best-for { background: var(--accent-light); color: var(--accent); }
+    .filter-type-badge.budget { background: #f0fdf4; color: var(--green); }
+    .filter-type-badge.premium { background: #fef3c7; color: #d97706; }
+    .filter-type-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .filter-type-specs {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .filter-type-specs span { white-space: nowrap; }
+    .filter-type-specs strong { color: var(--text); font-weight: 700; }
+
+    /* ============================================================
+       BUDGET TIER (Buyer's Guide unique)
+       ============================================================ */
+    .budget-tier {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .budget-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      text-align: center;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .budget-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+    .budget-card.recommended {
+      border-color: var(--accent);
+      border-width: 2px;
+      position: relative;
+    }
+    .budget-card.recommended::before {
+      content: 'Best Value';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 2px 12px;
+      border-radius: 10px;
+      white-space: nowrap;
+    }
+    .budget-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+    .budget-price {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .budget-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    @media (max-width: 600px) {
+      .budget-tier { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       SIDEBAR DECISION HELPER (Buyer's Guide unique)
+       ============================================================ */
+    .sidebar-decision .widget-title { display: block; }
+    .decision-intro { font-size: 13px; color: var(--text-secondary); margin-bottom: 14px; }
+    .decision-question { margin-bottom: 14px; }
+    .decision-q {
+      font-size: 13px; font-weight: 700; color: var(--text);
+      margin-bottom: 8px;
+    }
+    .decision-options { display: flex; gap: 6px; flex-wrap: wrap; }
+    .decision-opt {
+      flex: 1; min-width: 0;
+      padding: 7px 8px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--bg);
+      font-size: 12px; font-weight: 600;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition);
+      font-family: inherit;
+      text-align: center;
+    }
+    .decision-opt:hover { border-color: var(--accent); color: var(--accent); }
+    .decision-opt.selected {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .decision-result {
+      margin-top: 14px;
+      padding: 14px;
+      background: var(--accent-light);
+      border-radius: var(--radius);
+      text-align: center;
+    }
+    .decision-result-label {
+      font-size: 11px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--accent); margin-bottom: 4px;
+    }
+    .decision-result-name {
+      font-size: 15px; font-weight: 800; color: var(--text); margin-bottom: 10px;
+    }
+    .decision-result-cta {
+      display: inline-block;
+      padding: 8px 18px;
+      background: var(--accent); color: #fff !important;
+      border-radius: var(--radius); font-size: 13px; font-weight: 700;
+      text-decoration: none !important;
+      transition: background var(--transition);
+    }
+    .decision-result-cta:hover { background: var(--accent-hover); }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 1024px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      .toc { display: block; }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .menu-toggle { display: flex; }
+      .article-title { font-size: 1.8rem; }
+      .article-excerpt { font-size: 16px; }
+      .article-meta { flex-direction: column; align-items: flex-start; }
+      .article-content { font-size: 16px; }
+      .article-content h2 { font-size: 1.4rem; }
+      .article-content h3 { font-size: 1.15rem; }
+      .article-featured-img { width: 100%; }
+      .quick-answer { padding: 20px; }
+      .key-takeaway { padding: 16px 18px; }
+      .comparison-table-wrap { margin: 20px 0; overflow-x: hidden; }
+      .comparison-table th, .comparison-table td { padding: 8px 8px; font-size: 12px; word-break: break-word; }
+      .comparison-table .table-cta { padding: 5px 8px; font-size: 12px; }
+      .comparison-table .table-stars .stars { font-size: 10px; letter-spacing: 0; }
+      .comparison-table .table-stars .rating-num { font-size: 11px; }
+      .comparison-table .table-rank { font-size: 13px; }
+      .comparison-table .table-col-rank, .comparison-table .table-rank { width: 24px; }
+      .comparison-table .table-col-img, .comparison-table .table-img { width: 54px; padding: 6px !important; }
+      .comparison-table .table-img img { width: 44px; height: 44px; }
+      .comparison-table .hide-mobile { display: none; }
+      .toc { padding: 14px 18px; margin-bottom: 24px; }
+      .toc-title { margin-bottom: 0; font-size: 14px; }
+      .toc-title.collapsed { margin-bottom: 0; }
+      .toc-list a { padding: 6px 0; font-size: 13px; }
+      .share-bar { flex-wrap: wrap; }
+      .related-grid { grid-template-columns: 1fr; }
+      .author-box { flex-direction: column; text-align: center; padding: 22px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .article-title { font-size: 1.45rem; }
+      .section-title { font-size: 1.3rem; }
+    }
+  </style>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Water Filter Buying Guide: How to Choose the Perfect Filter for Your Home (2026)",
+    "description": "Confused by all the water filter options? This buyer's guide breaks down every type, explains what to look for, and helps you pick the perfect filter based on your needs and budget.",
+    "datePublished": "2026-02-25",
+    "dateModified": "2026-02-25",
+    "author": {
+      "@type": "Person",
+      "name": "Author Name"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "YourBlog"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="search-overlay">
+  <div class="search-box">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" placeholder="Search articles..." autofocus />
+    <button class="search-close" id="search-close" aria-label="Close search">&times;</button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="header-main">
+    <a href="/" class="logo">Your<span>Blog</span></a>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Filters</a>
+      <a href="#">Heaters</a>
+      <a href="#">Softeners</a>
+      <a href="#">Blog</a>
+      <a href="#">About</a>
+      <a href="#" class="nav-start-here">Start Here</a>
+    </nav>
+    <div class="header-actions">
+      <button class="header-btn" id="search-btn" aria-label="Search">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="header-btn" id="dark-mode-btn" aria-label="Toggle dark mode">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      </button>
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="#">Home</a>
+  <a href="#">Filters</a>
+  <a href="#">Heaters</a>
+  <a href="#">Softeners</a>
+  <a href="#">Blog</a>
+  <a href="#">About</a>
+  <a href="#" class="nav-start-here">Start Here</a>
+</nav>
+
+<!-- ARTICLE + SIDEBAR -->
+<div class="container">
+  <div class="article-layout">
+    <!-- MAIN ARTICLE -->
+    <article>
+      <div class="breadcrumbs">
+        <a href="/">Home</a> <span>/</span> <a href="#">Buying Guides</a> <span>/</span> Water Filter Buying Guide
+      </div>
+      <!-- Affiliate Disclosure -->
+      <p class="affiliate-disclosure">This post may contain affiliate links. We earn a small commission if you make a purchase, at no extra cost to&nbsp;you.</p>
+      <!-- Header -->
+      <div class="article-header">
+        <span class="article-cat">Buying Guides</span>
+        <h1 class="article-title">Water Filter Buying Guide: How to Choose the Perfect Filter for Your&nbsp;Home&nbsp;(2026)</h1>
+        <p class="article-excerpt">Confused by all the water filter options? This buyer's guide breaks down every type, explains what to look for, and helps you pick the perfect filter based on your needs and budget.</p>
+        <div class="article-meta">
+          <div class="article-author">
+            <div class="article-author-avatar">A</div>
+            <div class="article-author-info">
+              <div class="article-author-name">Author Name</div>
+              <div class="article-author-date">Last Updated: Feb 25, 2026 &bull; 15 min read</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div class="article-featured-img">
+        <img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?w=900&q=80" alt="Water filter buying guide — choosing the right filter for your home" />
+      </div>
+
+      <!-- Quick Answer -->
+      <div class="quick-answer">
+        <div class="quick-answer-label">Quick Answer</div>
+        <h3>The best water filter for most people</h3>
+        <p>If you're short on time: the best water filter for most people is a pitcher filter like <strong>Clearly Filtered</strong> ($50) or an under-sink RO system like <strong>APEC ROES-50</strong> ($200) for homeowners. Pitchers require zero installation, while RO systems deliver the highest level of filtration.</p>
+        <a href="#best-filters-by-category" class="quick-answer-cta">Skip to Recommendations &rarr;</a>
+      </div>
+
+      <!-- Table of Contents (mobile/inline) -->
+      <div class="toc">
+        <div class="toc-title" id="toc-toggle">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          Table of Contents
+        </div>
+        <div class="toc-list" id="toc-list">
+          <a href="#do-you-need">Do You Need a Water Filter?</a>
+          <a href="#types">Types of Water Filters</a>
+          <a href="#comparison">Filter Comparison</a>
+          <a href="#key-features">Key Features to Look For</a>
+          <a href="#budget">Budget Breakdown</a>
+          <a href="#best-filters-by-category">Best Filters by Category</a>
+          <a href="#red-flags">Red Flags to Avoid</a>
+          <a href="#certifications">Certifications Explained</a>
+          <a href="#where-to-buy">Where to Buy</a>
+          <a href="#faq">FAQ</a>
+          <a href="#final-recommendations">Final Recommendations</a>
+        </div>
+      </div>
+
+      <!-- ARTICLE CONTENT -->
+      <div class="article-content">
+        <p>Shopping for a water filter should be simple, but it's anything but. Walk into any big-box store or search Amazon and you'll find hundreds of options — pitchers, faucet mounts, under-sink systems, whole-house units — each claiming to be "the best." How do you know which one is actually right for you?</p>
+        <p>That's exactly why we wrote this guide. After months of research, lab testing, and hands-on experience with dozens of filters, we've distilled everything you need to know into one comprehensive resource. Whether you're a first-time buyer or upgrading an existing system, this guide will help you make a confident, informed decision.</p>
+
+        <div class="key-takeaway">
+          <div class="key-takeaway-label">Key Takeaway</div>
+          <p>There is no single "best" water filter. The right choice depends on your water quality, living situation (own vs. rent), budget, and how many contaminants you need to remove. This guide helps you match those factors to the perfect filter type.</p>
+        </div>
+
+        <!-- SECTION 1: Do You Need a Water Filter? -->
+        <h2 id="do-you-need">Do You Need a Water Filter?</h2>
+        <p>Not everyone needs a water filter — but most people would benefit from one. Here are the signs that you should seriously consider getting a filter:</p>
+        <h3>Signs You Need a Water Filter</h3>
+        <ul>
+          <li><strong>Your water tastes or smells off</strong> — chlorine taste, metallic flavor, or sulfur ("rotten egg") smell are common indicators that your water could use treatment.</li>
+          <li><strong>You have older plumbing</strong> — homes built before 1986 may have lead pipes or lead solder, which can leach into your drinking water.</li>
+          <li><strong>You're on well water</strong> — private wells aren't regulated by the EPA, so you're responsible for your own water quality testing and treatment.</li>
+          <li><strong>Your area has known contamination</strong> — check the <a href="#">EWG Tap Water Database</a> to see what's in your local water supply.</li>
+          <li><strong>You buy bottled water regularly</strong> — a home filter will save you money and reduce plastic waste significantly.</li>
+          <li><strong>You have young children or are pregnant</strong> — developing bodies are more susceptible to contaminants like lead, nitrates, and PFAS.</li>
+        </ul>
+        <h3>When You Might Not Need One</h3>
+        <ul>
+          <li><strong>Your water tests clean</strong> — if your annual water quality report shows all contaminants below EPA limits and you're happy with the taste, you may not need a filter.</li>
+          <li><strong>You're on a modern municipal system</strong> — some cities have excellent water treatment. Check your Consumer Confidence Report (CCR) first.</li>
+          <li><strong>You already have a whole-house system</strong> — if your home came with a built-in filtration system, an additional point-of-use filter may be redundant.</li>
+        </ul>
+
+        <!-- SECTION 2: Types of Water Filters -->
+        <h2 id="types">Types of Water Filters</h2>
+        <p>Understanding the different types of water filters is the most important step in choosing the right one. Each type has distinct strengths and trade-offs. Here's a breakdown of the six main categories:</p>
+
+        <div class="filter-type-card">
+          <div class="filter-type-header">
+            <div class="filter-type-name">Pitcher Filter</div>
+            <span class="filter-type-badge best-for">Best for Renters</span>
+          </div>
+          <div class="filter-type-desc">The simplest way to get filtered water. Fill it up, wait a few minutes, and pour. No installation required. Models like Clearly Filtered remove 365+ contaminants, while basic Brita models target 30+. Great for individuals and small households.</div>
+          <div class="filter-type-specs">
+            <span><strong>Price:</strong> $20-90</span>
+            <span><strong>Filter Life:</strong> 40-100 gal</span>
+            <span><strong>Install:</strong> None</span>
+            <span><strong>Contaminants:</strong> 30-365+</span>
+          </div>
+        </div>
+
+        <div class="filter-type-card">
+          <div class="filter-type-header">
+            <div class="filter-type-name">Under-Sink Reverse Osmosis</div>
+            <span class="filter-type-badge premium">Premium</span>
+          </div>
+          <div class="filter-type-desc">The gold standard for home filtration. RO systems force water through a semipermeable membrane that removes up to 99% of dissolved solids, heavy metals, and contaminants. Requires under-sink installation and a dedicated faucet. Best for homeowners who want the cleanest possible water.</div>
+          <div class="filter-type-specs">
+            <span><strong>Price:</strong> $150-500</span>
+            <span><strong>Filter Life:</strong> 6-12 mo</span>
+            <span><strong>Install:</strong> DIY (1-2 hrs)</span>
+            <span><strong>Contaminants:</strong> 1,000+</span>
+          </div>
+        </div>
+
+        <div class="filter-type-card">
+          <div class="filter-type-header">
+            <div class="filter-type-name">Countertop Filter</div>
+            <span class="filter-type-badge best-for">Best for Ease</span>
+          </div>
+          <div class="filter-type-desc">Sits on your counter and connects directly to your faucet or operates independently. No permanent installation. Offers better filtration than pitchers with faster flow rates, though they do take up counter space. Ideal for renters who want more than a pitcher but can't modify plumbing.</div>
+          <div class="filter-type-specs">
+            <span><strong>Price:</strong> $50-200</span>
+            <span><strong>Filter Life:</strong> 200-500 gal</span>
+            <span><strong>Install:</strong> Minimal</span>
+            <span><strong>Contaminants:</strong> 50-200+</span>
+          </div>
+        </div>
+
+        <div class="filter-type-card">
+          <div class="filter-type-header">
+            <div class="filter-type-name">Faucet-Mount Filter</div>
+            <span class="filter-type-badge budget">Budget</span>
+          </div>
+          <div class="filter-type-desc">Attaches directly to your kitchen faucet and filters water on demand. Turn a switch to toggle between filtered and unfiltered water. Compact and affordable, but not compatible with all faucet types. Good entry-level option for basic chlorine and taste improvement.</div>
+          <div class="filter-type-specs">
+            <span><strong>Price:</strong> $20-40</span>
+            <span><strong>Filter Life:</strong> 100 gal</span>
+            <span><strong>Install:</strong> 2 min</span>
+            <span><strong>Contaminants:</strong> 30-70</span>
+          </div>
+        </div>
+
+        <div class="filter-type-card">
+          <div class="filter-type-header">
+            <div class="filter-type-name">Whole House Filter</div>
+            <span class="filter-type-badge premium">Premium</span>
+          </div>
+          <div class="filter-type-desc">Installed at your home's main water line, it filters every drop of water entering your house — including showers, laundry, and outdoor faucets. Ideal for well water or homes with significant sediment or chlorine issues. Requires professional installation in most cases.</div>
+          <div class="filter-type-specs">
+            <span><strong>Price:</strong> $300-2,000+</span>
+            <span><strong>Filter Life:</strong> 3-10 years</span>
+            <span><strong>Install:</strong> Professional</span>
+            <span><strong>Contaminants:</strong> 50-77+</span>
+          </div>
+        </div>
+
+        <div class="filter-type-card">
+          <div class="filter-type-header">
+            <div class="filter-type-name">Gravity Filter</div>
+            <span class="filter-type-badge budget">Budget Long-Term</span>
+          </div>
+          <div class="filter-type-desc">Works entirely by gravity — no electricity, no plumbing, no water pressure needed. Pour water into the top chamber and it slowly filters down. Berkey is the most popular brand. Exceptional filter life (up to 3,000 gallons per element) makes it the cheapest per-gallon option available.</div>
+          <div class="filter-type-specs">
+            <span><strong>Price:</strong> $150-400</span>
+            <span><strong>Filter Life:</strong> 3,000 gal</span>
+            <span><strong>Install:</strong> None</span>
+            <span><strong>Contaminants:</strong> 200+</span>
+          </div>
+        </div>
+
+        <!-- SECTION 3: Filter Comparison -->
+        <h2 id="comparison">Filter Comparison</h2>
+        <p>Here's how the six main filter types stack up side by side:</p>
+        <div class="comparison-table-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Best For</th>
+                <th>Price Range</th>
+                <th class="hide-mobile">Contaminants Removed</th>
+                <th>Install Difficulty</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="table-product-name">Pitcher</td>
+                <td>Renters, simplicity</td>
+                <td>$20-90</td>
+                <td class="hide-mobile">30-365+</td>
+                <td>None</td>
+              </tr>
+              <tr>
+                <td class="table-product-name">Under-Sink RO</td>
+                <td>Homeowners, max filtration</td>
+                <td>$150-500</td>
+                <td class="hide-mobile">1,000+</td>
+                <td>DIY (1-2 hrs)</td>
+              </tr>
+              <tr>
+                <td class="table-product-name">Countertop</td>
+                <td>Renters wanting more</td>
+                <td>$50-200</td>
+                <td class="hide-mobile">50-200+</td>
+                <td>Minimal</td>
+              </tr>
+              <tr>
+                <td class="table-product-name">Faucet-Mount</td>
+                <td>Budget buyers</td>
+                <td>$20-40</td>
+                <td class="hide-mobile">30-70</td>
+                <td>2 minutes</td>
+              </tr>
+              <tr>
+                <td class="table-product-name">Whole House</td>
+                <td>Homeowners, well water</td>
+                <td>$300-2,000+</td>
+                <td class="hide-mobile">50-77+</td>
+                <td>Professional</td>
+              </tr>
+              <tr>
+                <td class="table-product-name">Gravity</td>
+                <td>Off-grid, low cost/gal</td>
+                <td>$150-400</td>
+                <td class="hide-mobile">200+</td>
+                <td>None</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- SECTION 4: Key Features to Look For -->
+        <h2 id="key-features">Key Features to Look For</h2>
+        <p>No matter which filter type you choose, these are the features that separate a great filter from a mediocre one:</p>
+        <ol>
+          <li><strong>NSF/ANSI Certification</strong> — This is non-negotiable. An NSF certification means the filter has been independently tested and verified to remove specific contaminants. Look for NSF 42, 53, 58, or 401 depending on your needs.</li>
+          <li><strong>Contaminant Removal List</strong> — Don't just take the manufacturer's word for it. Look for a published list of exactly which contaminants the filter removes and by what percentage. Reputable brands provide this data from third-party lab testing.</li>
+          <li><strong>Filter Life &amp; Replacement Cost</strong> — A cheap filter with expensive replacements can cost more over time than a pricier filter with longer-lasting cartridges. Always calculate the cost per gallon, not just the upfront price.</li>
+          <li><strong>Flow Rate</strong> — Measured in gallons per minute (GPM). A slow filter can be frustrating for daily use. Pitchers are inherently slow (5-15 minutes per batch), while under-sink systems deliver filtered water on demand.</li>
+          <li><strong>Filter Capacity</strong> — Measured in gallons. Higher capacity means fewer filter changes and lower long-term cost. Berkey's 3,000-gallon capacity dwarfs Brita's 120-gallon filters.</li>
+          <li><strong>Material Quality</strong> — Look for BPA-free plastics, food-grade stainless steel, and lead-free fittings. Cheap materials can leach contaminants into the very water you're trying to clean.</li>
+          <li><strong>Installation Requirements</strong> — Consider whether you can (or want to) install the system yourself. Pitcher and gravity filters need zero installation. Under-sink systems require basic DIY skills. Whole-house systems usually need a plumber.</li>
+          <li><strong>Filter Change Indicator</strong> — Some filters have electronic or mechanical indicators that tell you when it's time to replace the cartridge. This prevents you from unknowingly drinking inadequately filtered water.</li>
+        </ol>
+
+        <!-- SECTION 5: Budget Breakdown -->
+        <h2 id="budget">Budget Breakdown</h2>
+        <p>Water filters fit into three general price tiers. Here's what you can expect at each level:</p>
+
+        <div class="budget-tier">
+          <div class="budget-card">
+            <div class="budget-label">Budget</div>
+            <div class="budget-price">$20-50</div>
+            <div class="budget-desc">Basic pitcher or faucet-mount filters. Removes chlorine, taste, and odor. Limited contaminant removal. Good for municipal water that's already relatively clean. Expect to replace filters every 1-2 months.</div>
+          </div>
+          <div class="budget-card recommended">
+            <div class="budget-label">Mid-Range</div>
+            <div class="budget-price">$50-200</div>
+            <div class="budget-desc">Advanced pitchers (Clearly Filtered), countertop systems, or entry-level under-sink filters. Removes lead, PFAS, heavy metals, and 100+ contaminants. Best balance of filtration and value for most households.</div>
+          </div>
+          <div class="budget-card">
+            <div class="budget-label">Premium</div>
+            <div class="budget-price">$200-1,000+</div>
+            <div class="budget-desc">Under-sink RO systems, gravity filters (Berkey), or whole-house systems. Maximum contaminant removal (99%+). Lowest cost per gallon over time. Best for homeowners, well water, or areas with serious contamination.</div>
+          </div>
+        </div>
+
+        <!-- SECTION 6: Best Filters by Category -->
+        <h2 id="best-filters-by-category">Best Filters by Category</h2>
+        <p>Based on our testing and research, here are our top recommendations by use case:</p>
+
+        <h3>Best Overall</h3>
+        <p><strong>Clearly Filtered Water Pitcher</strong> — Removes 365+ contaminants including lead, fluoride, and PFAS. No installation needed. At $0.14/gallon, it delivers exceptional filtration at a reasonable ongoing cost. Ideal for renters and anyone wanting clean water without complexity.</p>
+
+        <h3>Best Budget</h3>
+        <p><strong>Brita Elite Pitcher</strong> — The most affordable way to start filtering your water. Removes 30+ contaminants at roughly $0.09/gallon. Won't match the Clearly Filtered on contaminant removal, but it handles the basics (chlorine, lead, some PFAS) well for the price.</p>
+
+        <h3>Best for Homeowners</h3>
+        <p><strong>APEC ROES-50 Reverse Osmosis System</strong> — Removes up to 99% of 1,000+ contaminants with its 5-stage filtration process. Made in the USA. DIY-installable in 1-2 hours. At $0.08/gallon, it's the most cost-effective way to get the cleanest possible water.</p>
+
+        <h3>Best for Off-Grid / Emergencies</h3>
+        <p><strong>Berkey Travel Water Filter</strong> — Works without electricity or water pressure. Each filter element lasts 3,000 gallons, bringing the cost down to an astonishing $0.02/gallon. Stainless steel construction will last for decades. Slower filtration speed is the only trade-off.</p>
+
+        <h3>Best Whole House</h3>
+        <p><strong>Aquasana EQ-1000</strong> — Filters up to 1,000,000 gallons (roughly 10 years) for every faucet, shower, and appliance in your home. Removes 77+ contaminants while preserving beneficial minerals. Higher upfront cost (~$800 + installation) but works out to about $0.03/gallon over its lifespan.</p>
+
+        <h3>Best Countertop</h3>
+        <p><strong>Big Berkey</strong> or <strong>AquaTru Countertop RO</strong> — If you want more than a pitcher but can't install under-sink plumbing, these countertop options deliver near-RO-level filtration without permanent installation. AquaTru is the only countertop reverse osmosis system on the market.</p>
+
+        <!-- SECTION 7: Red Flags to Avoid -->
+        <h2 id="red-flags">Red Flags to Avoid</h2>
+        <p>The water filter market has its share of misleading products. Watch out for these warning signs:</p>
+        <ul>
+          <li><strong>No NSF certification</strong> — If a filter can't show you an NSF or IAPMO certification, be skeptical. Claims like "lab tested" without specifying which independent lab are a red flag.</li>
+          <li><strong>Vague contaminant claims</strong> — "Removes 99% of contaminants" means nothing without specifying which contaminants and at what levels. Demand specifics.</li>
+          <li><strong>Alkaline water gimmicks</strong> — Filters that claim to "alkalize" your water for health benefits are largely marketing hype. The pH of your drinking water has minimal impact on your body's pH levels.</li>
+          <li><strong>Magnetic or "structured" water</strong> — Products claiming to "restructure" water molecules or use magnets for purification have zero scientific backing. Avoid them entirely.</li>
+          <li><strong>Suspiciously low prices</strong> — If a filter system costs $10 and claims to remove lead, fluoride, and PFAS, it almost certainly doesn't. Quality filtration media costs money to manufacture.</li>
+          <li><strong>No published filter life data</strong> — If the manufacturer can't tell you how many gallons the filter lasts, you have no way to calculate true cost or know when replacement is needed.</li>
+          <li><strong>MLM or direct-sales-only brands</strong> — Water filters sold through multi-level marketing schemes are typically overpriced for what they deliver. You're paying for the sales structure, not better filtration.</li>
+        </ul>
+
+        <!-- SECTION 8: Certifications Explained -->
+        <h2 id="certifications">Certifications Explained</h2>
+        <p>NSF/ANSI certifications are the gold standard for water filter verification. Here's what each one means:</p>
+
+        <h3>NSF/ANSI 42 — Aesthetic Effects</h3>
+        <p>Covers taste, odor, and chlorine reduction. This is the most basic certification. If a filter only has NSF 42, it will improve how your water tastes and smells but may not remove health-related contaminants.</p>
+
+        <h3>NSF/ANSI 53 — Health Effects</h3>
+        <p>Covers reduction of specific health-related contaminants like lead, mercury, asbestos, and volatile organic compounds (VOCs). This is the certification you want if your water has known contaminant issues.</p>
+
+        <h3>NSF/ANSI 58 — Reverse Osmosis</h3>
+        <p>Specific to reverse osmosis systems. Verifies that the system reduces TDS (total dissolved solids) and specific contaminants like arsenic, barium, and chromium. If you're buying an RO system, make sure it has this certification.</p>
+
+        <h3>NSF/ANSI 401 — Emerging Contaminants</h3>
+        <p>Covers "emerging" contaminants that aren't yet federally regulated, including pharmaceuticals, herbicides, pesticides, and PFAS (forever chemicals). This is a newer certification and indicates a filter is tackling the latest known threats to water quality.</p>
+
+        <blockquote>
+          <strong>Pro Tip:</strong> You can verify any filter's NSF certification at <a href="#">nsf.org</a>. If a manufacturer claims NSF certification but their product doesn't appear in the NSF database, they're likely being misleading.
+        </blockquote>
+
+        <!-- SECTION 9: Where to Buy -->
+        <h2 id="where-to-buy">Where to Buy</h2>
+        <p>Where you buy your filter matters — not just for price, but for warranty protection and authenticity:</p>
+        <ul>
+          <li><strong>Amazon</strong> — Largest selection and often the best prices. Use Amazon's "Subscribe & Save" for replacement filters to save 5-15%. Be cautious of third-party sellers offering prices that seem too good to be true — counterfeit filters are a real problem on the platform.</li>
+          <li><strong>Direct from Manufacturer</strong> — Brands like Clearly Filtered, Berkey, and APEC often run promotions on their own websites. Buying direct guarantees authenticity and typically offers the best warranty support.</li>
+          <li><strong>Home Improvement Stores</strong> — Home Depot, Lowe's, and similar retailers carry mainstream brands like Brita, PUR, and Aquasana. Good for seeing products in person before buying, and easy returns if something doesn't fit.</li>
+          <li><strong>Costco / Warehouse Clubs</strong> — Occasionally carry water filter bundles at competitive prices. Great for stocking up on replacement filters in bulk.</li>
+        </ul>
+
+        <!-- SECTION 10: FAQ -->
+        <h2 id="faq">Frequently Asked Questions</h2>
+
+        <h3>How do I know which contaminants are in my water?</h3>
+        <p>Start with your annual Consumer Confidence Report (CCR), which your water utility is required to provide. For a more detailed analysis, use the <a href="#">EWG Tap Water Database</a> or order a home water test kit ($15-30). If you're on well water, the EPA recommends testing annually for bacteria, nitrates, and pH at a minimum.</p>
+
+        <h3>Do I need a water filter if I have city water?</h3>
+        <p>Possibly. Municipal water meets EPA minimums, but "legal" doesn't always mean "safe." The EPA's standards haven't been updated for many contaminants in decades. The EWG has identified over 300 contaminants in U.S. tap water, many with health guidelines well below legal limits.</p>
+
+        <h3>How much does it really cost per gallon to filter water?</h3>
+        <p>It depends on the system. Berkey gravity filters cost about $0.02/gallon. Under-sink RO systems like the APEC ROES-50 cost around $0.08/gallon. Brita Elite pitchers cost roughly $0.09/gallon. Clearly Filtered pitchers cost about $0.14/gallon. Even the most expensive option is a fraction of the cost of bottled water ($1-2/gallon).</p>
+
+        <h3>Can a water filter remove PFAS (forever chemicals)?</h3>
+        <p>Yes, but not all of them can. Basic carbon filters (standard Brita) remove some PFAS, but not reliably. For thorough PFAS removal, look for filters with activated carbon block technology (Clearly Filtered), reverse osmosis systems (APEC ROES-50), or ion exchange resin. Check for NSF/ANSI P473 certification, which specifically covers PFOS and PFOA reduction.</p>
+
+        <!-- SECTION 11: Final Recommendations -->
+        <h2 id="final-recommendations">Final Recommendations</h2>
+        <p>Choosing a water filter doesn't have to be overwhelming. Here's our simple framework for making the right decision:</p>
+        <p>If you <strong>rent</strong> and want clean water with zero effort, get a <strong>Clearly Filtered Pitcher</strong>. It removes more contaminants than any other pitcher on the market and requires absolutely no installation.</p>
+        <p>If you <strong>own your home</strong> and want the cleanest water possible, install an <strong>APEC ROES-50 Reverse Osmosis System</strong>. The 1-2 hour DIY installation is worth it for 99% contaminant removal at just $0.08/gallon.</p>
+        <p>If you're on a <strong>tight budget</strong>, start with a <strong>Brita Elite Pitcher</strong> ($30). It won't remove everything, but it covers the basics and costs less than $10/month to operate.</p>
+        <p>And if you want <strong>whole-home filtration</strong>, the <strong>Aquasana EQ-1000</strong> delivers filtered water to every tap for roughly a decade before needing replacement.</p>
+        <p>Whatever you choose, the most important thing is to start filtering. Even a basic filter removes chlorine, improves taste, and gives you one less thing to worry about when you pour a glass of water.</p>
+
+        <div class="key-takeaway">
+          <div class="key-takeaway-label">Bottom Line</div>
+          <p>Start with the <strong>Clearly Filtered Pitcher</strong> if you rent or want simplicity. Upgrade to the <strong>APEC ROES-50</strong> if you own your home and want the highest level of filtration. Either way, you'll be drinking cleaner, safer water for a fraction of the cost of bottled.</p>
+        </div>
+      </div>
+
+      <!-- SHARE BAR -->
+      <div class="share-bar">
+        <span class="share-label">Share this article:</span>
+        <button class="share-btn" aria-label="Share on Facebook">f</button>
+        <button class="share-btn" aria-label="Share on Twitter">X</button>
+        <button class="share-btn" aria-label="Share on Pinterest">P</button>
+        <button class="share-btn" aria-label="Copy link">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </button>
+      </div>
+
+      <!-- AUTHOR BOX -->
+      <div class="author-box animate-on-scroll">
+        <div class="author-box-avatar">A</div>
+        <div class="author-box-info">
+          <div class="author-box-name">Author Name</div>
+          <div class="author-box-role">Water Quality Expert & Product Reviewer</div>
+          <p class="author-box-bio">With over 8 years of experience testing water treatment products, Author Name has reviewed 200+ filters, softeners, and purification systems. Their work has been featured in Popular Mechanics, Wirecutter, and Consumer Reports.</p>
+          <a href="#" class="author-box-link">More about the author &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="widget sidebar-toc">
+        <h3 class="widget-title">Table of Contents</h3>
+        <div class="sidebar-toc-list">
+          <a href="#do-you-need">Do You Need a Water Filter?</a>
+          <a href="#types">Types of Water Filters</a>
+          <a href="#comparison">Filter Comparison</a>
+          <a href="#key-features">Key Features to Look For</a>
+          <a href="#budget">Budget Breakdown</a>
+          <a href="#best-filters-by-category">Best Filters by Category</a>
+          <a href="#red-flags">Red Flags to Avoid</a>
+          <a href="#certifications">Certifications Explained</a>
+          <a href="#where-to-buy">Where to Buy</a>
+          <a href="#faq">FAQ</a>
+          <a href="#final-recommendations">Final Recommendations</a>
+        </div>
+      </div>
+
+      <div class="widget sidebar-decision">
+        <h3 class="widget-title">Find Your Filter</h3>
+        <p class="decision-intro">Answer these to find your match:</p>
+        <div class="decision-question">
+          <div class="decision-q">Do you own or rent?</div>
+          <div class="decision-options">
+            <button class="decision-opt" data-answer="own">Own</button>
+            <button class="decision-opt" data-answer="rent">Rent</button>
+          </div>
+        </div>
+        <div class="decision-question">
+          <div class="decision-q">What's your budget?</div>
+          <div class="decision-options">
+            <button class="decision-opt" data-answer="low">Under $50</button>
+            <button class="decision-opt" data-answer="mid">$50-200</button>
+            <button class="decision-opt" data-answer="high">$200+</button>
+          </div>
+        </div>
+        <div class="decision-question">
+          <div class="decision-q">What matters most?</div>
+          <div class="decision-options">
+            <button class="decision-opt" data-answer="filtration">Filtration</button>
+            <button class="decision-opt" data-answer="ease">Ease of Use</button>
+            <button class="decision-opt" data-answer="cost">Low Cost</button>
+          </div>
+        </div>
+        <div class="decision-result" id="decision-result" style="display:none;">
+          <div class="decision-result-label">We Recommend:</div>
+          <div class="decision-result-name" id="decision-result-name"></div>
+          <a href="#best-filters-by-category" class="decision-result-cta" id="decision-result-cta">Learn More</a>
+        </div>
+      </div>
+
+      <div class="widget">
+        <h3 class="widget-title">Related Articles</h3>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">Best Reverse Osmosis Systems for 2026</a></div>
+            <div class="widget-post-date">March 2, 2026</div>
+          </div>
+        </div>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">Brita vs. Clearly Filtered: Which Is Better?</a></div>
+            <div class="widget-post-date">Feb 18, 2026</div>
+          </div>
+        </div>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">How to Test Your Tap Water at Home</a></div>
+            <div class="widget-post-date">Feb 10, 2026</div>
+          </div>
+        </div>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">Do Water Filters Remove Fluoride? (Tested)</a></div>
+            <div class="widget-post-date">Jan 28, 2026</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- RELATED POSTS -->
+<section class="related-section">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <h2 class="section-title" style="font-size:1.5rem; margin-bottom: 28px;">You Might Also Like</h2>
+    </div>
+    <div class="related-grid">
+      <a href="#" class="related-card animate-on-scroll">
+        <div class="related-card-img">
+          <img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?w=500&q=70" alt="Related post" loading="lazy" />
+        </div>
+        <div class="related-card-body">
+          <div class="related-card-cat">Filters</div>
+          <h3 class="related-card-title">Best Reverse Osmosis Systems: 5 Top Picks for Clean Water</h3>
+          <div class="related-card-meta">March 2, 2026 &bull; 11 min read</div>
+        </div>
+      </a>
+      <a href="#" class="related-card animate-on-scroll">
+        <div class="related-card-img">
+          <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=500&q=70" alt="Related post" loading="lazy" />
+        </div>
+        <div class="related-card-body">
+          <div class="related-card-cat">Guides</div>
+          <h3 class="related-card-title">How to Test Your Tap Water Quality at Home (Step-by-Step)</h3>
+          <div class="related-card-meta">Feb 14, 2026 &bull; 8 min read</div>
+        </div>
+      </a>
+      <a href="#" class="related-card animate-on-scroll">
+        <div class="related-card-img">
+          <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500&q=70" alt="Related post" loading="lazy" />
+        </div>
+        <div class="related-card-body">
+          <div class="related-card-cat">Comparisons</div>
+          <h3 class="related-card-title">Brita vs. PUR vs. Clearly Filtered: Best Pitcher Filter?</h3>
+          <div class="related-card-meta">Feb 5, 2026 &bull; 9 min read</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Your<span>Blog</span></a>
+        <p>Your trusted source for honest reviews, expert guides, and actionable advice. We help you make smarter decisions.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="Pinterest">Pin</a>
+          <a href="#" aria-label="Twitter">X</a>
+          <a href="#" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#">Water Filters</a></li>
+          <li><a href="#">Water Heaters</a></li>
+          <li><a href="#">Water Softeners</a></li>
+          <li><a href="#">Guides</a></li>
+          <li><a href="#">Comparisons</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Popular</h4>
+        <ul>
+          <li><a href="#">Best Water Filters</a></li>
+          <li><a href="#">Best RO Systems</a></li>
+          <li><a href="#">Best Water Heaters</a></li>
+          <li><a href="#">Water Testing Guide</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Disclosure</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 YourBlog. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<!-- SCRIPTS -->
+<script>
+  const header = document.getElementById('header');
+  const progressBar = document.getElementById('scroll-progress');
+  const backToTop = document.getElementById('back-to-top');
+
+  // Scroll: header shadow, progress bar, back to top, sidebar TOC highlight
+  const tocLinks = document.querySelectorAll('.sidebar-toc-list a');
+  const sections = [];
+  tocLinks.forEach(a => {
+    const id = a.getAttribute('href')?.replace('#', '');
+    if (id) { const el = document.getElementById(id); if (el) sections.push({ el, link: a }); }
+  });
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    header.classList.toggle('scrolled', scrollY > 10);
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (docHeight > 0 ? (scrollY / docHeight) * 100 : 0) + '%';
+    backToTop.classList.toggle('visible', scrollY > 500);
+
+    // Highlight active TOC item
+    let current = '';
+    sections.forEach(s => {
+      if (scrollY >= s.el.offsetTop - 100) current = s.el.id;
+    });
+    tocLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Mobile nav drawer
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  const mobileOverlay = document.getElementById('mobile-nav-overlay');
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    mobileNav.classList.toggle('open');
+    mobileOverlay.classList.toggle('open');
+  });
+  mobileOverlay.addEventListener('click', () => {
+    menuToggle.classList.remove('active');
+    mobileNav.classList.remove('open');
+    mobileOverlay.classList.remove('open');
+  });
+
+  // Search overlay
+  const searchBtn = document.getElementById('search-btn');
+  const searchOverlay = document.getElementById('search-overlay');
+  const searchClose = document.getElementById('search-close');
+  searchBtn.addEventListener('click', () => { searchOverlay.classList.add('open'); searchOverlay.querySelector('input').focus(); });
+  searchClose.addEventListener('click', () => searchOverlay.classList.remove('open'));
+  searchOverlay.addEventListener('click', (e) => { if (e.target === searchOverlay) searchOverlay.classList.remove('open'); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') searchOverlay.classList.remove('open'); });
+
+  // Dark mode
+  const darkBtn = document.getElementById('dark-mode-btn');
+  darkBtn.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+  });
+  if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+
+  // TOC toggle
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocList = document.getElementById('toc-list');
+  tocToggle.addEventListener('click', () => {
+    tocToggle.classList.toggle('collapsed');
+    tocList.style.display = tocToggle.classList.contains('collapsed') ? 'none' : 'flex';
+  });
+
+  // Sidebar TOC toggle (collapsed by default)
+  const sidebarToc = document.querySelector('.sidebar-toc');
+  if (sidebarToc) {
+    const sidebarTitle = sidebarToc.querySelector('.widget-title');
+    sidebarTitle.addEventListener('click', () => {
+      sidebarToc.classList.toggle('expanded');
+    });
+  }
+
+  // Sidebar sticky: align with article title, stick when bottom reached
+  const sidebar = document.querySelector('.sidebar');
+  const articleTitle = document.querySelector('.article-title');
+  if (sidebar && articleTitle && window.innerWidth > 1024) {
+    const padding = 20;
+    function setSidebarSticky() {
+      // Calculate offset from top of article-layout to article title
+      const layout = document.querySelector('.article-layout');
+      const titleOffset = articleTitle.offsetTop - layout.offsetTop;
+      sidebar.style.paddingTop = titleOffset + 'px';
+
+      const sidebarH = sidebar.offsetHeight;
+      const viewportH = window.innerHeight;
+      if (sidebarH > viewportH - padding) {
+        sidebar.style.top = -(sidebarH - viewportH + padding) + 'px';
+      } else {
+        sidebar.style.top = padding + 'px';
+      }
+    }
+    setSidebarSticky();
+    window.addEventListener('resize', setSidebarSticky);
+    sidebar.addEventListener('click', () => setTimeout(setSidebarSticky, 400));
+  }
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+  // Comparison table row click — navigate to Check Price link in that row
+  document.querySelectorAll('.comparison-table tbody tr').forEach(row => {
+    row.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return; // don't double-navigate if clicking the link itself
+      const link = row.querySelector('.table-cta');
+      if (link) link.click();
+    });
+  });
+
+  // Decision Helper
+  const decisionBtns = document.querySelectorAll('.decision-opt');
+  const answers = {};
+  decisionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const question = btn.closest('.decision-question');
+      question.querySelectorAll('.decision-opt').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      const qIndex = [...document.querySelectorAll('.decision-question')].indexOf(question);
+      answers[qIndex] = btn.dataset.answer;
+      if (Object.keys(answers).length === 3) {
+        const result = document.getElementById('decision-result');
+        const name = document.getElementById('decision-result-name');
+        let rec = 'Clearly Filtered Pitcher';
+        if (answers[0] === 'own' && answers[1] === 'high') rec = 'APEC ROES-50 (Under-Sink RO)';
+        else if (answers[0] === 'own' && answers[2] === 'filtration') rec = 'Clearly Filtered Pitcher';
+        else if (answers[1] === 'low') rec = 'Brita Elite Pitcher';
+        else if (answers[2] === 'ease') rec = 'Brita Elite Pitcher';
+        name.textContent = rec;
+        result.style.display = 'block';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

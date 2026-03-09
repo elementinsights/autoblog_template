@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Complete Guide to Water Filtration: Everything You Need to Know - YourBlog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       THEME VARIABLES
+       ============================================================ */
+    :root {
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --accent-light: #eff6ff;
+      --accent-rgb: 59, 130, 246;
+      --text: #1a1a2e;
+      --text-secondary: #64748b;
+      --text-light: #94a3b8;
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --bg-dark: #0f172a;
+      --border: #e2e8f0;
+      --container: 1122px;
+      --radius: 8px;
+      --radius-lg: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+      --transition: 0.25s ease;
+      --green: #16a34a;
+      --red: #dc2626;
+    }
+    html.dark {
+      --text: #e2e8f0;
+      --text-secondary: #94a3b8;
+      --text-light: #64748b;
+      --bg: #0f172a;
+      --bg-alt: #1e293b;
+      --bg-dark: #020617;
+      --border: #334155;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+      --shadow: 0 4px 12px rgba(0,0,0,0.4);
+      --shadow-lg: 0 8px 30px rgba(0,0,0,0.5);
+      --accent-light: rgba(59, 130, 246, 0.15);
+    }
+
+    /* ============================================================
+       RESET & BASE
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--accent-hover); }
+    ul, ol { list-style: none; }
+    h1, h2, h3, h4, h5, h6 { line-height: 1.25; font-weight: 800; color: var(--text); }
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 20px; width: 100%; }
+
+    .animate-on-scroll {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============================================================
+       HEADER
+       ============================================================ */
+    .header {
+      position: sticky; top: 0; z-index: 1000;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow var(--transition);
+    }
+    .header.scrolled { box-shadow: var(--shadow); }
+    .scroll-progress {
+      position: absolute; bottom: 0; left: 0;
+      height: 3px; background: var(--accent);
+      width: 0%; transition: width 0.1s linear; z-index: 10;
+    }
+    .header-main {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px; gap: 20px;
+      max-width: var(--container); margin: 0 auto;
+    }
+    .logo { font-size: 1.6rem; font-weight: 900; color: var(--text); letter-spacing: -0.02em; white-space: nowrap; }
+    .logo span { color: var(--accent); }
+    .nav { display: flex; align-items: center; gap: 6px; }
+    .nav a {
+      color: var(--text); font-size: 15px; font-weight: 600;
+      padding: 8px 14px; border-radius: var(--radius);
+      transition: background var(--transition), color var(--transition);
+    }
+    .nav a:hover { color: var(--accent); }
+    .nav a.nav-start-here { background: var(--accent); color: #fff; padding: 8px 18px; }
+    .nav a.nav-start-here:hover { background: var(--accent-hover); color: #fff; }
+    .header-actions { display: flex; align-items: center; gap: 6px; }
+    .header-btn {
+      background: none; border: none; cursor: pointer; color: var(--text-secondary);
+      font-size: 20px; padding: 8px; border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .header-btn:hover { color: var(--accent); background: var(--accent-light); }
+    .menu-toggle {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 6px; flex-direction: column; gap: 5px;
+    }
+    .menu-toggle span { display: block; width: 24px; height: 2.5px; background: var(--text); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+    .menu-toggle.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    /* Mobile drawer */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0; right: -100%;
+      width: 280px; height: 100vh;
+      background: var(--bg);
+      z-index: 999;
+      box-shadow: var(--shadow-lg);
+      padding: 80px 24px 24px;
+      flex-direction: column;
+      gap: 4px;
+      transition: right 0.3s ease;
+    }
+    .mobile-nav.open { right: 0; }
+    .mobile-nav a {
+      display: block;
+      font-size: 16px; font-weight: 600;
+      color: var(--text);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color var(--transition);
+    }
+    .mobile-nav a:hover { color: var(--accent); }
+    .mobile-nav a.nav-start-here {
+      background: var(--accent); color: #fff;
+      padding: 12px 18px; border-radius: var(--radius);
+      text-align: center; margin-top: 12px; border-bottom: none;
+    }
+    .mobile-nav a.nav-start-here:hover { background: var(--accent-hover); color: #fff; }
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 998;
+    }
+    .mobile-nav-overlay.open { display: block; }
+    @media (max-width: 768px) {
+      .mobile-nav { display: flex; }
+    }
+
+    /* Search overlay */
+    .search-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+      z-index: 9999; display: none; align-items: flex-start;
+      justify-content: center; padding-top: 120px; backdrop-filter: blur(4px);
+    }
+    .search-overlay.open { display: flex; }
+    .search-box {
+      background: var(--bg); border-radius: var(--radius-lg); padding: 8px;
+      width: 90%; max-width: 600px; box-shadow: var(--shadow-lg);
+      display: flex; align-items: center; gap: 12px;
+      animation: searchSlideDown 0.25s ease;
+    }
+    @keyframes searchSlideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .search-box svg { margin-left: 12px; color: var(--text-light); flex-shrink: 0; }
+    .search-box input {
+      flex: 1; border: none; outline: none; font-size: 18px;
+      font-family: inherit; background: transparent; color: var(--text); padding: 12px 0;
+    }
+    .search-box input::placeholder { color: var(--text-light); }
+    .search-close {
+      background: none; border: none; font-size: 24px; cursor: pointer;
+      color: var(--text-light); padding: 8px 12px; transition: color var(--transition);
+    }
+    .search-close:hover { color: var(--text); }
+
+    /* ============================================================
+       BREADCRUMBS
+       ============================================================ */
+    .breadcrumbs {
+      padding: 16px 0;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .breadcrumbs a { color: var(--text-secondary); }
+    .breadcrumbs a:hover { color: var(--accent); }
+    .breadcrumbs span { margin: 0 8px; opacity: 0.5; }
+
+    /* ============================================================
+       ARTICLE LAYOUT
+       ============================================================ */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 750px 340px;
+      gap: 32px;
+      align-items: start;
+      padding-bottom: 60px;
+      min-width: 0;
+    }
+    .article-layout > article { min-width: 0; }
+
+    /* ============================================================
+       ARTICLE HEADER
+       ============================================================ */
+    .article-header { margin-bottom: 32px; }
+    .article-cat {
+      display: inline-block;
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .article-title {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .article-excerpt {
+      font-size: 18px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-author {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .article-author-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--accent); display: flex; align-items: center;
+      justify-content: center; color: #fff; font-weight: 700; font-size: 16px;
+    }
+    .article-author-info { font-size: 14px; }
+    .article-author-name { font-weight: 700; color: var(--text); }
+    .article-author-date { color: var(--text-light); font-size: 13px; }
+    /* Featured image */
+    .article-featured-img {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 32px;
+      aspect-ratio: 750 / 422;
+    }
+    .article-featured-img img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+
+    /* ============================================================
+       ARTICLE CONTENT
+       ============================================================ */
+    .article-content { font-size: 17px; line-height: 1.75; color: var(--text); overflow-wrap: break-word; word-wrap: break-word; }
+    .article-content h2 {
+      font-size: 1.7rem; margin: 28px 0 14px;
+    }
+    .article-content h3 { font-size: 1.3rem; margin: 28px 0 12px; }
+    .article-content p { margin-bottom: 18px; }
+    .article-content ul, .article-content ol {
+      margin: 0 0 20px 0; padding-left: 24px;
+    }
+    .article-content ul { list-style: disc; }
+    .article-content ol { list-style: decimal; }
+    .article-content li { margin-bottom: 8px; }
+    .article-content a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+    .article-content a:hover { color: var(--accent-hover); }
+    .article-content strong { font-weight: 700; }
+    .article-content blockquote {
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      margin: 24px 0;
+      background: var(--accent-light);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    /* Quick answer box */
+    .quick-answer {
+      background: var(--accent-light);
+      border: 2px solid var(--accent);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin-bottom: 32px;
+    }
+    .quick-answer-label {
+      font-size: 12px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px;
+    }
+    .quick-answer h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .quick-answer p { font-size: 15px; color: var(--text-secondary); margin: 0 0 14px; line-height: 1.6; }
+    .quick-answer-cta {
+      display: inline-block;
+      padding: 10px 22px;
+      background: var(--accent);
+      color: #fff !important;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: var(--radius);
+      text-decoration: none !important;
+      transition: background var(--transition);
+    }
+    .quick-answer-cta:hover { background: var(--accent-hover); color: #fff !important; text-decoration: none !important; }
+
+    /* ============================================================
+       TABLE OF CONTENTS
+       ============================================================ */
+    .toc {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px 26px;
+      margin-bottom: 32px;
+      display: none;
+    }
+    .toc-title {
+      font-size: 15px; font-weight: 800; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 8px;
+      cursor: pointer; user-select: none;
+    }
+    .toc-title svg { transition: transform var(--transition); }
+    .toc-title.collapsed svg { transform: rotate(-90deg); }
+    .toc-list { display: flex; flex-direction: column; gap: 0; }
+    .toc-list a {
+      display: block;
+      font-size: 14px; font-weight: 500;
+      color: var(--text-secondary);
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color var(--transition), padding-left var(--transition);
+    }
+    .toc-list a:last-child { border-bottom: none; }
+    .toc-list a:hover { color: var(--accent); padding-left: 6px; }
+    .toc-list a.active { color: var(--accent); font-weight: 700; }
+
+    /* ============================================================
+       KEY TAKEAWAY BOX
+       ============================================================ */
+    .key-takeaway {
+      background: var(--bg-alt);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .key-takeaway-label {
+      font-size: 12px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent); margin-bottom: 6px;
+    }
+    .key-takeaway p { font-size: 15px; color: var(--text-secondary); margin: 0; line-height: 1.6; }
+
+    /* ============================================================
+       INFO TABLE
+       ============================================================ */
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+    .info-table th {
+      background: var(--bg-dark);
+      color: #fff;
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .info-table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .info-table tr:last-child td { border-bottom: none; }
+    .info-table tr:nth-child(even) td { background: var(--bg-alt); }
+    .info-table .severity-high { color: var(--red); font-weight: 700; }
+    .info-table .severity-med { color: #d97706; font-weight: 700; }
+    .info-table .severity-low { color: var(--green); font-weight: 700; }
+
+    /* ============================================================
+       MYTH / FACT BLOCKS
+       ============================================================ */
+    .myth-fact {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin: 20px 0;
+      overflow: hidden;
+    }
+    .myth-label {
+      background: #fef2f2;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--red);
+      border-bottom: 1px solid var(--border);
+    }
+    .fact-label {
+      background: #f0fdf4;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--green);
+      border-bottom: 1px solid var(--border);
+    }
+    .myth-fact-content {
+      padding: 14px 16px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+    html.dark .myth-label { background: rgba(220,38,38,0.1); }
+    html.dark .fact-label { background: rgba(22,163,74,0.1); }
+
+    /* ============================================================
+       SOCIAL SHARE
+       ============================================================ */
+    .share-bar {
+      display: flex; align-items: center; gap: 12px;
+      padding: 20px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin: 32px 0;
+    }
+    .share-label { font-size: 14px; font-weight: 700; color: var(--text); }
+    .share-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--bg-alt); border: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 15px; font-weight: 700;
+      transition: all var(--transition); cursor: pointer;
+    }
+    .share-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    /* ============================================================
+       AUTHOR BOX
+       ============================================================ */
+    .author-box {
+      display: flex; gap: 20px;
+      padding: 28px;
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      margin: 32px 0;
+    }
+    .author-box-avatar {
+      width: 72px; height: 72px; border-radius: 50%; flex-shrink: 0;
+      background: var(--accent); display: flex; align-items: center;
+      justify-content: center; color: #fff; font-size: 28px; font-weight: 800;
+    }
+    .author-box-info { flex: 1; }
+    .author-box-name { font-size: 1.1rem; font-weight: 800; margin-bottom: 4px; }
+    .author-box-role { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+    .author-box-bio { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px; }
+    .author-box-link {
+      font-size: 13px; font-weight: 700; color: var(--accent);
+      text-decoration: none; display: inline-block;
+    }
+    .author-box-link:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* ============================================================
+       RELATED POSTS
+       ============================================================ */
+    .related-section {
+      padding: 55px 0 60px;
+      background: var(--bg-alt);
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .related-card {
+      background: var(--bg);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition), transform var(--transition);
+      display: block; color: var(--text);
+    }
+    .related-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+      color: var(--text);
+    }
+    .related-card-img { height: 180px; overflow: hidden; }
+    .related-card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .related-card:hover .related-card-img img { transform: scale(1.05); }
+    .related-card-body { padding: 20px; }
+    .related-card-cat {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; color: var(--accent); margin-bottom: 8px;
+    }
+    .related-card-title { font-size: 1.05rem; font-weight: 800; line-height: 1.35; margin-bottom: 8px; }
+    .related-card-meta { font-size: 13px; color: var(--text-light); }
+
+    /* ============================================================
+       SIDEBAR
+       ============================================================ */
+    .sidebar {
+      display: flex; flex-direction: column; gap: 28px;
+      position: sticky;
+      align-self: start;
+    }
+
+    .widget {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+    }
+    .widget-title {
+      font-size: 1rem; font-weight: 800; margin-bottom: 16px;
+      padding-bottom: 10px; border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    /* TOC sidebar widget */
+    .sidebar-toc {
+      padding: 14px 18px;
+    }
+    .sidebar-toc .widget-title {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      user-select: none;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      font-size: 14px;
+      transition: border-color 0.35s ease 0s, margin-bottom 0.35s ease, padding-bottom 0.35s ease;
+    }
+    .sidebar-toc.expanded .widget-title {
+      border-bottom-color: var(--accent);
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      transition: border-color 0s ease 0s, margin-bottom 0.35s ease, padding-bottom 0.35s ease;
+    }
+    .sidebar-toc .widget-title::after {
+      content: '';
+      width: 8px; height: 8px;
+      border-right: 2px solid var(--text-secondary);
+      border-bottom: 2px solid var(--text-secondary);
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform 0.25s;
+      flex-shrink: 0;
+      margin-left: 10px;
+    }
+    .sidebar-toc.expanded .widget-title::after {
+      transform: rotate(-135deg) translateY(-2px);
+    }
+    .sidebar-toc-list {
+      display: flex; flex-direction: column; gap: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .sidebar-toc.expanded .sidebar-toc-list {
+      max-height: 600px;
+    }
+    .sidebar-toc-list a {
+      display: block; font-size: 13px; font-weight: 500;
+      color: var(--text-secondary); padding: 8px 0 8px 14px;
+      border-left: 2px solid var(--border);
+      transition: color var(--transition), border-left-color var(--transition), background var(--transition);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .sidebar-toc-list a:hover { color: var(--accent); border-left-color: var(--accent); }
+    .sidebar-toc-list a.active {
+      color: var(--accent); font-weight: 700;
+      border-left-color: var(--accent);
+      background: var(--accent-light);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    /* Sidebar chapter guide widget */
+    .sidebar-chapters .widget-title { display: block; }
+    .chapter-list { display: flex; flex-direction: column; }
+    .chapter-item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+    .chapter-item:first-child { padding-top: 0; }
+    .chapter-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .chapter-item:hover { padding-left: 6px; }
+    .chapter-num {
+      width: 36px; height: 36px; flex-shrink: 0;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 800;
+      color: var(--text-light);
+      transition: all var(--transition);
+    }
+    .chapter-item:hover .chapter-num {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-light);
+    }
+    .chapter-item.active .chapter-num {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .chapter-name { font-size: 13px; font-weight: 700; color: var(--text); }
+    .chapter-item:hover .chapter-name { color: var(--accent); }
+    .chapter-read { font-size: 11px; color: var(--text-light); margin-top: 1px; }
+
+    /* Popular posts widget */
+    .widget-post {
+      display: flex; gap: 12px; padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .widget-post:first-of-type { padding-top: 0; }
+    .widget-post:last-of-type { border-bottom: none; }
+    .widget-post-img {
+      flex-shrink: 0; width: 70px; height: 52px;
+      border-radius: 6px; overflow: hidden;
+    }
+    .widget-post-img img { width: 100%; height: 100%; object-fit: cover; }
+    .widget-post-title { font-size: 13px; font-weight: 700; line-height: 1.4; }
+    .widget-post-title a { color: var(--text); }
+    .widget-post-title a:hover { color: var(--accent); }
+    .widget-post-date { font-size: 12px; color: var(--text-light); margin-top: 3px; }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .footer {
+      background: var(--bg-dark); color: rgba(255,255,255,0.6); padding: 55px 0 0;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr;
+      gap: 40px; padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand .logo { color: #fff; margin-bottom: 14px; display: inline-block; }
+    .footer-brand p { font-size: 14px; line-height: 1.7; margin-bottom: 18px; }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.08); display: flex;
+      align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6); font-size: 14px;
+      transition: background var(--transition), color var(--transition);
+    }
+    .footer-social a:hover { background: var(--accent); color: #fff; }
+    .footer-col h4 { color: #fff; font-size: 15px; font-weight: 700; margin-bottom: 18px; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul a { color: rgba(255,255,255,0.5); font-size: 14px; transition: color var(--transition); }
+    .footer-col ul a:hover { color: var(--accent); }
+    .footer-bottom {
+      padding: 20px 0; display: flex; justify-content: space-between;
+      align-items: center; font-size: 13px;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: var(--accent); }
+    .footer-links { display: flex; gap: 20px; }
+
+    /* ============================================================
+       BACK TO TOP
+       ============================================================ */
+    .back-to-top {
+      position: fixed; bottom: 30px; right: 30px;
+      width: 44px; height: 44px; background: var(--accent); color: #fff;
+      border: none; border-radius: 50%; cursor: pointer; font-size: 20px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow); opacity: 0; transform: translateY(20px);
+      transition: opacity var(--transition), transform var(--transition), background var(--transition);
+      z-index: 900;
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { background: var(--accent-hover); }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 1024px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      .toc { display: block; }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .menu-toggle { display: flex; }
+      .article-title { font-size: 1.8rem; }
+      .article-excerpt { font-size: 16px; }
+      .article-meta { flex-direction: column; align-items: flex-start; }
+      .article-content { font-size: 16px; }
+      .article-content h2 { font-size: 1.4rem; }
+      .article-content h3 { font-size: 1.15rem; }
+      .article-featured-img { width: 100%; }
+      .quick-answer { padding: 20px; }
+      .key-takeaway { padding: 16px 18px; }
+      .toc { padding: 14px 18px; margin-bottom: 24px; }
+      .toc-title { margin-bottom: 0; font-size: 14px; }
+      .toc-title.collapsed { margin-bottom: 0; }
+      .toc-list a { padding: 6px 0; font-size: 13px; }
+      .share-bar { flex-wrap: wrap; }
+      .related-grid { grid-template-columns: 1fr; }
+      .author-box { flex-direction: column; text-align: center; padding: 22px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+      .info-table { font-size: 12px; }
+      .info-table th, .info-table td { padding: 8px 10px; }
+    }
+    @media (max-width: 480px) {
+      .article-title { font-size: 1.45rem; }
+      .section-title { font-size: 1.3rem; }
+    }
+  </style>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Complete Guide to Water Filtration: Everything You Need to Know",
+    "description": "From understanding what's in your tap water to choosing the right filtration system for your home — this comprehensive guide covers everything about water filtration in 2026.",
+    "datePublished": "2026-03-01",
+    "dateModified": "2026-03-01",
+    "author": {
+      "@type": "Person",
+      "name": "Author Name"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "YourBlog"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="search-overlay">
+  <div class="search-box">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" placeholder="Search articles..." autofocus />
+    <button class="search-close" id="search-close" aria-label="Close search">&times;</button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="header-main">
+    <a href="/" class="logo">Your<span>Blog</span></a>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Filters</a>
+      <a href="#">Heaters</a>
+      <a href="#">Softeners</a>
+      <a href="#">Blog</a>
+      <a href="#">About</a>
+      <a href="#" class="nav-start-here">Start Here</a>
+    </nav>
+    <div class="header-actions">
+      <button class="header-btn" id="search-btn" aria-label="Search">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="header-btn" id="dark-mode-btn" aria-label="Toggle dark mode">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      </button>
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="#">Home</a>
+  <a href="#">Filters</a>
+  <a href="#">Heaters</a>
+  <a href="#">Softeners</a>
+  <a href="#">Blog</a>
+  <a href="#">About</a>
+  <a href="#" class="nav-start-here">Start Here</a>
+</nav>
+
+<!-- BREADCRUMBS -->
+<!-- ARTICLE + SIDEBAR -->
+<div class="container">
+  <div class="article-layout">
+    <!-- MAIN ARTICLE -->
+    <article>
+      <div class="breadcrumbs">
+        <a href="/">Home</a> <span>/</span> <a href="#">Guides</a> <span>/</span> Water Filtration Guide
+      </div>
+      <!-- Header -->
+      <div class="article-header">
+        <span class="article-cat">Guides</span>
+        <h1 class="article-title">The Complete Guide to Water Filtration: Everything You Need to&nbsp;Know</h1>
+        <p class="article-excerpt">From understanding what's in your tap water to choosing the right filtration system for your home &mdash; this comprehensive guide covers everything about water filtration in 2026.</p>
+        <div class="article-meta">
+          <div class="article-author">
+            <div class="article-author-avatar">A</div>
+            <div class="article-author-info">
+              <div class="article-author-name">Author Name</div>
+              <div class="article-author-date">Last Updated: March 1, 2026 &bull; 18 min read</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div class="article-featured-img">
+        <img src="https://images.unsplash.com/photo-1527066236128-2ff79f7b9b65?w=900&q=80" alt="Complete guide to water filtration" />
+      </div>
+
+      <!-- Quick Answer -->
+      <div class="quick-answer">
+        <div class="quick-answer-label">What You'll Learn</div>
+        <h3>Everything about water filtration in one place</h3>
+        <p>This guide walks you through the science of water filtration, the contaminants lurking in your tap water, every major filter type, how to choose the right one, testing your water quality, and long-term maintenance &mdash; all backed by data and expert research.</p>
+      </div>
+
+      <!-- Table of Contents (mobile/inline) -->
+      <div class="toc">
+        <div class="toc-title" id="toc-toggle">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          Table of Contents
+        </div>
+        <div class="toc-list" id="toc-list">
+          <a href="#why-matters">Why Water Filtration Matters</a>
+          <a href="#whats-in-water">What's in Your Tap Water</a>
+          <a href="#types">Types of Water Filters</a>
+          <a href="#how-they-work">How Water Filters Work</a>
+          <a href="#choosing">Choosing the Right Filter</a>
+          <a href="#testing">Water Quality Testing</a>
+          <a href="#maintenance">Maintenance &amp; Care</a>
+          <a href="#myths">Common Myths</a>
+          <a href="#future">The Future of Water Filtration</a>
+          <a href="#faq">FAQ</a>
+          <a href="#conclusion">Conclusion</a>
+        </div>
+      </div>
+
+      <!-- ARTICLE CONTENT -->
+      <div class="article-content">
+        <p>Water is the most essential resource for human life, yet millions of households across the United States are drinking water that contains potentially harmful contaminants. According to the Environmental Working Group, over 250 contaminants have been detected in the nation's tap water &mdash; many at levels that exceed health guidelines.</p>
+        <p>Whether you're concerned about lead in aging pipes, chlorine taste, microplastics, or emerging contaminants like PFAS (forever chemicals), understanding water filtration is the first step toward protecting your family's health. This guide covers everything you need to know &mdash; from the science behind filtration to choosing the perfect system for your home.</p>
+
+        <div class="key-takeaway">
+          <div class="key-takeaway-label">Key Takeaway</div>
+          <p>Water filtration isn't a luxury &mdash; it's a practical necessity. Even treated municipal water can contain contaminants at levels that exceed health guidelines. The right filter depends on your water source, your specific contaminants, and your household needs.</p>
+        </div>
+
+        <!-- WHY WATER FILTRATION MATTERS -->
+        <h2 id="why-matters">Why Water Filtration Matters</h2>
+        <p>The Safe Drinking Water Act regulates only 90 contaminants, yet there are thousands of chemicals, heavy metals, and biological agents that can make their way into your drinking water. Here's why filtration deserves your attention:</p>
+        <ul>
+          <li><strong>Aging infrastructure:</strong> The American Society of Civil Engineers gave U.S. drinking water infrastructure a C- grade. Many water mains are over 100 years old, leaching lead, copper, and other metals into the supply.</li>
+          <li><strong>Emerging contaminants:</strong> PFAS (per- and polyfluoroalkyl substances), microplastics, and pharmaceutical residues are increasingly detected in tap water &mdash; and most aren't regulated by the EPA.</li>
+          <li><strong>Chlorine and disinfection byproducts:</strong> While chlorine keeps water safe from bacteria during transport, it creates disinfection byproducts (DBPs) like trihalomethanes that are linked to cancer and reproductive issues.</li>
+          <li><strong>Local contamination events:</strong> From Flint, Michigan's lead crisis to military base PFAS contamination, localized water quality disasters happen more often than most people realize.</li>
+          <li><strong>Health impacts:</strong> Long-term exposure to low levels of contaminants has been linked to increased cancer risk, developmental problems in children, hormonal disruption, and gastrointestinal illness.</li>
+        </ul>
+        <blockquote>An estimated 77 million Americans are served by water systems that violate the Safe Drinking Water Act. &mdash; Natural Resources Defense Council</blockquote>
+
+        <!-- WHAT'S IN YOUR TAP WATER -->
+        <h2 id="whats-in-water">What's in Your Tap Water</h2>
+        <p>Before you can choose the right filter, you need to understand what you're filtering out. Here are the most common contaminants found in U.S. drinking water, their sources, and the health risks they pose:</p>
+
+        <table class="info-table">
+          <thead>
+            <tr>
+              <th>Contaminant</th>
+              <th>Source</th>
+              <th>Health Risk</th>
+              <th>Severity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Lead</strong></td>
+              <td>Old pipes, solder, fixtures</td>
+              <td>Developmental delays in children, kidney damage, neurological effects</td>
+              <td><span class="severity-high">High</span></td>
+            </tr>
+            <tr>
+              <td><strong>PFAS (Forever Chemicals)</strong></td>
+              <td>Industrial discharge, firefighting foam</td>
+              <td>Cancer, thyroid disease, immune suppression, reproductive issues</td>
+              <td><span class="severity-high">High</span></td>
+            </tr>
+            <tr>
+              <td><strong>Chlorine / Chloramine</strong></td>
+              <td>Water treatment disinfection</td>
+              <td>Disinfection byproducts linked to cancer; skin and respiratory irritation</td>
+              <td><span class="severity-med">Medium</span></td>
+            </tr>
+            <tr>
+              <td><strong>Microplastics</strong></td>
+              <td>Plastic pollution, industrial runoff</td>
+              <td>Endocrine disruption, inflammation; long-term effects still being studied</td>
+              <td><span class="severity-med">Medium</span></td>
+            </tr>
+            <tr>
+              <td><strong>Arsenic</strong></td>
+              <td>Natural rock erosion, agricultural runoff</td>
+              <td>Skin lesions, cardiovascular disease, multiple cancers</td>
+              <td><span class="severity-high">High</span></td>
+            </tr>
+            <tr>
+              <td><strong>Nitrates</strong></td>
+              <td>Fertilizer runoff, septic systems</td>
+              <td>Blue baby syndrome in infants, possible cancer link</td>
+              <td><span class="severity-med">Medium</span></td>
+            </tr>
+            <tr>
+              <td><strong>Mercury</strong></td>
+              <td>Industrial waste, natural deposits</td>
+              <td>Kidney damage, neurological effects</td>
+              <td><span class="severity-high">High</span></td>
+            </tr>
+            <tr>
+              <td><strong>Fluoride</strong></td>
+              <td>Added during treatment, natural deposits</td>
+              <td>Dental and skeletal fluorosis at high levels; debated at lower levels</td>
+              <td><span class="severity-low">Low</span></td>
+            </tr>
+            <tr>
+              <td><strong>Sediment / Rust</strong></td>
+              <td>Corroding pipes, soil infiltration</td>
+              <td>Aesthetics (taste, color); can harbor bacteria</td>
+              <td><span class="severity-low">Low</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The contaminants in your specific tap water depend on your location, water source (municipal vs. well), and the age of your home's plumbing. That's why testing your water is so important &mdash; more on that in the <a href="#testing">Water Quality Testing</a> section below.</p>
+
+        <!-- TYPES OF WATER FILTERS -->
+        <h2 id="types">Types of Water Filters</h2>
+        <p>Water filters come in many forms, each with distinct advantages and limitations. Here's a breakdown of the six most common types:</p>
+
+        <h3>Pitcher Filters</h3>
+        <p>Pitcher filters are the simplest entry point into water filtration. You fill the top reservoir, and water passes through a filter cartridge by gravity. Brands like Brita, PUR, and Clearly Filtered dominate this category. They're affordable ($20&ndash;$90), require no installation, and are perfect for renters or small households. The trade-off is limited capacity and moderate filtration &mdash; though high-end pitchers like Clearly Filtered can remove 365+ contaminants.</p>
+
+        <h3>Under-Sink Systems</h3>
+        <p>Installed beneath your kitchen sink, these systems connect to your cold water line and deliver filtered water through a dedicated faucet. Reverse osmosis (RO) systems are the most common under-sink type, offering the most thorough filtration available for home use. They typically remove 99% of contaminants but do waste some water in the process. Prices range from $150&ndash;$500, and installation is a manageable DIY project for most homeowners.</p>
+
+        <h3>Whole House Systems</h3>
+        <p>Whole house filters are installed at your main water line, filtering every drop that enters your home &mdash; including water for showers, laundry, and appliances. They're ideal for households with significant sediment, chlorine, or hard water issues. Expect to invest $300&ndash;$1,500 plus professional installation. Filter life is typically 3&ndash;10 years depending on the system.</p>
+
+        <h3>Countertop Filters</h3>
+        <p>Countertop systems sit on your kitchen counter and connect to your faucet via a diverter valve, or operate as standalone gravity-fed units (like Berkey). They offer better filtration than most pitchers without the permanence of an under-sink system. They're a great middle ground for renters who want superior filtration. Prices range from $50&ndash;$350.</p>
+
+        <h3>Faucet-Mount Filters</h3>
+        <p>These compact filters attach directly to your faucet head and filter water on demand. Brands like PUR and Brita offer popular faucet-mount options. They're inexpensive ($20&ndash;$40) and easy to install, but filtration is limited compared to other types, and they can slow water flow. They work best as a budget-friendly upgrade from unfiltered tap water.</p>
+
+        <h3>Gravity Filters</h3>
+        <p>Gravity filters (like Berkey and ProOne) use the force of gravity to push water through filter elements &mdash; no electricity, no plumbing, no water pressure needed. They're popular for off-grid living, emergency preparedness, and travel. Filtration quality is excellent, and filter life is remarkably long (up to 6,000 gallons per element). The downside is slow filtration speed and countertop space requirements.</p>
+
+        <!-- HOW WATER FILTERS WORK -->
+        <h2 id="how-they-work">How Water Filters Work</h2>
+        <p>Different filtration technologies target different contaminants. Understanding these mechanisms helps you match the right filter to your specific water quality concerns.</p>
+
+        <h3>Activated Carbon</h3>
+        <p>The most common filtration method. Water passes through porous carbon (usually derived from coconut shells), which traps contaminants through <strong>adsorption</strong> &mdash; a process where molecules bind to the carbon's surface. Activated carbon is excellent at removing chlorine, volatile organic compounds (VOCs), and improving taste and odor. However, it's less effective against dissolved minerals, heavy metals, and microorganisms on its own.</p>
+
+        <h3>Reverse Osmosis (RO)</h3>
+        <p>RO systems force water through a semi-permeable membrane with pores as small as 0.0001 microns. This removes up to 99% of dissolved solids, heavy metals, fluoride, nitrates, and many other contaminants. RO is considered the gold standard for comprehensive filtration. The trade-off is that it generates wastewater (typically a 3:1 or 4:1 ratio) and removes beneficial minerals along with contaminants &mdash; though many modern systems include a remineralization stage.</p>
+
+        <h3>UV (Ultraviolet) Purification</h3>
+        <p>UV systems expose water to ultraviolet light, which disrupts the DNA of bacteria, viruses, and other pathogens &mdash; rendering them unable to reproduce. UV is extremely effective against biological contaminants but does nothing for chemical contaminants, heavy metals, or sediment. It's typically used as a supplementary stage alongside carbon or RO filtration.</p>
+
+        <h3>Ion Exchange</h3>
+        <p>Ion exchange resins swap harmful ions in your water for harmless ones. The most common application is water softening, where calcium and magnesium ions (which cause hard water) are replaced with sodium ions. Specialized ion exchange resins can also target heavy metals like lead and mercury. This technology is often used in combination with other filtration methods.</p>
+
+        <h3>Mechanical / Sediment Filtration</h3>
+        <p>Mechanical filters physically strain out particles based on pore size. They're measured in microns &mdash; a 5-micron filter catches larger sediment, while a 0.5-micron filter can trap bacteria. These filters are typically the first stage in multi-stage systems, protecting finer filters downstream from clogging. On their own, they don't remove dissolved chemicals or heavy metals.</p>
+
+        <!-- CHOOSING THE RIGHT FILTER -->
+        <h2 id="choosing">Choosing the Right Filter</h2>
+        <p>With so many options available, choosing the right water filter can feel overwhelming. Use this decision framework to narrow down your options:</p>
+
+        <h3>1. What contaminants are in your water?</h3>
+        <p>Start by getting a water quality report (see the <a href="#testing">testing section</a>). If your main concerns are chlorine taste and basic contaminants, a quality pitcher or faucet filter may suffice. If you're dealing with lead, PFAS, or heavy metals, you'll need a more advanced system like RO or a high-end pitcher like Clearly Filtered.</p>
+
+        <h3>2. Do you rent or own?</h3>
+        <p>Renters should focus on portable options: pitchers, countertop filters, faucet-mount systems, or gravity filters. Homeowners have the full range available, including under-sink RO and whole house systems.</p>
+
+        <h3>3. How much water does your household use?</h3>
+        <p>A single person or couple can get by with a pitcher filter. A family of four or more should consider an under-sink system or countertop filter with a larger reservoir. Large households with multiple bathrooms benefit most from whole house systems.</p>
+
+        <h3>4. What's your budget?</h3>
+        <p>Consider both upfront cost and ongoing filter replacement expenses. A $30 Brita pitcher is cheap upfront but costs more per gallon long-term than a $280 Berkey. Calculate the total cost of ownership over 1&ndash;2 years before deciding.</p>
+
+        <h3>5. How important is installation simplicity?</h3>
+        <p>If you want zero installation, go with a pitcher or gravity filter. Faucet-mount filters require minimal setup. Under-sink and whole house systems need more involved installation &mdash; though many under-sink RO systems are designed for DIY installation.</p>
+
+        <!-- WATER QUALITY TESTING -->
+        <h2 id="testing">Water Quality Testing</h2>
+        <p>You can't choose the right filter without knowing what's in your water. Here are the most effective ways to test:</p>
+
+        <h3>Free Water Quality Report (Consumer Confidence Report)</h3>
+        <p>Every municipal water supplier is required by law to publish an annual water quality report, also known as a Consumer Confidence Report (CCR). You can request yours by contacting your water utility or searching the <a href="#">EPA's database</a>. Keep in mind that this report measures water at the treatment plant &mdash; not at your tap. Contaminants like lead can enter your water from your home's own plumbing.</p>
+
+        <h3>Home Test Kits ($15&ndash;$50)</h3>
+        <p>Affordable kits from brands like Varify and Health Metric test for the most common contaminants: lead, bacteria, chlorine, nitrates, hardness, pH, and more. These give you a snapshot of what's actually coming out of your faucet. For most households, a basic kit is a good starting point.</p>
+
+        <h3>Professional Lab Testing ($100&ndash;$400)</h3>
+        <p>For the most comprehensive analysis, send a water sample to a certified laboratory like Tap Score or National Testing Laboratories. They test for hundreds of contaminants and provide a detailed report with actionable recommendations. This is especially important for well water users who don't receive municipal testing.</p>
+
+        <h3>TDS Meters ($10&ndash;$20)</h3>
+        <p>A Total Dissolved Solids (TDS) meter gives you a quick reading of the dissolved mineral content in your water. While a high TDS reading doesn't necessarily mean your water is unsafe, it's a useful tool for monitoring filter performance over time &mdash; especially with RO systems.</p>
+
+        <!-- MAINTENANCE & CARE -->
+        <h2 id="maintenance">Maintenance &amp; Care</h2>
+        <p>Even the best water filter becomes ineffective &mdash; or even harmful &mdash; without proper maintenance. Here's how to keep your system performing at its best:</p>
+
+        <ul>
+          <li><strong>Replace filters on schedule:</strong> This is the single most important maintenance task. An overused filter loses its ability to trap contaminants and can actually release trapped pollutants back into your water. Set calendar reminders based on the manufacturer's recommendations.</li>
+          <li><strong>Sanitize your system regularly:</strong> Pitchers, reservoirs, and dispensers should be washed with warm, soapy water every 1&ndash;2 weeks to prevent bacterial growth. For under-sink systems, follow the manufacturer's sanitization procedure during filter changes.</li>
+          <li><strong>Check for leaks:</strong> Under-sink and whole house systems have connection points that can develop leaks over time. Inspect fittings and tubing every few months, especially in the weeks after installation.</li>
+          <li><strong>Monitor filter performance:</strong> If your water starts to taste or smell different, or if flow rate drops significantly, it's time to change the filter &mdash; even if it hasn't reached the recommended lifespan. Water quality varies, and filters in areas with higher contamination levels wear out faster.</li>
+          <li><strong>Store replacement filters properly:</strong> Keep unused filters in their sealed packaging in a cool, dry place. Activated carbon filters can absorb contaminants from the air if left exposed.</li>
+          <li><strong>Flush new filters before use:</strong> Most new filters need to be flushed with water for 15&ndash;30 seconds (or per the manufacturer's instructions) to remove carbon dust and activate the filtration media.</li>
+        </ul>
+
+        <!-- COMMON MYTHS -->
+        <h2 id="myths">Common Myths Debunked</h2>
+        <p>Water filtration is surrounded by misinformation. Let's separate fact from fiction:</p>
+
+        <div class="myth-fact">
+          <div class="myth-label">MYTH: Bottled water is safer than filtered tap water</div>
+          <div class="fact-label">FACT: Filtered tap water is often cleaner than bottled water</div>
+          <div class="myth-fact-content">Bottled water is regulated by the FDA, which has less stringent testing requirements than the EPA's standards for municipal tap water. Studies have found microplastics, phthalates, and other contaminants in many bottled water brands. A quality home filter gives you cleaner water at a fraction of the cost &mdash; as low as $0.02 per gallon versus $1&ndash;$2 for bottled.</div>
+        </div>
+
+        <div class="myth-fact">
+          <div class="myth-label">MYTH: All water filters are basically the same</div>
+          <div class="fact-label">FACT: Filtration quality varies enormously between products</div>
+          <div class="myth-fact-content">A basic Brita filter removes roughly 20&ndash;30 contaminants, while a high-end pitcher like Clearly Filtered removes 365+. A reverse osmosis system removes 1,000+. The technology, filter media, and certification standards all affect what a filter actually removes. Always check for NSF/ANSI certifications and third-party lab testing.</div>
+        </div>
+
+        <div class="myth-fact">
+          <div class="myth-label">MYTH: If your water looks and tastes fine, it's safe</div>
+          <div class="fact-label">FACT: Many dangerous contaminants are invisible and tasteless</div>
+          <div class="myth-fact-content">Lead, arsenic, PFAS, nitrates, and many other harmful contaminants are completely invisible, odorless, and tasteless. The only way to know what's in your water is to test it. Clear, good-tasting water can still contain contaminants at levels that exceed health guidelines.</div>
+        </div>
+
+        <div class="myth-fact">
+          <div class="myth-label">MYTH: Boiling water makes it safe to drink</div>
+          <div class="fact-label">FACT: Boiling only kills biological pathogens, not chemical contaminants</div>
+          <div class="myth-fact-content">Boiling water is effective against bacteria, viruses, and parasites. However, it does nothing to remove chemical contaminants like lead, PFAS, pesticides, or chlorine byproducts. In fact, boiling can actually concentrate these contaminants as water evaporates. For chemical contamination, you need a proper filtration system.</div>
+        </div>
+
+        <div class="myth-fact">
+          <div class="myth-label">MYTH: Reverse osmosis removes healthy minerals, making water unhealthy</div>
+          <div class="fact-label">FACT: The minerals removed by RO are negligible compared to dietary sources</div>
+          <div class="myth-fact-content">While RO does remove minerals like calcium and magnesium, the amounts in tap water are minimal compared to what you get from food. A single glass of milk contains more calcium than 200 glasses of tap water. Many modern RO systems also include a remineralization stage that adds beneficial minerals back into the filtered water.</div>
+        </div>
+
+        <!-- THE FUTURE OF WATER FILTRATION -->
+        <h2 id="future">The Future of Water Filtration</h2>
+        <p>Water filtration technology is evolving rapidly. Here are some of the most promising developments on the horizon:</p>
+        <p><strong>Graphene-based membranes</strong> are being developed that could filter water far more efficiently than current RO membranes, using less energy and wasting less water. Early research shows these membranes can desalinate seawater in a single pass while allowing water molecules through at significantly higher rates.</p>
+        <p><strong>Smart monitoring systems</strong> are already emerging in premium filter brands. These systems use sensors to track real-time water quality, filter life, and flow rates &mdash; sending alerts to your phone when attention is needed. Expect this technology to become standard within the next few years.</p>
+        <p><strong>Solar-powered purification</strong> systems are being developed for off-grid and developing-world applications. Using concentrated solar energy to power UV purification and even small-scale desalination, these systems could bring clean water to communities that currently lack access.</p>
+        <p><strong>PFAS-specific filtration</strong> is a growing area of focus, as awareness of forever chemicals increases. New filter media designed specifically to capture PFAS molecules are entering the market, and regulatory pressure is driving innovation in this space.</p>
+
+        <!-- FAQ -->
+        <h2 id="faq">Frequently Asked Questions</h2>
+
+        <h3>How do I know if my water filter is actually working?</h3>
+        <p>The most reliable method is to test your water before and after filtration using a home test kit or TDS meter. For certified filters, check that your model has NSF/ANSI certification for the specific contaminants you're targeting &mdash; this means it's been independently verified by a third-party lab. Also monitor flow rate: a significant decrease usually indicates the filter is saturated and needs replacing.</p>
+
+        <h3>Is well water harder to filter than city water?</h3>
+        <p>Well water can be more challenging because it isn't pre-treated by a municipal facility. It may contain higher levels of sediment, iron, manganese, bacteria, and naturally occurring contaminants like arsenic. Well water users typically need a multi-stage filtration system and should get professional lab testing annually to monitor for changes in water quality.</p>
+
+        <h3>Can water filters remove bacteria and viruses?</h3>
+        <p>Not all filters can. Standard activated carbon filters do not remove bacteria or viruses. To target biological contaminants, you need either a UV purification system, a filter with a pore size of 0.2 microns or smaller (like certain ceramic filters), or a reverse osmosis membrane. Gravity filters like Berkey are also tested to remove bacteria and parasites.</p>
+
+        <h3>How much does it really cost to filter water at home?</h3>
+        <p>The cost per gallon varies significantly by system type. Gravity filters like Berkey cost as little as $0.02/gallon. Under-sink RO systems typically run $0.05&ndash;$0.10/gallon. Mid-range pitchers like Clearly Filtered cost about $0.14/gallon. Basic pitcher filters run $0.09&ndash;$0.15/gallon. Even the most expensive option is dramatically cheaper than bottled water at $1&ndash;$2 per gallon.</p>
+
+        <!-- CONCLUSION -->
+        <h2 id="conclusion">Conclusion</h2>
+        <p>Clean drinking water is fundamental to good health, and in 2026, a quality water filter is one of the smartest investments you can make for your household. The key is to approach the decision methodically: test your water first, understand which contaminants you need to target, then choose a filter type that matches your living situation and budget.</p>
+        <p>For most people, a high-quality pitcher or countertop filter provides an excellent balance of filtration power and convenience. Homeowners with specific contamination concerns should consider an under-sink reverse osmosis system for the most comprehensive protection. And regardless of which system you choose, consistent maintenance &mdash; especially timely filter replacements &mdash; is essential for ongoing performance.</p>
+        <p>The science is clear: filtering your water reduces your exposure to harmful contaminants. The technology is accessible and affordable. The only question is which system is right for you.</p>
+
+        <div class="key-takeaway">
+          <div class="key-takeaway-label">Bottom Line</div>
+          <p>Start by testing your water to understand your specific contaminants. Then choose a filter that targets those contaminants within your budget. A <strong>pitcher filter</strong> is the easiest starting point, while an <strong>under-sink RO system</strong> offers the most thorough protection. Whatever you choose, replace your filters on schedule &mdash; an overused filter is worse than no filter at all.</p>
+        </div>
+      </div>
+
+      <!-- SHARE BAR -->
+      <div class="share-bar">
+        <span class="share-label">Share this article:</span>
+        <button class="share-btn" aria-label="Share on Facebook">f</button>
+        <button class="share-btn" aria-label="Share on Twitter">X</button>
+        <button class="share-btn" aria-label="Share on Pinterest">P</button>
+        <button class="share-btn" aria-label="Copy link">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </button>
+      </div>
+
+      <!-- AUTHOR BOX -->
+      <div class="author-box animate-on-scroll">
+        <div class="author-box-avatar">A</div>
+        <div class="author-box-info">
+          <div class="author-box-name">Author Name</div>
+          <div class="author-box-role">Water Quality Expert & Staff Writer</div>
+          <p class="author-box-bio">With over 8 years of experience researching water treatment and quality, Author Name has written extensively about filtration technology, contaminant science, and public health. Their work has been featured in Popular Mechanics, Wirecutter, and Consumer Reports.</p>
+          <a href="#" class="author-box-link">More about the author &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="widget sidebar-toc">
+        <h3 class="widget-title">Table of Contents</h3>
+        <div class="sidebar-toc-list">
+          <a href="#why-matters">Why Water Filtration Matters</a>
+          <a href="#whats-in-water">What's in Your Tap Water</a>
+          <a href="#types">Types of Water Filters</a>
+          <a href="#how-they-work">How Water Filters Work</a>
+          <a href="#choosing">Choosing the Right Filter</a>
+          <a href="#testing">Water Quality Testing</a>
+          <a href="#maintenance">Maintenance &amp; Care</a>
+          <a href="#myths">Common Myths</a>
+          <a href="#future">The Future of Water Filtration</a>
+          <a href="#faq">FAQ</a>
+          <a href="#conclusion">Conclusion</a>
+        </div>
+      </div>
+
+      <div class="widget sidebar-chapters">
+        <h3 class="widget-title">Chapter Guide</h3>
+        <div class="chapter-list">
+          <a href="#why-matters" class="chapter-item">
+            <div class="chapter-num">01</div>
+            <div class="chapter-info">
+              <div class="chapter-name">Why It Matters</div>
+              <div class="chapter-read">3 min read</div>
+            </div>
+          </a>
+          <a href="#whats-in-water" class="chapter-item">
+            <div class="chapter-num">02</div>
+            <div class="chapter-info">
+              <div class="chapter-name">What's in Your Water</div>
+              <div class="chapter-read">4 min read</div>
+            </div>
+          </a>
+          <a href="#types" class="chapter-item">
+            <div class="chapter-num">03</div>
+            <div class="chapter-info">
+              <div class="chapter-name">Types of Water Filters</div>
+              <div class="chapter-read">3 min read</div>
+            </div>
+          </a>
+          <a href="#how-they-work" class="chapter-item">
+            <div class="chapter-num">04</div>
+            <div class="chapter-info">
+              <div class="chapter-name">How Filters Work</div>
+              <div class="chapter-read">3 min read</div>
+            </div>
+          </a>
+          <a href="#choosing" class="chapter-item">
+            <div class="chapter-num">05</div>
+            <div class="chapter-info">
+              <div class="chapter-name">Choosing the Right Filter</div>
+              <div class="chapter-read">2 min read</div>
+            </div>
+          </a>
+          <a href="#testing" class="chapter-item">
+            <div class="chapter-num">06</div>
+            <div class="chapter-info">
+              <div class="chapter-name">Water Quality Testing</div>
+              <div class="chapter-read">2 min read</div>
+            </div>
+          </a>
+          <a href="#maintenance" class="chapter-item">
+            <div class="chapter-num">07</div>
+            <div class="chapter-info">
+              <div class="chapter-name">Maintenance &amp; Care</div>
+              <div class="chapter-read">2 min read</div>
+            </div>
+          </a>
+          <a href="#myths" class="chapter-item">
+            <div class="chapter-num">08</div>
+            <div class="chapter-info">
+              <div class="chapter-name">Common Myths</div>
+              <div class="chapter-read">3 min read</div>
+            </div>
+          </a>
+          <a href="#future" class="chapter-item">
+            <div class="chapter-num">09</div>
+            <div class="chapter-info">
+              <div class="chapter-name">The Future</div>
+              <div class="chapter-read">2 min read</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="widget">
+        <h3 class="widget-title">Related Articles</h3>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">Best Reverse Osmosis Systems for 2026</a></div>
+            <div class="widget-post-date">March 2, 2026</div>
+          </div>
+        </div>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">7 Best Water Filters of 2026 (Tested)</a></div>
+            <div class="widget-post-date">March 5, 2026</div>
+          </div>
+        </div>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">How to Test Your Tap Water at Home</a></div>
+            <div class="widget-post-date">Feb 10, 2026</div>
+          </div>
+        </div>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">Brita vs. Clearly Filtered: Which Is Better?</a></div>
+            <div class="widget-post-date">Feb 18, 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <h3 class="widget-title">Popular Posts</h3>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">Do Water Filters Remove Fluoride? (Tested)</a></div>
+            <div class="widget-post-date">Jan 28, 2026</div>
+          </div>
+        </div>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">Whole House vs. Under-Sink Filters: Which Do You Need?</a></div>
+            <div class="widget-post-date">Jan 15, 2026</div>
+          </div>
+        </div>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">The Truth About PFAS in Drinking Water</a></div>
+            <div class="widget-post-date">Jan 5, 2026</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- RELATED POSTS -->
+<section class="related-section">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <h2 class="section-title" style="font-size:1.5rem; margin-bottom: 28px;">You Might Also Like</h2>
+    </div>
+    <div class="related-grid">
+      <a href="#" class="related-card animate-on-scroll">
+        <div class="related-card-img">
+          <img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?w=500&q=70" alt="Related post" loading="lazy" />
+        </div>
+        <div class="related-card-body">
+          <div class="related-card-cat">Filters</div>
+          <h3 class="related-card-title">7 Best Water Filters of 2026 (Tested &amp; Reviewed)</h3>
+          <div class="related-card-meta">March 5, 2026 &bull; 14 min read</div>
+        </div>
+      </a>
+      <a href="#" class="related-card animate-on-scroll">
+        <div class="related-card-img">
+          <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=500&q=70" alt="Related post" loading="lazy" />
+        </div>
+        <div class="related-card-body">
+          <div class="related-card-cat">Guides</div>
+          <h3 class="related-card-title">How to Test Your Tap Water Quality at Home (Step-by-Step)</h3>
+          <div class="related-card-meta">Feb 14, 2026 &bull; 8 min read</div>
+        </div>
+      </a>
+      <a href="#" class="related-card animate-on-scroll">
+        <div class="related-card-img">
+          <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500&q=70" alt="Related post" loading="lazy" />
+        </div>
+        <div class="related-card-body">
+          <div class="related-card-cat">Comparisons</div>
+          <h3 class="related-card-title">Brita vs. PUR vs. Clearly Filtered: Best Pitcher Filter?</h3>
+          <div class="related-card-meta">Feb 5, 2026 &bull; 9 min read</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Your<span>Blog</span></a>
+        <p>Your trusted source for honest reviews, expert guides, and actionable advice. We help you make smarter decisions.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="Pinterest">Pin</a>
+          <a href="#" aria-label="Twitter">X</a>
+          <a href="#" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#">Water Filters</a></li>
+          <li><a href="#">Water Heaters</a></li>
+          <li><a href="#">Water Softeners</a></li>
+          <li><a href="#">Guides</a></li>
+          <li><a href="#">Comparisons</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Popular</h4>
+        <ul>
+          <li><a href="#">Best Water Filters</a></li>
+          <li><a href="#">Best RO Systems</a></li>
+          <li><a href="#">Best Water Heaters</a></li>
+          <li><a href="#">Water Testing Guide</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Disclosure</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 YourBlog. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<!-- SCRIPTS -->
+<script>
+  const header = document.getElementById('header');
+  const progressBar = document.getElementById('scroll-progress');
+  const backToTop = document.getElementById('back-to-top');
+
+  // Scroll: header shadow, progress bar, back to top, sidebar TOC highlight
+  const tocLinks = document.querySelectorAll('.sidebar-toc-list a');
+  const sections = [];
+  tocLinks.forEach(a => {
+    const id = a.getAttribute('href')?.replace('#', '');
+    if (id) { const el = document.getElementById(id); if (el) sections.push({ el, link: a }); }
+  });
+
+  // Chapter guide highlight
+  const chapterItems = document.querySelectorAll('.chapter-item');
+  const chapterSections = [];
+  chapterItems.forEach(a => {
+    const id = a.getAttribute('href')?.replace('#', '');
+    if (id) { const el = document.getElementById(id); if (el) chapterSections.push({ el, link: a }); }
+  });
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    header.classList.toggle('scrolled', scrollY > 10);
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (docHeight > 0 ? (scrollY / docHeight) * 100 : 0) + '%';
+    backToTop.classList.toggle('visible', scrollY > 500);
+
+    // Highlight active TOC item
+    let current = '';
+    sections.forEach(s => {
+      if (scrollY >= s.el.offsetTop - 100) current = s.el.id;
+    });
+    tocLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+
+    // Highlight active chapter item
+    let currentChapter = '';
+    chapterSections.forEach(s => {
+      if (scrollY >= s.el.offsetTop - 100) currentChapter = s.el.id;
+    });
+    chapterItems.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + currentChapter);
+    });
+  });
+
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Mobile nav drawer
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  const mobileOverlay = document.getElementById('mobile-nav-overlay');
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    mobileNav.classList.toggle('open');
+    mobileOverlay.classList.toggle('open');
+  });
+  mobileOverlay.addEventListener('click', () => {
+    menuToggle.classList.remove('active');
+    mobileNav.classList.remove('open');
+    mobileOverlay.classList.remove('open');
+  });
+
+  // Search overlay
+  const searchBtn = document.getElementById('search-btn');
+  const searchOverlay = document.getElementById('search-overlay');
+  const searchClose = document.getElementById('search-close');
+  searchBtn.addEventListener('click', () => { searchOverlay.classList.add('open'); searchOverlay.querySelector('input').focus(); });
+  searchClose.addEventListener('click', () => searchOverlay.classList.remove('open'));
+  searchOverlay.addEventListener('click', (e) => { if (e.target === searchOverlay) searchOverlay.classList.remove('open'); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') searchOverlay.classList.remove('open'); });
+
+  // Dark mode
+  const darkBtn = document.getElementById('dark-mode-btn');
+  darkBtn.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+  });
+  if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+
+  // TOC toggle
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocList = document.getElementById('toc-list');
+  tocToggle.addEventListener('click', () => {
+    tocToggle.classList.toggle('collapsed');
+    tocList.style.display = tocToggle.classList.contains('collapsed') ? 'none' : 'flex';
+  });
+
+  // Sidebar TOC toggle (collapsed by default)
+  const sidebarToc = document.querySelector('.sidebar-toc');
+  if (sidebarToc) {
+    const sidebarTitle = sidebarToc.querySelector('.widget-title');
+    sidebarTitle.addEventListener('click', () => {
+      sidebarToc.classList.toggle('expanded');
+    });
+  }
+
+  // Sidebar sticky: align with article title, stick when bottom reached
+  const sidebar = document.querySelector('.sidebar');
+  const articleTitle = document.querySelector('.article-title');
+  if (sidebar && articleTitle && window.innerWidth > 1024) {
+    const padding = 20;
+    function setSidebarSticky() {
+      // Calculate offset from top of article-layout to article title
+      const layout = document.querySelector('.article-layout');
+      const titleOffset = articleTitle.offsetTop - layout.offsetTop;
+      sidebar.style.paddingTop = titleOffset + 'px';
+
+      const sidebarH = sidebar.offsetHeight;
+      const viewportH = window.innerHeight;
+      if (sidebarH > viewportH - padding) {
+        sidebar.style.top = -(sidebarH - viewportH + padding) + 'px';
+      } else {
+        sidebar.style.top = padding + 'px';
+      }
+    }
+    setSidebarSticky();
+    window.addEventListener('resize', setSidebarSticky);
+    sidebar.addEventListener('click', () => setTimeout(setSidebarSticky, 400));
+  }
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

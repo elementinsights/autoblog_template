@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>11 Shocking Facts About Your Tap Water (Most People Don't Know #7) - YourBlog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       THEME VARIABLES
+       ============================================================ */
+    :root {
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --accent-light: #eff6ff;
+      --accent-rgb: 59, 130, 246;
+      --text: #1a1a2e;
+      --text-secondary: #64748b;
+      --text-light: #94a3b8;
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --bg-dark: #0f172a;
+      --border: #e2e8f0;
+      --container: 1122px;
+      --radius: 8px;
+      --radius-lg: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+      --transition: 0.25s ease;
+      --green: #16a34a;
+      --red: #dc2626;
+    }
+    html.dark {
+      --text: #e2e8f0;
+      --text-secondary: #94a3b8;
+      --text-light: #64748b;
+      --bg: #0f172a;
+      --bg-alt: #1e293b;
+      --bg-dark: #020617;
+      --border: #334155;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+      --shadow: 0 4px 12px rgba(0,0,0,0.4);
+      --shadow-lg: 0 8px 30px rgba(0,0,0,0.5);
+      --accent-light: rgba(59, 130, 246, 0.15);
+    }
+
+    /* ============================================================
+       RESET & BASE
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--accent-hover); }
+    ul, ol { list-style: none; }
+    h1, h2, h3, h4, h5, h6 { line-height: 1.25; font-weight: 800; color: var(--text); }
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 20px; width: 100%; }
+
+    .animate-on-scroll {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============================================================
+       HEADER
+       ============================================================ */
+    .header {
+      position: sticky; top: 0; z-index: 1000;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow var(--transition);
+    }
+    .header.scrolled { box-shadow: var(--shadow); }
+    .scroll-progress {
+      position: absolute; bottom: 0; left: 0;
+      height: 3px; background: var(--accent);
+      width: 0%; transition: width 0.1s linear; z-index: 10;
+    }
+    .header-main {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px; gap: 20px;
+      max-width: var(--container); margin: 0 auto;
+    }
+    .logo { font-size: 1.6rem; font-weight: 900; color: var(--text); letter-spacing: -0.02em; white-space: nowrap; }
+    .logo span { color: var(--accent); }
+    .nav { display: flex; align-items: center; gap: 6px; }
+    .nav a {
+      color: var(--text); font-size: 15px; font-weight: 600;
+      padding: 8px 14px; border-radius: var(--radius);
+      transition: background var(--transition), color var(--transition);
+    }
+    .nav a:hover { color: var(--accent); }
+    .nav a.nav-start-here { background: var(--accent); color: #fff; padding: 8px 18px; }
+    .nav a.nav-start-here:hover { background: var(--accent-hover); color: #fff; }
+    .header-actions { display: flex; align-items: center; gap: 6px; }
+    .header-btn {
+      background: none; border: none; cursor: pointer; color: var(--text-secondary);
+      font-size: 20px; padding: 8px; border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .header-btn:hover { color: var(--accent); background: var(--accent-light); }
+    .menu-toggle {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 6px; flex-direction: column; gap: 5px;
+    }
+    .menu-toggle span { display: block; width: 24px; height: 2.5px; background: var(--text); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+    .menu-toggle.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    /* Mobile drawer */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0; right: -100%;
+      width: 280px; height: 100vh;
+      background: var(--bg);
+      z-index: 999;
+      box-shadow: var(--shadow-lg);
+      padding: 80px 24px 24px;
+      flex-direction: column;
+      gap: 4px;
+      transition: right 0.3s ease;
+    }
+    .mobile-nav.open { right: 0; }
+    .mobile-nav a {
+      display: block;
+      font-size: 16px; font-weight: 600;
+      color: var(--text);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color var(--transition);
+    }
+    .mobile-nav a:hover { color: var(--accent); }
+    .mobile-nav a.nav-start-here {
+      background: var(--accent); color: #fff;
+      padding: 12px 18px; border-radius: var(--radius);
+      text-align: center; margin-top: 12px; border-bottom: none;
+    }
+    .mobile-nav a.nav-start-here:hover { background: var(--accent-hover); color: #fff; }
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 998;
+    }
+    .mobile-nav-overlay.open { display: block; }
+    @media (max-width: 768px) {
+      .mobile-nav { display: flex; }
+    }
+
+    /* Search overlay */
+    .search-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+      z-index: 9999; display: none; align-items: flex-start;
+      justify-content: center; padding-top: 120px; backdrop-filter: blur(4px);
+    }
+    .search-overlay.open { display: flex; }
+    .search-box {
+      background: var(--bg); border-radius: var(--radius-lg); padding: 8px;
+      width: 90%; max-width: 600px; box-shadow: var(--shadow-lg);
+      display: flex; align-items: center; gap: 12px;
+      animation: searchSlideDown 0.25s ease;
+    }
+    @keyframes searchSlideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .search-box svg { margin-left: 12px; color: var(--text-light); flex-shrink: 0; }
+    .search-box input {
+      flex: 1; border: none; outline: none; font-size: 18px;
+      font-family: inherit; background: transparent; color: var(--text); padding: 12px 0;
+    }
+    .search-box input::placeholder { color: var(--text-light); }
+    .search-close {
+      background: none; border: none; font-size: 24px; cursor: pointer;
+      color: var(--text-light); padding: 8px 12px; transition: color var(--transition);
+    }
+    .search-close:hover { color: var(--text); }
+
+    /* ============================================================
+       BREADCRUMBS
+       ============================================================ */
+    .breadcrumbs {
+      padding: 16px 0;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .breadcrumbs a { color: var(--text-secondary); }
+    .breadcrumbs a:hover { color: var(--accent); }
+    .breadcrumbs span { margin: 0 8px; opacity: 0.5; }
+
+    /* ============================================================
+       ARTICLE LAYOUT
+       ============================================================ */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 750px 340px;
+      gap: 32px;
+      align-items: start;
+      padding-bottom: 60px;
+      min-width: 0;
+    }
+    .article-layout > article { min-width: 0; }
+
+    /* ============================================================
+       ARTICLE HEADER
+       ============================================================ */
+    .article-header { margin-bottom: 32px; }
+    .article-cat {
+      display: inline-block;
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .article-title {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .article-excerpt {
+      font-size: 18px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-author {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .article-author-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--accent); display: flex; align-items: center;
+      justify-content: center; color: #fff; font-weight: 700; font-size: 16px;
+    }
+    .article-author-info { font-size: 14px; }
+    .article-author-name { font-weight: 700; color: var(--text); }
+    .article-author-date { color: var(--text-light); font-size: 13px; }
+    /* Featured image */
+    .article-featured-img {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 32px;
+      aspect-ratio: 750 / 422;
+    }
+    .article-featured-img img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+
+    /* ============================================================
+       ARTICLE CONTENT
+       ============================================================ */
+    .article-content { font-size: 17px; line-height: 1.75; color: var(--text); overflow-wrap: break-word; word-wrap: break-word; }
+    .article-content h2 {
+      font-size: 1.7rem; margin: 28px 0 14px;
+    }
+    .article-content h3 { font-size: 1.3rem; margin: 28px 0 12px; }
+    .article-content p { margin-bottom: 18px; }
+    .article-content ul, .article-content ol {
+      margin: 0 0 20px 0; padding-left: 24px;
+    }
+    .article-content ul { list-style: disc; }
+    .article-content ol { list-style: decimal; }
+    .article-content li { margin-bottom: 8px; }
+    .article-content a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+    .article-content a:hover { color: var(--accent-hover); }
+    .article-content strong { font-weight: 700; }
+    .article-content blockquote {
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      margin: 24px 0;
+      background: var(--accent-light);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    /* Quick answer box */
+    .quick-answer {
+      background: var(--accent-light);
+      border: 2px solid var(--accent);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin-bottom: 32px;
+    }
+    .quick-answer-label {
+      font-size: 12px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px;
+    }
+    .quick-answer h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .quick-answer p { font-size: 15px; color: var(--text-secondary); margin: 0 0 14px; line-height: 1.6; }
+    .quick-answer-cta {
+      display: inline-block;
+      padding: 10px 22px;
+      background: var(--accent);
+      color: #fff !important;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: var(--radius);
+      text-decoration: none !important;
+      transition: background var(--transition);
+    }
+    .quick-answer-cta:hover { background: var(--accent-hover); color: #fff !important; text-decoration: none !important; }
+
+    /* ============================================================
+       TABLE OF CONTENTS
+       ============================================================ */
+    .toc {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px 26px;
+      margin-bottom: 32px;
+      display: none;
+    }
+    .toc-title {
+      font-size: 15px; font-weight: 800; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 8px;
+      cursor: pointer; user-select: none;
+    }
+    .toc-title svg { transition: transform var(--transition); }
+    .toc-title.collapsed svg { transform: rotate(-90deg); }
+    .toc-list { display: flex; flex-direction: column; gap: 0; }
+    .toc-list a {
+      display: block;
+      font-size: 14px; font-weight: 500;
+      color: var(--text-secondary);
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color var(--transition), padding-left var(--transition);
+    }
+    .toc-list a:last-child { border-bottom: none; }
+    .toc-list a:hover { color: var(--accent); padding-left: 6px; }
+    .toc-list a.active { color: var(--accent); font-weight: 700; }
+
+    /* ============================================================
+       KEY TAKEAWAY BOX
+       ============================================================ */
+    .key-takeaway {
+      background: var(--bg-alt);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .key-takeaway-label {
+      font-size: 12px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent); margin-bottom: 6px;
+    }
+    .key-takeaway p { font-size: 15px; color: var(--text-secondary); margin: 0; line-height: 1.6; }
+
+    /* ============================================================
+       STAT HIGHLIGHT (Listicle-specific)
+       ============================================================ */
+    .stat-highlight {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--accent-light);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      margin: 16px 0;
+    }
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .stat-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ============================================================
+       SOCIAL SHARE
+       ============================================================ */
+    .share-bar {
+      display: flex; align-items: center; gap: 12px;
+      padding: 20px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin: 32px 0;
+    }
+    .share-label { font-size: 14px; font-weight: 700; color: var(--text); }
+    .share-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--bg-alt); border: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 15px; font-weight: 700;
+      transition: all var(--transition); cursor: pointer;
+    }
+    .share-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    /* ============================================================
+       AUTHOR BOX
+       ============================================================ */
+    .author-box {
+      display: flex; gap: 20px;
+      padding: 28px;
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      margin: 32px 0;
+    }
+    .author-box-avatar {
+      width: 72px; height: 72px; border-radius: 50%; flex-shrink: 0;
+      background: var(--accent); display: flex; align-items: center;
+      justify-content: center; color: #fff; font-size: 28px; font-weight: 800;
+    }
+    .author-box-info { flex: 1; }
+    .author-box-name { font-size: 1.1rem; font-weight: 800; margin-bottom: 4px; }
+    .author-box-role { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+    .author-box-bio { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px; }
+    .author-box-link {
+      font-size: 13px; font-weight: 700; color: var(--accent);
+      text-decoration: none; display: inline-block;
+    }
+    .author-box-link:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* ============================================================
+       RELATED POSTS
+       ============================================================ */
+    .related-section {
+      padding: 55px 0 60px;
+      background: var(--bg-alt);
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .related-card {
+      background: var(--bg);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition), transform var(--transition);
+      display: block; color: var(--text);
+    }
+    .related-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+      color: var(--text);
+    }
+    .related-card-img { height: 180px; overflow: hidden; }
+    .related-card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .related-card:hover .related-card-img img { transform: scale(1.05); }
+    .related-card-body { padding: 20px; }
+    .related-card-cat {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; color: var(--accent); margin-bottom: 8px;
+    }
+    .related-card-title { font-size: 1.05rem; font-weight: 800; line-height: 1.35; margin-bottom: 8px; }
+    .related-card-meta { font-size: 13px; color: var(--text-light); }
+
+    /* ============================================================
+       SIDEBAR
+       ============================================================ */
+    .sidebar {
+      display: flex; flex-direction: column; gap: 28px;
+      position: sticky;
+      align-self: start;
+    }
+
+    .widget {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+    }
+    .widget-title {
+      font-size: 1rem; font-weight: 800; margin-bottom: 16px;
+      padding-bottom: 10px; border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    /* TOC sidebar widget */
+    .sidebar-toc {
+      padding: 14px 18px;
+    }
+    .sidebar-toc .widget-title {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      user-select: none;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      font-size: 14px;
+      transition: border-color 0.35s ease 0s, margin-bottom 0.35s ease, padding-bottom 0.35s ease;
+    }
+    .sidebar-toc.expanded .widget-title {
+      border-bottom-color: var(--accent);
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      transition: border-color 0s ease 0s, margin-bottom 0.35s ease, padding-bottom 0.35s ease;
+    }
+    .sidebar-toc .widget-title::after {
+      content: '';
+      width: 8px; height: 8px;
+      border-right: 2px solid var(--text-secondary);
+      border-bottom: 2px solid var(--text-secondary);
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform 0.25s;
+      flex-shrink: 0;
+      margin-left: 10px;
+    }
+    .sidebar-toc.expanded .widget-title::after {
+      transform: rotate(-135deg) translateY(-2px);
+    }
+    .sidebar-toc-list {
+      display: flex; flex-direction: column; gap: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .sidebar-toc.expanded .sidebar-toc-list {
+      max-height: 600px;
+    }
+    .sidebar-toc-list a {
+      display: block; font-size: 13px; font-weight: 500;
+      color: var(--text-secondary); padding: 8px 0 8px 14px;
+      border-left: 2px solid var(--border);
+      transition: color var(--transition), border-left-color var(--transition), background var(--transition);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .sidebar-toc-list a:hover { color: var(--accent); border-left-color: var(--accent); }
+    .sidebar-toc-list a.active {
+      color: var(--accent); font-weight: 700;
+      border-left-color: var(--accent);
+      background: var(--accent-light);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    /* Sidebar Quick Facts widget */
+    .sidebar-facts .widget-title { display: block; }
+    .fact-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .fact-item:first-of-type { padding-top: 0; }
+    .fact-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .fact-value {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .fact-desc {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    /* Popular posts widget */
+    .widget-post {
+      display: flex; gap: 12px; padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .widget-post:first-of-type { padding-top: 0; }
+    .widget-post:last-of-type { border-bottom: none; }
+    .widget-post-img {
+      flex-shrink: 0; width: 70px; height: 52px;
+      border-radius: 6px; overflow: hidden;
+    }
+    .widget-post-img img { width: 100%; height: 100%; object-fit: cover; }
+    .widget-post-title { font-size: 13px; font-weight: 700; line-height: 1.4; }
+    .widget-post-title a { color: var(--text); }
+    .widget-post-title a:hover { color: var(--accent); }
+    .widget-post-date { font-size: 12px; color: var(--text-light); margin-top: 3px; }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .footer {
+      background: var(--bg-dark); color: rgba(255,255,255,0.6); padding: 55px 0 0;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr;
+      gap: 40px; padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand .logo { color: #fff; margin-bottom: 14px; display: inline-block; }
+    .footer-brand p { font-size: 14px; line-height: 1.7; margin-bottom: 18px; }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.08); display: flex;
+      align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6); font-size: 14px;
+      transition: background var(--transition), color var(--transition);
+    }
+    .footer-social a:hover { background: var(--accent); color: #fff; }
+    .footer-col h4 { color: #fff; font-size: 15px; font-weight: 700; margin-bottom: 18px; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul a { color: rgba(255,255,255,0.5); font-size: 14px; transition: color var(--transition); }
+    .footer-col ul a:hover { color: var(--accent); }
+    .footer-bottom {
+      padding: 20px 0; display: flex; justify-content: space-between;
+      align-items: center; font-size: 13px;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: var(--accent); }
+    .footer-links { display: flex; gap: 20px; }
+
+    /* ============================================================
+       BACK TO TOP
+       ============================================================ */
+    .back-to-top {
+      position: fixed; bottom: 30px; right: 30px;
+      width: 44px; height: 44px; background: var(--accent); color: #fff;
+      border: none; border-radius: 50%; cursor: pointer; font-size: 20px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow); opacity: 0; transform: translateY(20px);
+      transition: opacity var(--transition), transform var(--transition), background var(--transition);
+      z-index: 900;
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { background: var(--accent-hover); }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 1024px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      .toc { display: block; }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .menu-toggle { display: flex; }
+      .article-title { font-size: 1.8rem; }
+      .article-excerpt { font-size: 16px; }
+      .article-meta { flex-direction: column; align-items: flex-start; }
+      .article-content { font-size: 16px; }
+      .article-content h2 { font-size: 1.4rem; }
+      .article-content h3 { font-size: 1.15rem; }
+      .article-featured-img { width: 100%; }
+      .quick-answer { padding: 20px; }
+      .key-takeaway { padding: 16px 18px; }
+      .toc { padding: 14px 18px; margin-bottom: 24px; }
+      .toc-title { margin-bottom: 0; font-size: 14px; }
+      .toc-title.collapsed { margin-bottom: 0; }
+      .toc-list a { padding: 6px 0; font-size: 13px; }
+      .share-bar { flex-wrap: wrap; }
+      .related-grid { grid-template-columns: 1fr; }
+      .author-box { flex-direction: column; text-align: center; padding: 22px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .article-title { font-size: 1.45rem; }
+      .section-title { font-size: 1.3rem; }
+      .stat-highlight { flex-direction: column; text-align: center; gap: 8px; }
+      .stat-number { font-size: 1.8rem; }
+    }
+  </style>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "11 Shocking Facts About Your Tap Water (Most People Don't Know #7)",
+    "description": "Think your tap water is safe? These 11 facts might change your mind. From forever chemicals to outdated infrastructure, here's what's really in the water you drink every day.",
+    "datePublished": "2026-02-28",
+    "dateModified": "2026-02-28",
+    "author": {
+      "@type": "Person",
+      "name": "Author Name"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "YourBlog"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="search-overlay">
+  <div class="search-box">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" placeholder="Search articles..." autofocus />
+    <button class="search-close" id="search-close" aria-label="Close search">&times;</button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="header-main">
+    <a href="/" class="logo">Your<span>Blog</span></a>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Filters</a>
+      <a href="#">Heaters</a>
+      <a href="#">Softeners</a>
+      <a href="#">Blog</a>
+      <a href="#">About</a>
+      <a href="#" class="nav-start-here">Start Here</a>
+    </nav>
+    <div class="header-actions">
+      <button class="header-btn" id="search-btn" aria-label="Search">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="header-btn" id="dark-mode-btn" aria-label="Toggle dark mode">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      </button>
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="#">Home</a>
+  <a href="#">Filters</a>
+  <a href="#">Heaters</a>
+  <a href="#">Softeners</a>
+  <a href="#">Blog</a>
+  <a href="#">About</a>
+  <a href="#" class="nav-start-here">Start Here</a>
+</nav>
+
+<!-- ARTICLE + SIDEBAR -->
+<div class="container">
+  <div class="article-layout">
+    <!-- MAIN ARTICLE -->
+    <article>
+      <div class="breadcrumbs">
+        <a href="/">Home</a> <span>/</span> <a href="#">Water Quality</a> <span>/</span> Tap Water Facts
+      </div>
+      <!-- Header -->
+      <div class="article-header">
+        <span class="article-cat">Water Quality</span>
+        <h1 class="article-title">11 Shocking Facts About Your Tap Water (Most People Don't Know&nbsp;#7)</h1>
+        <p class="article-excerpt">Think your tap water is safe? These 11 facts might change your mind. From forever chemicals to outdated infrastructure, here's what's really in the water you drink every day.</p>
+        <div class="article-meta">
+          <div class="article-author">
+            <div class="article-author-avatar">A</div>
+            <div class="article-author-info">
+              <div class="article-author-name">Author Name</div>
+              <div class="article-author-date">Last Updated: Feb 28, 2026 &bull; 7 min read</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div class="article-featured-img">
+        <img src="https://images.unsplash.com/photo-1527066579998-dbbae272f8f8?w=900&q=80" alt="Glass of tap water on a kitchen counter" />
+      </div>
+
+      <!-- Table of Contents (mobile/inline) -->
+      <div class="toc">
+        <div class="toc-title" id="toc-toggle">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          Table of Contents
+        </div>
+        <div class="toc-list" id="toc-list">
+          <a href="#fact-1">1. 300+ Contaminants in Average Tap Water</a>
+          <a href="#fact-2">2. 45% Comes From Contaminated Sources</a>
+          <a href="#fact-3">3. Lead Pipes Still Serve 10 Million Homes</a>
+          <a href="#fact-4">4. PFAS Found in 98% of Americans</a>
+          <a href="#fact-5">5. Chlorine Byproducts Linked to Health Issues</a>
+          <a href="#fact-6">6. Bottled Water Is Less Regulated Than Tap</a>
+          <a href="#fact-7">7. Your Water Treatment Plant May Be Decades Old</a>
+          <a href="#fact-8">8. Microplastics in 94% of Tap Water</a>
+          <a href="#fact-9">9. Agricultural Runoff Is #1 Pollution Source</a>
+          <a href="#fact-10">10. Pharmaceutical Traces in Drinking Water</a>
+          <a href="#fact-11">11. Water Quality Varies Block by Block</a>
+          <a href="#bottom-line">The Bottom Line</a>
+        </div>
+      </div>
+
+      <!-- ARTICLE CONTENT -->
+      <div class="article-content">
+        <p>Most of us turn on the faucet without a second thought. Water comes out, it looks clear, and it tastes fine &mdash; so it must be safe, right? The truth is far more complicated than that.</p>
+        <p>The United States has some of the most advanced water treatment systems in the world, but "advanced" doesn't always mean "adequate." Between aging infrastructure, emerging contaminants, and regulatory gaps, there are things in your tap water that might surprise you. Here are 11 facts every homeowner should know.</p>
+
+        <!-- FACT 1 -->
+        <h2 id="fact-1">1. The Average Glass of Tap Water Contains 300+ Contaminants</h2>
+        <div class="stat-highlight">
+          <div class="stat-number">300+</div>
+          <div class="stat-text">Contaminants detected in U.S. tap water by the Environmental Working Group's national drinking water database</div>
+        </div>
+        <p>According to the Environmental Working Group's extensive analysis of nearly 50,000 water utilities, more than 300 contaminants have been detected in the tap water Americans drink every day. These include industrial chemicals, agricultural pollutants, disinfection byproducts, and heavy metals.</p>
+        <p>What makes this especially concerning is that more than half of these contaminants have no enforceable federal health standards. That means they're legal to have in your water at any concentration &mdash; simply because regulators haven't gotten around to setting limits yet.</p>
+
+        <!-- FACT 2 -->
+        <h2 id="fact-2">2. Nearly 45% of U.S. Tap Water Comes From Contaminated Sources</h2>
+        <div class="stat-highlight">
+          <div class="stat-number">45%</div>
+          <div class="stat-text">Of U.S. tap water originates from source water that contains detectable levels of PFAS and other persistent pollutants</div>
+        </div>
+        <p>A landmark study by the U.S. Geological Survey tested tap water from both public supplies and private wells across the country. The results showed that nearly 45% of samples contained at least one type of "forever chemical" or other persistent organic pollutant at detectable levels.</p>
+        <p>While water treatment plants do remove many of these contaminants, the process isn't perfect. Some chemicals, particularly PFAS compounds, are extremely difficult to filter out with conventional treatment methods. The contamination often traces back to industrial discharge, military bases, and even firefighting foam used at airports.</p>
+
+        <!-- FACT 3 -->
+        <h2 id="fact-3">3. Lead Pipes Still Deliver Water to 10 Million American Homes</h2>
+        <div class="stat-highlight">
+          <div class="stat-number">10M</div>
+          <div class="stat-text">Homes across the U.S. still receive water through lead service lines, according to EPA estimates</div>
+        </div>
+        <p>Despite the well-documented dangers of lead exposure, an estimated 10 million homes and buildings in the United States still receive their water through lead service lines. These are the pipes that connect the water main in the street to the plumbing inside your house.</p>
+        <p>The crisis in Flint, Michigan brought national attention to lead in water, but Flint is far from alone. Cities like Newark, Chicago, and Milwaukee have hundreds of thousands of lead service lines still in use. Replacing them is expensive &mdash; often $5,000 to $10,000 per home &mdash; and federal funding hasn't been enough to address the full scope of the problem.</p>
+
+        <!-- FACT 4 -->
+        <h2 id="fact-4">4. PFAS "Forever Chemicals" Have Been Found in 98% of Americans' Blood</h2>
+        <div class="stat-highlight">
+          <div class="stat-number">98%</div>
+          <div class="stat-text">Of Americans have detectable levels of PFAS in their bloodstream, with drinking water being a primary exposure route</div>
+        </div>
+        <p>Per- and polyfluoroalkyl substances &mdash; better known as PFAS or "forever chemicals" &mdash; have become one of the most widespread environmental contaminants of our time. These synthetic chemicals were used for decades in non-stick cookware, waterproof clothing, food packaging, and firefighting foam.</p>
+        <p>The nickname "forever chemicals" isn't an exaggeration. PFAS don't break down in the environment or in your body. They accumulate over time and have been linked to cancer, thyroid disease, immune system suppression, and reproductive issues. Drinking water is considered one of the primary routes of human exposure, and most standard water treatment processes weren't designed to remove them.</p>
+
+        <!-- FACT 5 -->
+        <h2 id="fact-5">5. Chlorine Disinfection Byproducts Are Linked to Serious Health Concerns</h2>
+        <div class="stat-highlight">
+          <div class="stat-number">600+</div>
+          <div class="stat-text">Disinfection byproducts can form when chlorine reacts with organic matter in water, many with unknown health effects</div>
+        </div>
+        <p>Chlorine is added to municipal water supplies to kill bacteria and pathogens &mdash; and it does that job well. The problem is what happens after. When chlorine reacts with naturally occurring organic matter in water, it creates disinfection byproducts (DBPs) like trihalomethanes and haloacetic acids.</p>
+        <p>Long-term exposure to these byproducts has been associated with an increased risk of bladder cancer, reproductive problems, and liver and kidney damage in multiple peer-reviewed studies. It's a frustrating trade-off: the very chemical that makes your water safe from bacteria may be introducing other risks.</p>
+
+        <!-- FACT 6 -->
+        <h2 id="fact-6">6. Bottled Water Is Actually Less Regulated Than Tap Water</h2>
+        <div class="stat-highlight">
+          <div class="stat-number">FDA vs. EPA</div>
+          <div class="stat-text">Bottled water is regulated by the FDA with less frequent testing requirements, while tap water falls under stricter EPA oversight</div>
+        </div>
+        <p>Many people switch to bottled water because they assume it's cleaner or more heavily regulated. In reality, the opposite is often true. Municipal tap water is regulated by the EPA, which requires hundreds of tests per month for large systems. Bottled water, regulated by the FDA, has far less stringent testing requirements.</p>
+        <p>In fact, roughly 25% of bottled water is simply repackaged tap water. Studies have also found that bottled water can contain microplastics from the packaging itself. Add the environmental cost of plastic bottles &mdash; 80% end up in landfills &mdash; and the economic cost (1,000 to 2,000 times more expensive than tap), and the case for bottled water gets thin quickly.</p>
+
+        <!-- FACT 7 -->
+        <h2 id="fact-7">7. Your Water Treatment Plant May Be Running on Decades-Old Technology</h2>
+        <div class="stat-highlight">
+          <div class="stat-number">50+ yrs</div>
+          <div class="stat-text">Average age of water treatment infrastructure in many U.S. cities, with some systems dating back to the early 1900s</div>
+        </div>
+        <p>This is the fact that most people find the hardest to believe. Much of America's water treatment infrastructure was built in the mid-20th century &mdash; and some systems date back even further. The American Society of Civil Engineers gave the nation's drinking water infrastructure a grade of C- in their most recent report card.</p>
+        <p>These aging systems were designed to handle the contaminants that scientists knew about 50 or 60 years ago. They weren't built to filter out PFAS, microplastics, pharmaceutical residues, or many of the other emerging contaminants that are now showing up in water supplies. Upgrading the nation's water infrastructure would cost an estimated $625 billion over the next 20 years.</p>
+
+        <!-- FACT 8 -->
+        <h2 id="fact-8">8. Microplastics Have Been Found in 94% of U.S. Tap Water Samples</h2>
+        <div class="stat-highlight">
+          <div class="stat-number">94%</div>
+          <div class="stat-text">Of tap water samples tested in the United States contained microplastic fibers, the highest rate of any country studied</div>
+        </div>
+        <p>A groundbreaking study by Orb Media found that 94% of tap water samples from the United States contained microplastic fibers &mdash; the highest contamination rate of any country tested. These tiny plastic particles, smaller than 5 millimeters, come from the breakdown of larger plastic waste, synthetic clothing fibers, and industrial processes.</p>
+        <p>The full health effects of ingesting microplastics are still being studied, but early research suggests they can carry toxic chemicals into the body, cause inflammation, and may disrupt the endocrine system. Most water treatment plants aren't equipped to filter out particles this small, meaning they pass directly through the system and into your glass.</p>
+
+        <!-- FACT 9 -->
+        <h2 id="fact-9">9. Agricultural Runoff Is the #1 Source of Water Contamination in the U.S.</h2>
+        <div class="stat-highlight">
+          <div class="stat-number">#1</div>
+          <div class="stat-text">Agricultural runoff is the leading source of water pollution in rivers and streams, and the second-largest source for wetlands</div>
+        </div>
+        <p>If you live in a rural or suburban area near farmland, your water supply faces unique challenges. Agricultural runoff &mdash; containing pesticides, herbicides, fertilizers, and animal waste &mdash; is the single largest source of water pollution in the country.</p>
+        <p>Nitrate from fertilizers is particularly dangerous for infants and has been linked to "blue baby syndrome." Atrazine, one of the most commonly used herbicides in the U.S., has been detected in drinking water supplies serving millions of Americans. While it's been banned in the European Union since 2004, it remains widely used in American agriculture and frequently shows up in water tests, especially during spring planting season.</p>
+
+        <!-- FACT 10 -->
+        <h2 id="fact-10">10. Traces of Pharmaceuticals Have Been Detected in Drinking Water</h2>
+        <div class="stat-highlight">
+          <div class="stat-number">56</div>
+          <div class="stat-text">Different pharmaceutical compounds were detected in drinking water supplies serving 41 million Americans in a major AP investigation</div>
+        </div>
+        <p>When people take medication, their bodies don't fully absorb all of it. The remainder gets flushed down the toilet and enters the wastewater system. Conventional water treatment plants weren't designed to remove pharmaceutical compounds, so trace amounts can end up right back in your drinking water.</p>
+        <p>An Associated Press investigation found 56 different pharmaceuticals and pharmaceutical byproducts in the drinking water supplies of 41 million Americans. These include antibiotics, anti-depressants, hormones, and painkillers. While the concentrations are extremely low &mdash; typically measured in parts per trillion &mdash; scientists are concerned about the effects of long-term exposure to this chemical cocktail, especially on children and pregnant women.</p>
+
+        <!-- FACT 11 -->
+        <h2 id="fact-11">11. Water Quality Can Vary Dramatically From Block to Block</h2>
+        <div class="stat-highlight">
+          <div class="stat-number">Varies</div>
+          <div class="stat-text">Water quality can differ significantly between neighboring houses depending on pipe age, material, and distance from treatment plant</div>
+        </div>
+        <p>Your neighbor's water and your water can be remarkably different &mdash; even if you're on the same municipal supply. The quality of water at your tap depends not just on what leaves the treatment plant, but on the condition of every pipe it travels through to reach you.</p>
+        <p>Older neighborhoods with lead or galvanized steel service lines will have different contaminant profiles than newer areas with copper or PVC pipes. Dead-end water mains can have higher disinfection byproducts because the water sits longer. Homes closer to the treatment plant may get different water than those at the end of the distribution system. The only way to truly know what's in your water is to test it at your own tap.</p>
+
+        <!-- THE BOTTOM LINE -->
+        <h2 id="bottom-line">The Bottom Line</h2>
+        <p>None of this means you should panic about your tap water. In most cases, U.S. municipal water is treated and safe to drink by current regulatory standards. But "meets current standards" and "is completely free of concerning substances" are two very different things.</p>
+        <p>The science on emerging contaminants like PFAS, microplastics, and pharmaceutical residues is still evolving, and regulations often lag years or even decades behind the research. Being informed is the first step toward protecting yourself and your family.</p>
+
+        <div class="key-takeaway">
+          <div class="key-takeaway-label">Key Takeaway</div>
+          <p>Your tap water is likely safe by current standards, but it almost certainly contains contaminants that aren't yet regulated. <strong>Testing your water at home</strong> is the single best step you can take. From there, you can choose the right filtration solution &mdash; whether that's a simple pitcher filter or a more comprehensive system &mdash; based on what's actually in your water.</p>
+        </div>
+      </div>
+
+      <!-- SHARE BAR -->
+      <div class="share-bar">
+        <span class="share-label">Share this article:</span>
+        <button class="share-btn" aria-label="Share on Facebook">f</button>
+        <button class="share-btn" aria-label="Share on Twitter">X</button>
+        <button class="share-btn" aria-label="Share on Pinterest">P</button>
+        <button class="share-btn" aria-label="Copy link">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </button>
+      </div>
+
+      <!-- AUTHOR BOX -->
+      <div class="author-box animate-on-scroll">
+        <div class="author-box-avatar">A</div>
+        <div class="author-box-info">
+          <div class="author-box-name">Author Name</div>
+          <div class="author-box-role">Water Quality Expert & Product Reviewer</div>
+          <p class="author-box-bio">With over 8 years of experience testing water treatment products, Author Name has reviewed 200+ filters, softeners, and purification systems. Their work has been featured in Popular Mechanics, Wirecutter, and Consumer Reports.</p>
+          <a href="#" class="author-box-link">More about the author &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="widget sidebar-toc">
+        <h3 class="widget-title">Table of Contents</h3>
+        <div class="sidebar-toc-list">
+          <a href="#fact-1">1. 300+ Contaminants</a>
+          <a href="#fact-2">2. Contaminated Sources</a>
+          <a href="#fact-3">3. Lead Pipes in 10M Homes</a>
+          <a href="#fact-4">4. PFAS in 98% of Americans</a>
+          <a href="#fact-5">5. Chlorine Byproducts</a>
+          <a href="#fact-6">6. Bottled Water Myths</a>
+          <a href="#fact-7">7. Decades-Old Infrastructure</a>
+          <a href="#fact-8">8. Microplastics in 94%</a>
+          <a href="#fact-9">9. Agricultural Runoff</a>
+          <a href="#fact-10">10. Pharmaceuticals in Water</a>
+          <a href="#fact-11">11. Block-by-Block Variance</a>
+          <a href="#bottom-line">The Bottom Line</a>
+        </div>
+      </div>
+
+      <div class="widget sidebar-facts">
+        <h3 class="widget-title">Quick Facts</h3>
+        <div class="fact-item">
+          <div class="fact-value">300+</div>
+          <div class="fact-desc">Contaminants in average tap water</div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-value">10M</div>
+          <div class="fact-desc">Homes with lead pipes</div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-value">94%</div>
+          <div class="fact-desc">Of tap water has microplastics</div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-value">$0.02</div>
+          <div class="fact-desc">Cost per gallon with home filter</div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <h3 class="widget-title">Related Articles</h3>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">Best Reverse Osmosis Systems for 2026</a></div>
+            <div class="widget-post-date">March 2, 2026</div>
+          </div>
+        </div>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">Brita vs. Clearly Filtered: Which Is Better?</a></div>
+            <div class="widget-post-date">Feb 18, 2026</div>
+          </div>
+        </div>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">How to Test Your Tap Water at Home</a></div>
+            <div class="widget-post-date">Feb 10, 2026</div>
+          </div>
+        </div>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">Do Water Filters Remove Fluoride? (Tested)</a></div>
+            <div class="widget-post-date">Jan 28, 2026</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- RELATED POSTS -->
+<section class="related-section">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <h2 class="section-title" style="font-size:1.5rem; margin-bottom: 28px;">You Might Also Like</h2>
+    </div>
+    <div class="related-grid">
+      <a href="#" class="related-card animate-on-scroll">
+        <div class="related-card-img">
+          <img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?w=500&q=70" alt="Related post" loading="lazy" />
+        </div>
+        <div class="related-card-body">
+          <div class="related-card-cat">Filters</div>
+          <h3 class="related-card-title">Best Reverse Osmosis Systems: 5 Top Picks for Clean Water</h3>
+          <div class="related-card-meta">March 2, 2026 &bull; 11 min read</div>
+        </div>
+      </a>
+      <a href="#" class="related-card animate-on-scroll">
+        <div class="related-card-img">
+          <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=500&q=70" alt="Related post" loading="lazy" />
+        </div>
+        <div class="related-card-body">
+          <div class="related-card-cat">Guides</div>
+          <h3 class="related-card-title">How to Test Your Tap Water Quality at Home (Step-by-Step)</h3>
+          <div class="related-card-meta">Feb 14, 2026 &bull; 8 min read</div>
+        </div>
+      </a>
+      <a href="#" class="related-card animate-on-scroll">
+        <div class="related-card-img">
+          <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500&q=70" alt="Related post" loading="lazy" />
+        </div>
+        <div class="related-card-body">
+          <div class="related-card-cat">Comparisons</div>
+          <h3 class="related-card-title">Brita vs. PUR vs. Clearly Filtered: Best Pitcher Filter?</h3>
+          <div class="related-card-meta">Feb 5, 2026 &bull; 9 min read</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Your<span>Blog</span></a>
+        <p>Your trusted source for honest reviews, expert guides, and actionable advice. We help you make smarter decisions.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="Pinterest">Pin</a>
+          <a href="#" aria-label="Twitter">X</a>
+          <a href="#" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#">Water Filters</a></li>
+          <li><a href="#">Water Heaters</a></li>
+          <li><a href="#">Water Softeners</a></li>
+          <li><a href="#">Guides</a></li>
+          <li><a href="#">Comparisons</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Popular</h4>
+        <ul>
+          <li><a href="#">Best Water Filters</a></li>
+          <li><a href="#">Best RO Systems</a></li>
+          <li><a href="#">Best Water Heaters</a></li>
+          <li><a href="#">Water Testing Guide</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Disclosure</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 YourBlog. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<!-- SCRIPTS -->
+<script>
+  const header = document.getElementById('header');
+  const progressBar = document.getElementById('scroll-progress');
+  const backToTop = document.getElementById('back-to-top');
+
+  // Scroll: header shadow, progress bar, back to top, sidebar TOC highlight
+  const tocLinks = document.querySelectorAll('.sidebar-toc-list a');
+  const sections = [];
+  tocLinks.forEach(a => {
+    const id = a.getAttribute('href')?.replace('#', '');
+    if (id) { const el = document.getElementById(id); if (el) sections.push({ el, link: a }); }
+  });
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    header.classList.toggle('scrolled', scrollY > 10);
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (docHeight > 0 ? (scrollY / docHeight) * 100 : 0) + '%';
+    backToTop.classList.toggle('visible', scrollY > 500);
+
+    // Highlight active TOC item
+    let current = '';
+    sections.forEach(s => {
+      if (scrollY >= s.el.offsetTop - 100) current = s.el.id;
+    });
+    tocLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Mobile nav drawer
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  const mobileOverlay = document.getElementById('mobile-nav-overlay');
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    mobileNav.classList.toggle('open');
+    mobileOverlay.classList.toggle('open');
+  });
+  mobileOverlay.addEventListener('click', () => {
+    menuToggle.classList.remove('active');
+    mobileNav.classList.remove('open');
+    mobileOverlay.classList.remove('open');
+  });
+
+  // Search overlay
+  const searchBtn = document.getElementById('search-btn');
+  const searchOverlay = document.getElementById('search-overlay');
+  const searchClose = document.getElementById('search-close');
+  searchBtn.addEventListener('click', () => { searchOverlay.classList.add('open'); searchOverlay.querySelector('input').focus(); });
+  searchClose.addEventListener('click', () => searchOverlay.classList.remove('open'));
+  searchOverlay.addEventListener('click', (e) => { if (e.target === searchOverlay) searchOverlay.classList.remove('open'); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') searchOverlay.classList.remove('open'); });
+
+  // Dark mode
+  const darkBtn = document.getElementById('dark-mode-btn');
+  darkBtn.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+  });
+  if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+
+  // TOC toggle
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocList = document.getElementById('toc-list');
+  tocToggle.addEventListener('click', () => {
+    tocToggle.classList.toggle('collapsed');
+    tocList.style.display = tocToggle.classList.contains('collapsed') ? 'none' : 'flex';
+  });
+
+  // Sidebar TOC toggle (collapsed by default)
+  const sidebarToc = document.querySelector('.sidebar-toc');
+  if (sidebarToc) {
+    const sidebarTitle = sidebarToc.querySelector('.widget-title');
+    sidebarTitle.addEventListener('click', () => {
+      sidebarToc.classList.toggle('expanded');
+    });
+  }
+
+  // Sidebar sticky: align with article title, stick when bottom reached
+  const sidebar = document.querySelector('.sidebar');
+  const articleTitle = document.querySelector('.article-title');
+  if (sidebar && articleTitle && window.innerWidth > 1024) {
+    const padding = 20;
+    function setSidebarSticky() {
+      // Calculate offset from top of article-layout to article title
+      const layout = document.querySelector('.article-layout');
+      const titleOffset = articleTitle.offsetTop - layout.offsetTop;
+      sidebar.style.paddingTop = titleOffset + 'px';
+
+      const sidebarH = sidebar.offsetHeight;
+      const viewportH = window.innerHeight;
+      if (sidebarH > viewportH - padding) {
+        sidebar.style.top = -(sidebarH - viewportH + padding) + 'px';
+      } else {
+        sidebar.style.top = padding + 'px';
+      }
+    }
+    setSidebarSticky();
+    window.addEventListener('resize', setSidebarSticky);
+    sidebar.addEventListener('click', () => setTimeout(setSidebarSticky, 400));
+  }
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+  // Comparison table row click — navigate to Check Price link in that row
+  document.querySelectorAll('.comparison-table tbody tr').forEach(row => {
+    row.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return; // don't double-navigate if clicking the link itself
+      const link = row.querySelector('.table-cta');
+      if (link) link.click();
+    });
+  });
+</script>
+
+</body>
+</html>

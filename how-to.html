@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to Install an Under-Sink Water Filter (Step-by-Step) - YourBlog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       THEME VARIABLES
+       ============================================================ */
+    :root {
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --accent-light: #eff6ff;
+      --accent-rgb: 59, 130, 246;
+      --text: #1a1a2e;
+      --text-secondary: #64748b;
+      --text-light: #94a3b8;
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --bg-dark: #0f172a;
+      --border: #e2e8f0;
+      --container: 1122px;
+      --radius: 8px;
+      --radius-lg: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+      --transition: 0.25s ease;
+      --green: #16a34a;
+      --red: #dc2626;
+    }
+    html.dark {
+      --text: #e2e8f0;
+      --text-secondary: #94a3b8;
+      --text-light: #64748b;
+      --bg: #0f172a;
+      --bg-alt: #1e293b;
+      --bg-dark: #020617;
+      --border: #334155;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+      --shadow: 0 4px 12px rgba(0,0,0,0.4);
+      --shadow-lg: 0 8px 30px rgba(0,0,0,0.5);
+      --accent-light: rgba(59, 130, 246, 0.15);
+    }
+
+    /* ============================================================
+       RESET & BASE
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--accent-hover); }
+    ul, ol { list-style: none; }
+    h1, h2, h3, h4, h5, h6 { line-height: 1.25; font-weight: 800; color: var(--text); }
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 20px; width: 100%; }
+
+    .animate-on-scroll {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============================================================
+       HEADER
+       ============================================================ */
+    .header {
+      position: sticky; top: 0; z-index: 1000;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow var(--transition);
+    }
+    .header.scrolled { box-shadow: var(--shadow); }
+    .scroll-progress {
+      position: absolute; bottom: 0; left: 0;
+      height: 3px; background: var(--accent);
+      width: 0%; transition: width 0.1s linear; z-index: 10;
+    }
+    .header-main {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px; gap: 20px;
+      max-width: var(--container); margin: 0 auto;
+    }
+    .logo { font-size: 1.6rem; font-weight: 900; color: var(--text); letter-spacing: -0.02em; white-space: nowrap; }
+    .logo span { color: var(--accent); }
+    .nav { display: flex; align-items: center; gap: 6px; }
+    .nav a {
+      color: var(--text); font-size: 15px; font-weight: 600;
+      padding: 8px 14px; border-radius: var(--radius);
+      transition: background var(--transition), color var(--transition);
+    }
+    .nav a:hover { color: var(--accent); }
+    .nav a.nav-start-here { background: var(--accent); color: #fff; padding: 8px 18px; }
+    .nav a.nav-start-here:hover { background: var(--accent-hover); color: #fff; }
+    .header-actions { display: flex; align-items: center; gap: 6px; }
+    .header-btn {
+      background: none; border: none; cursor: pointer; color: var(--text-secondary);
+      font-size: 20px; padding: 8px; border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .header-btn:hover { color: var(--accent); background: var(--accent-light); }
+    .menu-toggle {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 6px; flex-direction: column; gap: 5px;
+    }
+    .menu-toggle span { display: block; width: 24px; height: 2.5px; background: var(--text); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+    .menu-toggle.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    /* Mobile drawer */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 0; right: -100%;
+      width: 280px; height: 100vh;
+      background: var(--bg);
+      z-index: 999;
+      box-shadow: var(--shadow-lg);
+      padding: 80px 24px 24px;
+      flex-direction: column;
+      gap: 4px;
+      transition: right 0.3s ease;
+    }
+    .mobile-nav.open { right: 0; }
+    .mobile-nav a {
+      display: block;
+      font-size: 16px; font-weight: 600;
+      color: var(--text);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color var(--transition);
+    }
+    .mobile-nav a:hover { color: var(--accent); }
+    .mobile-nav a.nav-start-here {
+      background: var(--accent); color: #fff;
+      padding: 12px 18px; border-radius: var(--radius);
+      text-align: center; margin-top: 12px; border-bottom: none;
+    }
+    .mobile-nav a.nav-start-here:hover { background: var(--accent-hover); color: #fff; }
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 998;
+    }
+    .mobile-nav-overlay.open { display: block; }
+    @media (max-width: 768px) {
+      .mobile-nav { display: flex; }
+    }
+
+    /* Search overlay */
+    .search-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+      z-index: 9999; display: none; align-items: flex-start;
+      justify-content: center; padding-top: 120px; backdrop-filter: blur(4px);
+    }
+    .search-overlay.open { display: flex; }
+    .search-box {
+      background: var(--bg); border-radius: var(--radius-lg); padding: 8px;
+      width: 90%; max-width: 600px; box-shadow: var(--shadow-lg);
+      display: flex; align-items: center; gap: 12px;
+      animation: searchSlideDown 0.25s ease;
+    }
+    @keyframes searchSlideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .search-box svg { margin-left: 12px; color: var(--text-light); flex-shrink: 0; }
+    .search-box input {
+      flex: 1; border: none; outline: none; font-size: 18px;
+      font-family: inherit; background: transparent; color: var(--text); padding: 12px 0;
+    }
+    .search-box input::placeholder { color: var(--text-light); }
+    .search-close {
+      background: none; border: none; font-size: 24px; cursor: pointer;
+      color: var(--text-light); padding: 8px 12px; transition: color var(--transition);
+    }
+    .search-close:hover { color: var(--text); }
+
+    /* ============================================================
+       BREADCRUMBS
+       ============================================================ */
+    .breadcrumbs {
+      padding: 16px 0;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .breadcrumbs a { color: var(--text-secondary); }
+    .breadcrumbs a:hover { color: var(--accent); }
+    .breadcrumbs span { margin: 0 8px; opacity: 0.5; }
+
+    /* ============================================================
+       ARTICLE LAYOUT
+       ============================================================ */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 750px 340px;
+      gap: 32px;
+      align-items: start;
+      padding-bottom: 60px;
+      min-width: 0;
+    }
+    .article-layout > article { min-width: 0; }
+
+    /* ============================================================
+       ARTICLE HEADER
+       ============================================================ */
+    .article-header { margin-bottom: 32px; }
+    .article-cat {
+      display: inline-block;
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .article-title {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .article-excerpt {
+      font-size: 18px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-author {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .article-author-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--accent); display: flex; align-items: center;
+      justify-content: center; color: #fff; font-weight: 700; font-size: 16px;
+    }
+    .article-author-info { font-size: 14px; }
+    .article-author-name { font-weight: 700; color: var(--text); }
+    .article-author-date { color: var(--text-light); font-size: 13px; }
+    /* Featured image */
+    .article-featured-img {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 32px;
+      aspect-ratio: 750 / 422;
+    }
+    .article-featured-img img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+
+    /* ============================================================
+       ARTICLE CONTENT
+       ============================================================ */
+    .article-content { font-size: 17px; line-height: 1.75; color: var(--text); overflow-wrap: break-word; word-wrap: break-word; }
+    .article-content h2 {
+      font-size: 1.7rem; margin: 28px 0 14px;
+    }
+    .article-content h3 { font-size: 1.3rem; margin: 28px 0 12px; }
+    .article-content p { margin-bottom: 18px; }
+    .article-content ul, .article-content ol {
+      margin: 0 0 20px 0; padding-left: 24px;
+    }
+    .article-content ul { list-style: disc; }
+    .article-content ol { list-style: decimal; }
+    .article-content li { margin-bottom: 8px; }
+    .article-content a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+    .article-content a:hover { color: var(--accent-hover); }
+    .article-content strong { font-weight: 700; }
+    .article-content blockquote {
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      margin: 24px 0;
+      background: var(--accent-light);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    /* Quick answer box */
+    .quick-answer {
+      background: var(--accent-light);
+      border: 2px solid var(--accent);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin-bottom: 32px;
+    }
+    .quick-answer-label {
+      font-size: 12px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent); margin-bottom: 8px;
+    }
+    .quick-answer h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .quick-answer p { font-size: 15px; color: var(--text-secondary); margin: 0 0 14px; line-height: 1.6; }
+    .quick-answer-cta {
+      display: inline-block;
+      padding: 10px 22px;
+      background: var(--accent);
+      color: #fff !important;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: var(--radius);
+      text-decoration: none !important;
+      transition: background var(--transition);
+    }
+    .quick-answer-cta:hover { background: var(--accent-hover); color: #fff !important; text-decoration: none !important; }
+
+    /* ============================================================
+       TABLE OF CONTENTS
+       ============================================================ */
+    .toc {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px 26px;
+      margin-bottom: 32px;
+      display: none;
+    }
+    .toc-title {
+      font-size: 15px; font-weight: 800; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 8px;
+      cursor: pointer; user-select: none;
+    }
+    .toc-title svg { transition: transform var(--transition); }
+    .toc-title.collapsed svg { transform: rotate(-90deg); }
+    .toc-list { display: flex; flex-direction: column; gap: 0; }
+    .toc-list a {
+      display: block;
+      font-size: 14px; font-weight: 500;
+      color: var(--text-secondary);
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color var(--transition), padding-left var(--transition);
+    }
+    .toc-list a:last-child { border-bottom: none; }
+    .toc-list a:hover { color: var(--accent); padding-left: 6px; }
+    .toc-list a.active { color: var(--accent); font-weight: 700; }
+
+    /* ============================================================
+       PRODUCT CARDS
+       ============================================================ */
+    .product-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin: 28px 0;
+      background: var(--bg);
+      box-shadow: var(--shadow-sm);
+      max-width: 100%;
+    }
+    .product-card-top {
+      display: flex;
+      gap: 24px;
+      padding: 24px;
+    }
+    .product-card-img {
+      flex-shrink: 0;
+      width: 200px;
+      height: 200px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--bg-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-card-img img { width: 100%; height: 100%; object-fit: contain; padding: 12px; }
+    .product-card-body { flex: 1; }
+    .product-card-rank {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--accent); margin-bottom: 6px;
+    }
+    .product-card-rank .rank-badge {
+      background: var(--accent); color: #fff; padding: 2px 8px;
+      border-radius: 4px; font-size: 11px;
+    }
+    .product-card-name {
+      font-size: 1.4rem; font-weight: 800; margin-bottom: 8px; line-height: 1.3;
+    }
+    .product-card-rating {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 10px; font-size: 14px;
+    }
+    .stars { color: #f59e0b; letter-spacing: 2px; }
+    .rating-text { color: var(--text-secondary); font-weight: 500; }
+    .product-card-desc {
+      font-size: 15px; color: var(--text-secondary); line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .product-card-highlights {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;
+      max-width: 100%; overflow: hidden;
+    }
+    .highlight-tag {
+      font-size: 12px; font-weight: 600;
+      padding: 4px 12px; border-radius: 20px;
+      background: var(--accent-light); color: var(--accent);
+    }
+    .product-card-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent); color: #fff !important;
+      padding: 12px 24px; border-radius: var(--radius);
+      font-size: 15px; font-weight: 700;
+      transition: background var(--transition), transform var(--transition);
+      box-sizing: border-box;
+      text-decoration: none !important;
+    }
+    .product-card-cta:hover {
+      background: var(--accent-hover); color: #fff !important; transform: translateY(-1px);
+      text-decoration: none !important;
+    }
+    .product-card-cta svg { transition: transform var(--transition); position: relative; top: 0.5px; }
+    .product-card-cta:hover svg { transform: translateX(3px); }
+
+    /* Pros / Cons */
+    .product-card-details {
+      border-top: 1px solid var(--border);
+      padding: 20px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .pros-cons h4 {
+      font-size: 14px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.06em; margin-bottom: 10px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .pros-cons h4.pros-title { color: var(--green); }
+    .pros-cons h4.cons-title { color: var(--red); }
+    .pros-cons ul { padding: 0; }
+    .pros-cons li {
+      font-size: 14px; line-height: 1.55;
+      padding: 5px 0 5px 22px;
+      position: relative;
+      list-style: none;
+      color: var(--text-secondary);
+    }
+    .pros-cons li::before {
+      position: absolute; left: 0; font-weight: 700; font-size: 14px;
+    }
+    .pros-list li::before { content: '+'; color: var(--green); }
+    .cons-list li::before { content: '\2013'; color: var(--red); }
+
+    /* ============================================================
+       COMPARISON TABLE
+       ============================================================ */
+    .comparison-table-wrap {
+      overflow: hidden;
+      margin: 28px 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      table-layout: fixed;
+    }
+    .comparison-table th {
+      background: var(--bg-dark);
+      color: #fff;
+      font-weight: 700;
+      padding: 14px 18px;
+      text-align: left;
+    }
+    .comparison-table td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr:nth-child(even) td { background: var(--bg-alt); }
+    .comparison-table .table-col-rank,
+    .comparison-table .table-rank { width: 36px; text-align: center; }
+    .comparison-table .table-rank {
+      font-size: 15px; font-weight: 800; color: var(--text-secondary);
+    }
+    .comparison-table .table-stars { white-space: nowrap; }
+    .comparison-table .table-stars .stars { color: #f59e0b; font-size: 13px; letter-spacing: 1px; }
+    .comparison-table .table-stars .rating-num { font-size: 13px; color: var(--text-secondary); font-weight: 600; margin-left: 2px; }
+    .comparison-table .table-col-img,
+    .comparison-table .table-img { width: 68px; padding: 8px !important; }
+    .comparison-table .table-img img {
+      width: 54px; height: 54px; object-fit: cover;
+      border-radius: 6px; display: block;
+      background: var(--bg-alt);
+    }
+    .comparison-table .table-product-name { font-weight: 700; color: var(--text); }
+    .comparison-table td:last-child, .comparison-table th:last-child { text-align: right; }
+    .comparison-table .table-best {
+      background: var(--accent-light);
+      font-weight: 700;
+    }
+    .comparison-table .hide-always { display: none; }
+    .comparison-table .table-cta {
+      display: inline-block;
+      padding: 6px 16px;
+      background: var(--accent);
+      color: #fff !important;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 13px;
+      transition: background var(--transition);
+      white-space: nowrap;
+      text-decoration: none !important;
+    }
+    .comparison-table .table-cta:hover { background: var(--accent-hover); color: #fff !important; text-decoration: none !important; }
+
+    /* ============================================================
+       KEY TAKEAWAY BOX
+       ============================================================ */
+    .key-takeaway {
+      background: var(--bg-alt);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .key-takeaway-label {
+      font-size: 12px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent); margin-bottom: 6px;
+    }
+    .key-takeaway p { font-size: 15px; color: var(--text-secondary); margin: 0; line-height: 1.6; }
+
+    /* ============================================================
+       SOCIAL SHARE
+       ============================================================ */
+    .share-bar {
+      display: flex; align-items: center; gap: 12px;
+      padding: 20px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin: 32px 0;
+    }
+    .share-label { font-size: 14px; font-weight: 700; color: var(--text); }
+    .share-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--bg-alt); border: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 15px; font-weight: 700;
+      transition: all var(--transition); cursor: pointer;
+    }
+    .share-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    /* ============================================================
+       AUTHOR BOX
+       ============================================================ */
+    .author-box {
+      display: flex; gap: 20px;
+      padding: 28px;
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      margin: 32px 0;
+    }
+    .author-box-avatar {
+      width: 72px; height: 72px; border-radius: 50%; flex-shrink: 0;
+      background: var(--accent); display: flex; align-items: center;
+      justify-content: center; color: #fff; font-size: 28px; font-weight: 800;
+    }
+    .author-box-info { flex: 1; }
+    .author-box-name { font-size: 1.1rem; font-weight: 800; margin-bottom: 4px; }
+    .author-box-role { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+    .author-box-bio { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px; }
+    .author-box-link {
+      font-size: 13px; font-weight: 700; color: var(--accent);
+      text-decoration: none; display: inline-block;
+    }
+    .author-box-link:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* ============================================================
+       RELATED POSTS
+       ============================================================ */
+    .related-section {
+      padding: 55px 0 60px;
+      background: var(--bg-alt);
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .related-card {
+      background: var(--bg);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition), transform var(--transition);
+      display: block; color: var(--text);
+    }
+    .related-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+      color: var(--text);
+    }
+    .related-card-img { height: 180px; overflow: hidden; }
+    .related-card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .related-card:hover .related-card-img img { transform: scale(1.05); }
+    .related-card-body { padding: 20px; }
+    .related-card-cat {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; color: var(--accent); margin-bottom: 8px;
+    }
+    .related-card-title { font-size: 1.05rem; font-weight: 800; line-height: 1.35; margin-bottom: 8px; }
+    .related-card-meta { font-size: 13px; color: var(--text-light); }
+
+    /* ============================================================
+       SIDEBAR
+       ============================================================ */
+    .sidebar {
+      display: flex; flex-direction: column; gap: 28px;
+      position: sticky;
+      align-self: start;
+    }
+
+    .widget {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+    }
+    .widget-title {
+      font-size: 1rem; font-weight: 800; margin-bottom: 16px;
+      padding-bottom: 10px; border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    /* TOC sidebar widget */
+    .sidebar-toc {
+      padding: 14px 18px;
+    }
+    .sidebar-toc .widget-title {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      user-select: none;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      font-size: 14px;
+      transition: border-color 0.35s ease 0s, margin-bottom 0.35s ease, padding-bottom 0.35s ease;
+    }
+    .sidebar-toc.expanded .widget-title {
+      border-bottom-color: var(--accent);
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      transition: border-color 0s ease 0s, margin-bottom 0.35s ease, padding-bottom 0.35s ease;
+    }
+    .sidebar-toc .widget-title::after {
+      content: '';
+      width: 8px; height: 8px;
+      border-right: 2px solid var(--text-secondary);
+      border-bottom: 2px solid var(--text-secondary);
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform 0.25s;
+      flex-shrink: 0;
+      margin-left: 10px;
+    }
+    .sidebar-toc.expanded .widget-title::after {
+      transform: rotate(-135deg) translateY(-2px);
+    }
+    .sidebar-toc-list {
+      display: flex; flex-direction: column; gap: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .sidebar-toc.expanded .sidebar-toc-list {
+      max-height: 600px;
+    }
+    .sidebar-toc-list a {
+      display: block; font-size: 13px; font-weight: 500;
+      color: var(--text-secondary); padding: 8px 0 8px 14px;
+      border-left: 2px solid var(--border);
+      transition: color var(--transition), border-left-color var(--transition), background var(--transition);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .sidebar-toc-list a:hover { color: var(--accent); border-left-color: var(--accent); }
+    .sidebar-toc-list a.active {
+      color: var(--accent); font-weight: 700;
+      border-left-color: var(--accent);
+      background: var(--accent-light);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    /* Sidebar top picks widget */
+    .sidebar-picks .widget-title { display: block; }
+    .sidebar-picks-grid {
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar-pick {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .sidebar-pick:first-child { padding-top: 0; }
+    .sidebar-pick:last-child { border-bottom: none; padding-bottom: 0; }
+    .sidebar-pick-badge {
+      position: absolute; top: -1px; left: 0;
+      font-size: 9px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.04em; color: #fff;
+      background: var(--accent); padding: 1px 6px;
+      border-radius: 0 0 4px 0;
+    }
+    .sidebar-pick-img {
+      width: 48px; height: 48px; flex-shrink: 0;
+      border-radius: 6px;
+      overflow: hidden; background: var(--bg-alt);
+      position: relative;
+    }
+    .sidebar-pick-img img { width: 100%; height: 100%; object-fit: cover; }
+    .sidebar-pick-info { flex: 1; min-width: 0; }
+    .sidebar-pick-name { font-size: 13px; font-weight: 700; line-height: 1.3; }
+    .sidebar-pick-rating { font-size: 12px; color: var(--text-secondary); }
+    .sidebar-pick-rating .stars { color: #f59e0b; font-size: 11px; }
+    .sidebar-pick-cta {
+      display: inline-block;
+      padding: 6px 12px; flex-shrink: 0;
+      background: var(--accent); color: #fff !important;
+      border-radius: var(--radius); font-size: 12px; font-weight: 700;
+      text-decoration: none !important;
+      transition: background var(--transition);
+      white-space: nowrap;
+    }
+    .sidebar-pick-cta:hover { background: var(--accent-hover); }
+
+    /* Popular posts widget */
+    .widget-post {
+      display: flex; gap: 12px; padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .widget-post:first-of-type { padding-top: 0; }
+    .widget-post:last-of-type { border-bottom: none; }
+    .widget-post-img {
+      flex-shrink: 0; width: 70px; height: 52px;
+      border-radius: 6px; overflow: hidden;
+    }
+    .widget-post-img img { width: 100%; height: 100%; object-fit: cover; }
+    .widget-post-title { font-size: 13px; font-weight: 700; line-height: 1.4; }
+    .widget-post-title a { color: var(--text); }
+    .widget-post-title a:hover { color: var(--accent); }
+    .widget-post-date { font-size: 12px; color: var(--text-light); margin-top: 3px; }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .footer {
+      background: var(--bg-dark); color: rgba(255,255,255,0.6); padding: 55px 0 0;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr;
+      gap: 40px; padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand .logo { color: #fff; margin-bottom: 14px; display: inline-block; }
+    .footer-brand p { font-size: 14px; line-height: 1.7; margin-bottom: 18px; }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.08); display: flex;
+      align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6); font-size: 14px;
+      transition: background var(--transition), color var(--transition);
+    }
+    .footer-social a:hover { background: var(--accent); color: #fff; }
+    .footer-col h4 { color: #fff; font-size: 15px; font-weight: 700; margin-bottom: 18px; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul a { color: rgba(255,255,255,0.5); font-size: 14px; transition: color var(--transition); }
+    .footer-col ul a:hover { color: var(--accent); }
+    .footer-bottom {
+      padding: 20px 0; display: flex; justify-content: space-between;
+      align-items: center; font-size: 13px;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); }
+    .footer-bottom a:hover { color: var(--accent); }
+    .footer-links { display: flex; gap: 20px; }
+
+    /* ============================================================
+       BACK TO TOP
+       ============================================================ */
+    .back-to-top {
+      position: fixed; bottom: 30px; right: 30px;
+      width: 44px; height: 44px; background: var(--accent); color: #fff;
+      border: none; border-radius: 50%; cursor: pointer; font-size: 20px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow); opacity: 0; transform: translateY(20px);
+      transition: opacity var(--transition), transform var(--transition), background var(--transition);
+      z-index: 900;
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { background: var(--accent-hover); }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 1024px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      .toc { display: block; }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .menu-toggle { display: flex; }
+      .article-title { font-size: 1.8rem; }
+      .article-excerpt { font-size: 16px; }
+      .article-meta { flex-direction: column; align-items: flex-start; }
+      .article-content { font-size: 16px; }
+      .article-content h2 { font-size: 1.4rem; }
+      .article-content h3 { font-size: 1.15rem; }
+      .article-featured-img { width: 100%; }
+      .product-card-top { flex-direction: column; padding: 18px; }
+      .product-card-img { width: 100%; height: 200px; }
+      .product-card-details { grid-template-columns: 1fr; padding: 18px; }
+      .product-card-name { font-size: 1.2rem; }
+      .product-card-desc { font-size: 14px; }
+      .product-card-cta { width: 100%; justify-content: center; }
+      .highlight-tag { font-size: 11px; padding: 3px 10px; }
+      .quick-answer { padding: 20px; }
+      .key-takeaway { padding: 16px 18px; }
+      .comparison-table-wrap { margin: 20px 0; overflow-x: hidden; }
+      .comparison-table th, .comparison-table td { padding: 8px 8px; font-size: 12px; word-break: break-word; }
+      .comparison-table .table-cta { padding: 5px 8px; font-size: 12px; }
+      .comparison-table .table-stars .stars { font-size: 10px; letter-spacing: 0; }
+      .comparison-table .table-stars .rating-num { font-size: 11px; }
+      .comparison-table .table-rank { font-size: 13px; }
+      .comparison-table .table-col-rank, .comparison-table .table-rank { width: 24px; }
+      .comparison-table .table-col-img, .comparison-table .table-img { width: 54px; padding: 6px !important; }
+      .comparison-table .table-img img { width: 44px; height: 44px; }
+      .comparison-table .hide-mobile { display: none; }
+      .toc { padding: 14px 18px; margin-bottom: 24px; }
+      .toc-title { margin-bottom: 0; font-size: 14px; }
+      .toc-title.collapsed { margin-bottom: 0; }
+      .toc-list a { padding: 6px 0; font-size: 13px; }
+      .share-bar { flex-wrap: wrap; }
+      .related-grid { grid-template-columns: 1fr; }
+      .author-box { flex-direction: column; text-align: center; padding: 22px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .article-title { font-size: 1.45rem; }
+      .product-card-name { font-size: 1.1rem; }
+      .product-card-top { padding: 16px; gap: 16px; }
+      .product-card-img { height: 180px; }
+      .section-title { font-size: 1.3rem; }
+    }
+    /* Affiliate disclosure */
+    .affiliate-disclosure {
+      font-size: 12px;
+      color: var(--text-light);
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+
+    /* Why Trust Us bar */
+    .trust-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      background: var(--accent-light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 20px;
+      margin-bottom: 28px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+    .trust-bar span {
+      white-space: nowrap;
+    }
+    .trust-bar .trust-sep {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--text-light);
+      flex-shrink: 0;
+    }
+
+    /* Table row hover highlight */
+    .comparison-table tbody tr:hover td { background: var(--accent-light); }
+    .comparison-table tbody tr { cursor: pointer; }
+
+    /* Mobile sticky bottom CTA */
+    .mobile-sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: var(--accent);
+      text-align: center;
+      padding: 10px 16px;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .mobile-sticky-cta.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .mobile-sticky-cta a {
+      color: #fff !important;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .mobile-sticky-cta {
+        display: block;
+      }
+      .back-to-top.visible {
+        bottom: 62px;
+      }
+    }
+
+    /* ============================================================
+       HOW-TO META BOX
+       ============================================================ */
+    .how-to-meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .how-to-meta-item {
+      background: var(--bg);
+      padding: 16px;
+      text-align: center;
+    }
+    .how-to-meta-icon {
+      font-size: 22px;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
+    .how-to-meta-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+    .how-to-meta-value {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text);
+    }
+    @media (max-width: 600px) {
+      .how-to-meta { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ============================================================
+       STEP TIP & WARNING CALLOUTS
+       ============================================================ */
+    .step-tip {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #166534;
+    }
+    .step-tip strong { color: #15803d; }
+    .step-warning {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #991b1b;
+    }
+    .step-warning strong { color: #dc2626; }
+    html.dark .step-tip { background: rgba(22,163,74,0.1); border-color: rgba(22,163,74,0.3); color: #86efac; }
+    html.dark .step-tip strong { color: #4ade80; }
+    html.dark .step-warning { background: rgba(220,38,38,0.1); border-color: rgba(220,38,38,0.3); color: #fca5a5; }
+    html.dark .step-warning strong { color: #f87171; }
+
+    /* ============================================================
+       SIDEBAR CHECKLIST WIDGET
+       ============================================================ */
+    .sidebar-checklist .widget-title { display: block; }
+    .checklist-section { margin-bottom: 16px; }
+    .checklist-section:last-child { margin-bottom: 0; }
+    .checklist-heading {
+      font-size: 12px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .checklist-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 7px 0; cursor: pointer;
+      font-size: 13px; color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+      transition: color var(--transition);
+    }
+    .checklist-item:last-child { border-bottom: none; }
+    .checklist-item:hover { color: var(--text); }
+    .checklist-item input[type="checkbox"] {
+      width: 16px; height: 16px; flex-shrink: 0;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+    .checklist-item input:checked + span {
+      text-decoration: line-through;
+      color: var(--text-light);
+    }
+  </style>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Install an Under-Sink Water Filter (Step-by-Step)",
+    "description": "Installing an under-sink water filter is easier than you think. This guide walks you through the entire process in 8 simple steps — no plumber needed.",
+    "datePublished": "2026-03-03",
+    "dateModified": "2026-03-03",
+    "author": {
+      "@type": "Person",
+      "name": "Author Name"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "YourBlog"
+    }
+  }
+  </script>
+
+  <!-- HowTo Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Install an Under-Sink Water Filter",
+    "description": "Step-by-step guide to installing an under-sink water filter system.",
+    "totalTime": "PT2H",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "150-300"
+    },
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Turn Off Water Supply",
+        "text": "Locate the cold water shut-off valve under your sink and turn it clockwise until it stops. Then open the cold water faucet to release any remaining pressure in the line."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Clear the Cabinet",
+        "text": "Remove everything from under the sink to give yourself plenty of room to work. Lay down towels to catch any drips during the installation process."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Mount the Filter",
+        "text": "Position the filter bracket on the inside wall of the cabinet and mark the screw holes. Drill pilot holes and secure the bracket with the included screws, then snap the filter housing into place."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Connect the Water Line",
+        "text": "Install the feed water adapter on the cold water supply line. Connect the tubing from the adapter to the filter inlet, making sure to wrap all threaded connections with Teflon tape."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Install the Faucet",
+        "text": "Drill a hole in the countertop or use an existing sprayer hole for the dedicated filter faucet. Feed the faucet stem through the hole, secure it from below, and connect the tubing from the filter outlet."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Flush the System",
+        "text": "Turn the water supply back on slowly and let the system fill. Run the dedicated faucet for 5-10 minutes to flush out any carbon fines and manufacturing residue from the new filter."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Check for Leaks",
+        "text": "Inspect every connection point carefully while the water is running. Place a dry paper towel under each fitting and check after 15 minutes for any moisture. Tighten any connections that show drips."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Final Testing",
+        "text": "Fill a glass from the dedicated faucet and check for clarity, taste, and odor. If you have a TDS meter, test the filtered water against your tap water to verify the filter is working correctly."
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="search-overlay">
+  <div class="search-box">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" placeholder="Search articles..." autofocus />
+    <button class="search-close" id="search-close" aria-label="Close search">&times;</button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="header-main">
+    <a href="/" class="logo">Your<span>Blog</span></a>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Filters</a>
+      <a href="#">Heaters</a>
+      <a href="#">Softeners</a>
+      <a href="#">Blog</a>
+      <a href="#">About</a>
+      <a href="#" class="nav-start-here">Start Here</a>
+    </nav>
+    <div class="header-actions">
+      <button class="header-btn" id="search-btn" aria-label="Search">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="header-btn" id="dark-mode-btn" aria-label="Toggle dark mode">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      </button>
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="#">Home</a>
+  <a href="#">Filters</a>
+  <a href="#">Heaters</a>
+  <a href="#">Softeners</a>
+  <a href="#">Blog</a>
+  <a href="#">About</a>
+  <a href="#" class="nav-start-here">Start Here</a>
+</nav>
+
+<!-- BREADCRUMBS -->
+<!-- ARTICLE + SIDEBAR -->
+<div class="container">
+  <div class="article-layout">
+    <!-- MAIN ARTICLE -->
+    <article>
+      <div class="breadcrumbs">
+        <a href="/">Home</a> <span>/</span> <a href="#">Tutorials</a> <span>/</span> Install Under-Sink Water Filter
+      </div>
+      <!-- Header -->
+      <div class="article-header">
+        <span class="article-cat">Tutorials</span>
+        <h1 class="article-title">How to Install an Under-Sink Water Filter (Step-by-Step)</h1>
+        <p class="article-excerpt">Installing an under-sink water filter is easier than you think. This guide walks you through the entire process in 8 simple steps &mdash; no plumber needed.</p>
+        <div class="article-meta">
+          <div class="article-author">
+            <div class="article-author-avatar">A</div>
+            <div class="article-author-info">
+              <div class="article-author-name">Author Name</div>
+              <div class="article-author-date">Last Updated: March 3, 2026 &bull; 9 min read</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div class="article-featured-img">
+        <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=900&q=80" alt="Installing an under-sink water filter step by step" />
+      </div>
+
+      <!-- How-To Meta Box -->
+      <div class="how-to-meta">
+        <div class="how-to-meta-item">
+          <div class="how-to-meta-icon">&#9200;</div>
+          <div class="how-to-meta-label">Time Required</div>
+          <div class="how-to-meta-value">1-2 Hours</div>
+        </div>
+        <div class="how-to-meta-item">
+          <div class="how-to-meta-icon">&#9881;</div>
+          <div class="how-to-meta-label">Difficulty</div>
+          <div class="how-to-meta-value">Easy-Moderate</div>
+        </div>
+        <div class="how-to-meta-item">
+          <div class="how-to-meta-icon">&#128176;</div>
+          <div class="how-to-meta-label">Cost</div>
+          <div class="how-to-meta-value">$150-300</div>
+        </div>
+        <div class="how-to-meta-item">
+          <div class="how-to-meta-icon">&#128295;</div>
+          <div class="how-to-meta-label">Tools Needed</div>
+          <div class="how-to-meta-value">3 Items</div>
+        </div>
+      </div>
+
+      <!-- Table of Contents (mobile/inline) -->
+      <div class="toc">
+        <div class="toc-title" id="toc-toggle">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          Table of Contents
+        </div>
+        <div class="toc-list" id="toc-list">
+          <a href="#what-youll-need">What You'll Need</a>
+          <a href="#before-you-start">Before You Start</a>
+          <a href="#step-1">Step 1: Turn Off Water</a>
+          <a href="#step-2">Step 2: Clear the Cabinet</a>
+          <a href="#step-3">Step 3: Mount the Filter</a>
+          <a href="#step-4">Step 4: Connect the Water Line</a>
+          <a href="#step-5">Step 5: Install the Faucet</a>
+          <a href="#step-6">Step 6: Flush the System</a>
+          <a href="#step-7">Step 7: Check for Leaks</a>
+          <a href="#step-8">Step 8: Final Testing</a>
+          <a href="#troubleshooting">Troubleshooting</a>
+          <a href="#faq">FAQ</a>
+          <a href="#summary">Summary</a>
+        </div>
+      </div>
+
+      <!-- ARTICLE CONTENT -->
+      <div class="article-content">
+        <p>An under-sink water filter is one of the best upgrades you can make to your kitchen. It provides clean, filtered water on demand from a dedicated faucet &mdash; no more refilling pitchers or buying bottled water.</p>
+        <p>The good news? You don't need a plumber. Most under-sink filter systems are designed for DIY installation, and the entire process takes about 1-2 hours with basic tools. This guide walks you through every step so you can get it done right the first time.</p>
+
+        <!-- What You'll Need -->
+        <h2 id="what-youll-need">What You'll Need</h2>
+        <p>Before you start, gather everything in one place. There's nothing worse than being mid-install with water dripping and realizing you're missing a tool.</p>
+        <h3>Tools</h3>
+        <ul>
+          <li><strong>Adjustable wrench</strong> &mdash; for tightening supply line connections</li>
+          <li><strong>Drill with 1/2" bit</strong> &mdash; for mounting the bracket and drilling the faucet hole (if needed)</li>
+          <li><strong>Teflon tape</strong> &mdash; for sealing threaded connections and preventing leaks</li>
+          <li><strong>Bucket &amp; towels</strong> &mdash; for catching water when disconnecting the supply line</li>
+        </ul>
+        <h3>Materials</h3>
+        <ul>
+          <li><strong>Under-sink filter system</strong> &mdash; includes filter housing, cartridge, and tubing</li>
+          <li><strong>Dedicated faucet</strong> &mdash; usually included with the filter kit</li>
+          <li><strong>Feed water adapter</strong> &mdash; connects your existing cold water line to the filter</li>
+        </ul>
+
+        <div class="step-tip">
+          <strong>Tip:</strong> Most quality filter systems (like the APEC ROES-50) include all the hardware, tubing, and fittings you need. Check what's in the box before buying anything extra.
+        </div>
+
+        <!-- Before You Start -->
+        <h2 id="before-you-start">Before You Start</h2>
+        <p>A few things to consider before you begin the installation:</p>
+        <ul>
+          <li><strong>Check your water pressure.</strong> Most under-sink systems require 40-80 PSI. If your pressure is too low, the filter won't work efficiently.</li>
+          <li><strong>Measure your cabinet space.</strong> Make sure the filter housing fits under your sink with room to spare for filter changes.</li>
+          <li><strong>Identify your faucet mounting point.</strong> Many sinks have a pre-drilled hole (often covered by a soap dispenser cap or sprayer). If not, you'll need to drill through the countertop.</li>
+          <li><strong>Read the manual first.</strong> Every system is slightly different. Skim the instructions before you start so you know what to expect.</li>
+        </ul>
+
+        <div class="step-warning">
+          <strong>Warning:</strong> If you have a granite or marble countertop, do not attempt to drill a faucet hole yourself. The stone can crack. Hire a countertop specialist for this step &mdash; the rest of the install is still DIY-friendly.
+        </div>
+
+        <!-- Step 1 -->
+        <h2 id="step-1">Step 1: Turn Off the Water Supply</h2>
+        <p>Locate the cold water shut-off valve under your sink. It's typically on the right side, connected to the cold water supply line running up to your faucet. Turn the valve clockwise until it stops.</p>
+        <p>Once the valve is closed, open the cold water faucet above to release any remaining pressure in the line. Let it run until the water stops completely &mdash; this usually takes 10-15 seconds.</p>
+
+        <div class="step-tip">
+          <strong>Tip:</strong> Place a bucket directly under the shut-off valve before disconnecting anything. Even with the water off, there's always some water trapped in the line that will drip out.
+        </div>
+
+        <!-- Step 2 -->
+        <h2 id="step-2">Step 2: Clear the Cabinet</h2>
+        <p>Remove everything from under the sink &mdash; cleaning supplies, trash bags, all of it. You need clear access to the cold water supply line, the cabinet wall (for mounting), and the underside of the countertop (for the faucet).</p>
+        <p>Lay down old towels on the cabinet floor to absorb any water that drips during the installation. A headlamp or battery-powered light is extremely helpful here since under-sink areas are notoriously dark.</p>
+
+        <div class="step-tip">
+          <strong>Tip:</strong> Take a photo of your existing plumbing setup before you start. If anything goes wrong, you'll have a reference for how it looked originally.
+        </div>
+
+        <!-- Step 3 -->
+        <h2 id="step-3">Step 3: Mount the Filter Bracket</h2>
+        <p>Position the filter bracket on the inside wall of the cabinet. Most systems mount on the left or right wall, but choose whichever side gives you the most room and keeps the filter accessible for future cartridge changes.</p>
+        <p>Hold the bracket in place and mark the screw holes with a pencil. Drill pilot holes (this prevents the wood from splitting), then secure the bracket with the included screws. Snap or slide the filter housing into the bracket.</p>
+
+        <div class="step-warning">
+          <strong>Warning:</strong> Make sure you mount the bracket at a height that allows you to easily remove and replace the filter cartridge. Leave at least 2-3 inches of clearance below the housing for cartridge removal.
+        </div>
+
+        <!-- Step 4 -->
+        <h2 id="step-4">Step 4: Connect the Water Line</h2>
+        <p>This is the most critical step. You'll need to tap into your existing cold water supply line to feed water into the filter.</p>
+        <p>Disconnect the cold water supply line from the shut-off valve using your adjustable wrench. Install the feed water adapter (also called a tee fitting) onto the shut-off valve. Wrap the threads with 2-3 layers of Teflon tape before connecting &mdash; always wrap in the direction you'll be tightening.</p>
+        <p>Reconnect your existing supply line to one port of the adapter, and connect the filter inlet tubing to the other port. Hand-tighten first, then give each connection a quarter-turn with the wrench.</p>
+
+        <div class="step-tip">
+          <strong>Tip:</strong> Don't over-tighten the connections. With Teflon tape, hand-tight plus a quarter-turn with a wrench is usually enough. Over-tightening can crack the fittings.
+        </div>
+
+        <!-- Step 5 -->
+        <h2 id="step-5">Step 5: Install the Dedicated Faucet</h2>
+        <p>If your sink has a pre-drilled hole (check for a cap or unused sprayer hole), remove the cap and use that opening. If not, you'll need to drill a new hole in the countertop using the appropriate bit for your material.</p>
+        <p>Feed the faucet stem through the hole from above. From below, slide on the rubber gasket, the mounting plate, and the nut. Tighten the nut by hand until the faucet is snug and doesn't rotate.</p>
+        <p>Connect the tubing from the filter outlet to the faucet stem underneath. Push the tubing firmly into the quick-connect fitting until you hear or feel it click into place.</p>
+
+        <div class="step-tip">
+          <strong>Tip:</strong> For stainless steel sinks, use a step drill bit (also called a unibit) for a clean hole. Standard drill bits can grab and tear the metal.
+        </div>
+
+        <!-- Step 6 -->
+        <h2 id="step-6">Step 6: Flush the System</h2>
+        <p>With everything connected, it's time to turn the water back on &mdash; but do it slowly. Open the shut-off valve gradually (counter-clockwise) to let the system fill without a pressure surge.</p>
+        <p>Open the dedicated filter faucet and let it run for 5-10 minutes. The water may come out cloudy or have black specks at first &mdash; this is completely normal. It's carbon fines from the new filter cartridge being flushed out.</p>
+        <p>Continue flushing until the water runs clear and tastes clean. Some systems recommend flushing 2-3 gallons; check your manual for the specific recommendation.</p>
+
+        <div class="step-warning">
+          <strong>Warning:</strong> Do not drink the water during the initial flush. The carbon fines are harmless but unpleasant. Wait until the water runs completely clear before using it for drinking or cooking.
+        </div>
+
+        <!-- Step 7 -->
+        <h2 id="step-7">Step 7: Check for Leaks</h2>
+        <p>With the water running, carefully inspect every connection point. Start at the shut-off valve and work your way through each fitting: the feed water adapter, the filter inlet, the filter outlet, and the faucet connection.</p>
+        <p>The best method: place a dry paper towel under each connection and check it after 15 minutes. Even a tiny drip will show up clearly on the paper towel.</p>
+        <p>If you find a leak, turn off the water, disconnect the leaking fitting, add more Teflon tape, and reconnect. Most leaks are caused by insufficient tape or connections that aren't quite tight enough.</p>
+
+        <div class="step-tip">
+          <strong>Tip:</strong> Check for leaks again after 24 hours. Some very slow drips don't show up immediately but will become obvious overnight. Place a dry towel under the system and check the next morning.
+        </div>
+
+        <!-- Step 8 -->
+        <h2 id="step-8">Step 8: Final Testing</h2>
+        <p>Fill a glass from the dedicated faucet and evaluate the water. It should be crystal clear with no cloudiness, particles, or unusual taste. Compare it side-by-side with an unfiltered glass of tap water &mdash; you should notice a significant difference in taste and odor.</p>
+        <p>If you have a TDS (Total Dissolved Solids) meter, test both your tap water and filtered water. A reverse osmosis system should reduce TDS by 90-99%. A standard carbon filter won't change TDS much but will remove chlorine taste and odor.</p>
+        <p>Finally, mark your calendar for the next filter change. Most under-sink filters need replacement every 6-12 months depending on your water quality and usage.</p>
+
+        <div class="step-tip">
+          <strong>Tip:</strong> Write the installation date on the filter housing with a permanent marker. This makes it easy to track when the filter needs replacing without trying to remember.
+        </div>
+
+        <!-- Troubleshooting -->
+        <h2 id="troubleshooting">Troubleshooting Common Issues</h2>
+        <h3>Low water flow from the filter faucet</h3>
+        <p>This is the most common issue after installation. Check that all tubing is free of kinks, the shut-off valve is fully open, and your home water pressure is at least 40 PSI. If you have an RO system, the storage tank may need 2-4 hours to fill completely before you'll get full flow.</p>
+
+        <h3>Water tastes strange or has an odor</h3>
+        <p>If the filtered water has a plastic or chemical taste, you likely didn't flush the system long enough. Run the faucet for another 10-15 minutes. If the taste persists after flushing 5+ gallons, the filter cartridge may be defective &mdash; contact the manufacturer for a replacement.</p>
+
+        <h3>Leaking at connections</h3>
+        <p>Turn off the water, dry the connection thoroughly, and reapply Teflon tape (3-4 wraps this time). Make sure you're wrapping the tape in the correct direction &mdash; clockwise when looking at the end of the fitting. If a quick-connect fitting leaks, make sure the tubing is cut cleanly and pushed in all the way until it clicks.</p>
+
+        <h3>Filter faucet drips when turned off</h3>
+        <p>A dripping faucet usually means the faucet handle wasn't tightened enough during installation, or the internal O-ring is misaligned. Remove the faucet handle, check the O-ring, and reassemble. If the problem persists, the faucet may be defective.</p>
+
+        <!-- FAQ -->
+        <h2 id="faq">Frequently Asked Questions</h2>
+        <h3>Do I need a plumber to install an under-sink water filter?</h3>
+        <p>No. Most under-sink filter systems are specifically designed for DIY installation. If you can use a wrench and a drill, you can install one yourself in 1-2 hours. The only exception is if you need to drill through granite, marble, or another hard countertop material &mdash; in that case, hire a countertop specialist for just the drilling step.</p>
+
+        <h3>Will an under-sink filter reduce my water pressure?</h3>
+        <p>The filter supplies water through its own dedicated faucet, so it has no effect on your main kitchen faucet's pressure. The dedicated faucet will have a slightly lower flow rate than your main faucet (typically 0.5-1.0 GPM), which is normal and by design &mdash; slower flow means better filtration.</p>
+
+        <h3>How often do I need to replace the filter cartridge?</h3>
+        <p>Most under-sink filters need replacement every 6-12 months, depending on your water quality and daily usage. RO systems have multiple stages with different replacement schedules: sediment and carbon pre-filters every 6-12 months, the RO membrane every 2-3 years. Your system's manual will have specific recommendations.</p>
+
+        <!-- Summary -->
+        <h2 id="summary">Summary</h2>
+        <p>Installing an under-sink water filter is a straightforward DIY project that pays for itself quickly in better-tasting water and savings over bottled water. The key to a successful installation is preparation &mdash; gather your tools, read the manual, and take your time with the connections.</p>
+
+        <div class="key-takeaway">
+          <div class="key-takeaway-label">Key Takeaway</div>
+          <p>The entire installation takes 1-2 hours and requires just three tools: an adjustable wrench, a drill, and Teflon tape. Turn off the water first, take your time with connections, use Teflon tape on every threaded fitting, and always flush the system for at least 5-10 minutes before drinking. Check for leaks twice &mdash; once immediately and again after 24 hours.</p>
+        </div>
+      </div>
+
+      <!-- SHARE BAR -->
+      <div class="share-bar">
+        <span class="share-label">Share this article:</span>
+        <button class="share-btn" aria-label="Share on Facebook">f</button>
+        <button class="share-btn" aria-label="Share on Twitter">X</button>
+        <button class="share-btn" aria-label="Share on Pinterest">P</button>
+        <button class="share-btn" aria-label="Copy link">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </button>
+      </div>
+
+      <!-- AUTHOR BOX -->
+      <div class="author-box animate-on-scroll">
+        <div class="author-box-avatar">A</div>
+        <div class="author-box-info">
+          <div class="author-box-name">Author Name</div>
+          <div class="author-box-role">DIY &amp; Home Improvement Writer</div>
+          <p class="author-box-bio">Author Name has been writing step-by-step home improvement guides for over 6 years. They specialize in making complex projects accessible to beginners, with a focus on water treatment, plumbing, and kitchen upgrades.</p>
+          <a href="#" class="author-box-link">More about the author &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="widget sidebar-toc">
+        <h3 class="widget-title">Table of Contents</h3>
+        <div class="sidebar-toc-list">
+          <a href="#what-youll-need">What You'll Need</a>
+          <a href="#before-you-start">Before You Start</a>
+          <a href="#step-1">Step 1: Turn Off Water</a>
+          <a href="#step-2">Step 2: Clear the Cabinet</a>
+          <a href="#step-3">Step 3: Mount the Filter</a>
+          <a href="#step-4">Step 4: Connect Water Line</a>
+          <a href="#step-5">Step 5: Install the Faucet</a>
+          <a href="#step-6">Step 6: Flush the System</a>
+          <a href="#step-7">Step 7: Check for Leaks</a>
+          <a href="#step-8">Step 8: Final Testing</a>
+          <a href="#troubleshooting">Troubleshooting</a>
+          <a href="#faq">FAQ</a>
+          <a href="#summary">Summary</a>
+        </div>
+      </div>
+
+      <div class="widget sidebar-checklist">
+        <h3 class="widget-title">What You'll Need</h3>
+        <div class="checklist-section">
+          <h4 class="checklist-heading">Tools</h4>
+          <label class="checklist-item">
+            <input type="checkbox" />
+            <span>Adjustable wrench</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox" />
+            <span>Drill with 1/2" bit</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox" />
+            <span>Teflon tape</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox" />
+            <span>Bucket &amp; towels</span>
+          </label>
+        </div>
+        <div class="checklist-section">
+          <h4 class="checklist-heading">Materials</h4>
+          <label class="checklist-item">
+            <input type="checkbox" />
+            <span>Under-sink filter system</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox" />
+            <span>Dedicated faucet (usually included)</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox" />
+            <span>Feed water adapter</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="widget">
+        <h3 class="widget-title">Related Articles</h3>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">Best Under-Sink Water Filters of 2026</a></div>
+            <div class="widget-post-date">March 1, 2026</div>
+          </div>
+        </div>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">How to Test Your Tap Water at Home</a></div>
+            <div class="widget-post-date">Feb 18, 2026</div>
+          </div>
+        </div>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">RO vs. Carbon Filters: Which Is Right for You?</a></div>
+            <div class="widget-post-date">Feb 10, 2026</div>
+          </div>
+        </div>
+        <div class="widget-post">
+          <div class="widget-post-img">
+            <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=200&q=70" alt="Post" loading="lazy" />
+          </div>
+          <div>
+            <div class="widget-post-title"><a href="#">When to Replace Your Water Filter (Signs to Watch)</a></div>
+            <div class="widget-post-date">Jan 28, 2026</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- RELATED POSTS -->
+<section class="related-section">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <h2 class="section-title" style="font-size:1.5rem; margin-bottom: 28px;">You Might Also Like</h2>
+    </div>
+    <div class="related-grid">
+      <a href="#" class="related-card animate-on-scroll">
+        <div class="related-card-img">
+          <img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?w=500&q=70" alt="Related post" loading="lazy" />
+        </div>
+        <div class="related-card-body">
+          <div class="related-card-cat">Filters</div>
+          <h3 class="related-card-title">Best Under-Sink Water Filters: 5 Top Picks for 2026</h3>
+          <div class="related-card-meta">March 1, 2026 &bull; 12 min read</div>
+        </div>
+      </a>
+      <a href="#" class="related-card animate-on-scroll">
+        <div class="related-card-img">
+          <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=500&q=70" alt="Related post" loading="lazy" />
+        </div>
+        <div class="related-card-body">
+          <div class="related-card-cat">Guides</div>
+          <h3 class="related-card-title">How to Test Your Tap Water Quality at Home (Step-by-Step)</h3>
+          <div class="related-card-meta">Feb 14, 2026 &bull; 8 min read</div>
+        </div>
+      </a>
+      <a href="#" class="related-card animate-on-scroll">
+        <div class="related-card-img">
+          <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500&q=70" alt="Related post" loading="lazy" />
+        </div>
+        <div class="related-card-body">
+          <div class="related-card-cat">Comparisons</div>
+          <h3 class="related-card-title">Reverse Osmosis vs. Carbon Filters: Which Should You Choose?</h3>
+          <div class="related-card-meta">Feb 5, 2026 &bull; 10 min read</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">Your<span>Blog</span></a>
+        <p>Your trusted source for honest reviews, expert guides, and actionable advice. We help you make smarter decisions.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="Pinterest">Pin</a>
+          <a href="#" aria-label="Twitter">X</a>
+          <a href="#" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#">Water Filters</a></li>
+          <li><a href="#">Water Heaters</a></li>
+          <li><a href="#">Water Softeners</a></li>
+          <li><a href="#">Guides</a></li>
+          <li><a href="#">Comparisons</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Popular</h4>
+        <ul>
+          <li><a href="#">Best Water Filters</a></li>
+          <li><a href="#">Best RO Systems</a></li>
+          <li><a href="#">Best Water Heaters</a></li>
+          <li><a href="#">Water Testing Guide</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Disclosure</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 YourBlog. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<!-- SCRIPTS -->
+<script>
+  const header = document.getElementById('header');
+  const progressBar = document.getElementById('scroll-progress');
+  const backToTop = document.getElementById('back-to-top');
+
+  // Scroll: header shadow, progress bar, back to top, sidebar TOC highlight
+  const tocLinks = document.querySelectorAll('.sidebar-toc-list a');
+  const sections = [];
+  tocLinks.forEach(a => {
+    const id = a.getAttribute('href')?.replace('#', '');
+    if (id) { const el = document.getElementById(id); if (el) sections.push({ el, link: a }); }
+  });
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    header.classList.toggle('scrolled', scrollY > 10);
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (docHeight > 0 ? (scrollY / docHeight) * 100 : 0) + '%';
+    backToTop.classList.toggle('visible', scrollY > 500);
+
+    // Highlight active TOC item
+    let current = '';
+    sections.forEach(s => {
+      if (scrollY >= s.el.offsetTop - 100) current = s.el.id;
+    });
+    tocLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Mobile nav drawer
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  const mobileOverlay = document.getElementById('mobile-nav-overlay');
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    mobileNav.classList.toggle('open');
+    mobileOverlay.classList.toggle('open');
+  });
+  mobileOverlay.addEventListener('click', () => {
+    menuToggle.classList.remove('active');
+    mobileNav.classList.remove('open');
+    mobileOverlay.classList.remove('open');
+  });
+
+  // Search overlay
+  const searchBtn = document.getElementById('search-btn');
+  const searchOverlay = document.getElementById('search-overlay');
+  const searchClose = document.getElementById('search-close');
+  searchBtn.addEventListener('click', () => { searchOverlay.classList.add('open'); searchOverlay.querySelector('input').focus(); });
+  searchClose.addEventListener('click', () => searchOverlay.classList.remove('open'));
+  searchOverlay.addEventListener('click', (e) => { if (e.target === searchOverlay) searchOverlay.classList.remove('open'); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') searchOverlay.classList.remove('open'); });
+
+  // Dark mode
+  const darkBtn = document.getElementById('dark-mode-btn');
+  darkBtn.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+  });
+  if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
+
+  // TOC toggle
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocList = document.getElementById('toc-list');
+  tocToggle.addEventListener('click', () => {
+    tocToggle.classList.toggle('collapsed');
+    tocList.style.display = tocToggle.classList.contains('collapsed') ? 'none' : 'flex';
+  });
+
+  // Sidebar TOC toggle (collapsed by default)
+  const sidebarToc = document.querySelector('.sidebar-toc');
+  if (sidebarToc) {
+    const sidebarTitle = sidebarToc.querySelector('.widget-title');
+    sidebarTitle.addEventListener('click', () => {
+      sidebarToc.classList.toggle('expanded');
+    });
+  }
+
+  // Sidebar sticky: align with article title, stick when bottom reached
+  const sidebar = document.querySelector('.sidebar');
+  const articleTitle = document.querySelector('.article-title');
+  if (sidebar && articleTitle && window.innerWidth > 1024) {
+    const padding = 20;
+    function setSidebarSticky() {
+      // Calculate offset from top of article-layout to article title
+      const layout = document.querySelector('.article-layout');
+      const titleOffset = articleTitle.offsetTop - layout.offsetTop;
+      sidebar.style.paddingTop = titleOffset + 'px';
+
+      const sidebarH = sidebar.offsetHeight;
+      const viewportH = window.innerHeight;
+      if (sidebarH > viewportH - padding) {
+        sidebar.style.top = -(sidebarH - viewportH + padding) + 'px';
+      } else {
+        sidebar.style.top = padding + 'px';
+      }
+    }
+    setSidebarSticky();
+    window.addEventListener('resize', setSidebarSticky);
+    sidebar.addEventListener('click', () => setTimeout(setSidebarSticky, 400));
+  }
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+  // Comparison table row click — navigate to Check Price link in that row
+  document.querySelectorAll('.comparison-table tbody tr').forEach(row => {
+    row.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return; // don't double-navigate if clicking the link itself
+      const link = row.querySelector('.table-cta');
+      if (link) link.click();
+    });
+  });
+</script>
+
+</body>
+</html>
