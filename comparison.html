@@ -888,9 +888,8 @@
     .trust-bar {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       gap: 20px;
-      flex-wrap: wrap;
       background: var(--accent-light);
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -903,12 +902,24 @@
     .trust-bar span {
       white-space: nowrap;
     }
+    .trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
     .trust-bar .trust-sep {
       width: 4px;
       height: 4px;
       border-radius: 50%;
       background: var(--text-light);
       flex-shrink: 0;
+    }
+    .trust-icon {
+      color: var(--accent);
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      .trust-bar { display: none; }
     }
 
     /* Table row hover highlight */
@@ -995,7 +1006,10 @@
     }
     .verdict-winner-img img { width: 100%; height: 100%; object-fit: cover; }
     .verdict-winner-name { font-size: 14px; font-weight: 800; margin-bottom: 2px; }
-    .verdict-winner-score { font-size: 13px; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
+    .verdict-winner-rating { font-size: 13px; margin-bottom: 4px; }
+    .verdict-winner-rating .stars { color: #f59e0b; letter-spacing: 1px; }
+    .verdict-winner-rating .rating-text { color: var(--text-secondary); font-weight: 600; }
+    .verdict-winner-score { font-size: 11px; color: var(--text-secondary); font-weight: 600; margin-bottom: 10px; }
     .verdict-cta {
       display: inline-block; padding: 8px 18px;
       background: var(--accent); color: #fff !important;
@@ -1017,7 +1031,10 @@
     }
     .verdict-loser-img img { width: 100%; height: 100%; object-fit: cover; }
     .verdict-loser-name { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
-    .verdict-loser-score { font-size: 12px; color: var(--text-secondary); font-weight: 600; margin-bottom: 8px; }
+    .verdict-loser-rating { font-size: 12px; margin-bottom: 4px; }
+    .verdict-loser-rating .stars { color: #f59e0b; letter-spacing: 1px; font-size: 11px; }
+    .verdict-loser-rating .rating-text { color: var(--text-secondary); font-weight: 600; }
+    .verdict-loser-score { font-size: 11px; color: var(--text-secondary); font-weight: 600; margin-bottom: 8px; }
     .verdict-cta-secondary {
       display: inline-block; padding: 6px 14px;
       border: 1px solid var(--accent); color: var(--accent) !important;
@@ -1035,7 +1052,7 @@
     .product-showdown {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
-      align-items: center;
+      align-items: start;
       gap: 0;
       margin: 28px 0;
       border: 1px solid var(--border);
@@ -1046,13 +1063,13 @@
     }
     .showdown-product {
       text-align: center;
-      padding: 28px 20px;
+      padding: 22px 16px;
       position: relative;
     }
     .showdown-product-img {
-      width: 160px;
-      height: 160px;
-      margin: 0 auto 14px;
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 10px;
       border-radius: var(--radius-lg);
       overflow: hidden;
       background: var(--bg-alt);
@@ -1063,8 +1080,7 @@
     .showdown-product-img img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      padding: 10px;
+      object-fit: cover;
     }
     .showdown-product-name {
       font-size: 1rem;
@@ -1103,17 +1119,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 52px;
-      height: 52px;
+      align-self: start;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background: var(--bg-dark);
       color: #fff;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 900;
       letter-spacing: -0.02em;
       flex-shrink: 0;
       box-shadow: var(--shadow);
-      z-index: 1;
+      z-index: 2;
+      margin: 0 -8px;
+      margin-top: 62px;
     }
     .showdown-winner-badge {
       position: absolute;
@@ -1133,18 +1152,18 @@
     }
     .showdown-stats {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 1px;
       background: var(--border);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       text-align: center;
     }
     .showdown-stat {
       background: var(--bg);
-      padding: 8px 6px;
+      padding: 6px 4px;
     }
     .showdown-stat-label {
       display: block;
@@ -1167,8 +1186,8 @@
     .showdown-highlights {
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      margin-bottom: 16px;
+      gap: 3px;
+      margin-bottom: 12px;
       align-items: center;
     }
     .showdown-pro, .showdown-con {
@@ -1181,16 +1200,61 @@
     @media (max-width: 600px) {
       .product-showdown {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
       }
-      .showdown-product { padding: 22px 16px; }
-      .showdown-product:first-child { border-bottom: 1px solid var(--border); }
-      .showdown-product:last-child { border-top: 1px solid var(--border); }
-      .showdown-product-img { width: 120px; height: 120px; }
+      .showdown-product {
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        gap: 0 16px;
+        text-align: left;
+        padding: 20px 16px;
+      }
+      .showdown-product-img {
+        grid-row: 1 / 4;
+        width: 110px; height: 110px;
+        margin: 0;
+        align-self: center;
+      }
+      .showdown-winner-badge {
+        position: absolute;
+        top: 10px; left: 10px;
+        transform: none;
+      }
+      .showdown-product-name { font-size: 1.05rem; margin-bottom: 4px; }
+      .showdown-product-rating { margin-bottom: 8px; font-size: 12px; justify-content: flex-start; }
+      .showdown-highlights {
+        grid-column: 2;
+        grid-row: 3;
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 0;
+        gap: 4px;
+      }
+      .showdown-pro, .showdown-con { font-size: 11px; }
+      .showdown-stats {
+        grid-column: 1 / -1;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-top: 14px;
+        margin-bottom: 12px;
+      }
+      .showdown-stat { padding: 7px 6px; }
+      .showdown-stat-label { font-size: 9px; }
+      .showdown-stat-value { font-size: 13px; }
+      .showdown-stat.hide-mobile { display: none; }
+      .showdown-cta {
+        grid-column: 1 / -1;
+        padding: 10px 16px; font-size: 13px;
+        text-align: center;
+      }
       .showdown-vs {
-        width: 44px; height: 44px;
-        font-size: 14px;
-        margin: -14px auto;
+        width: 40px; height: 40px;
+        font-size: 13px;
+        margin: 4px auto 10px;
+        margin-top: 4px;
+        justify-self: center;
+        align-self: auto;
+        position: relative;
+        z-index: 2;
       }
     }
   </style>
@@ -1333,18 +1397,16 @@
 
         <!-- Why Trust Us -->
         <div class="trust-bar">
-          <span>90-Day Side-by-Side Test</span>
-          <span class="trust-sep"></span>
-          <span>Lab-Tested Results</span>
-          <span class="trust-sep"></span>
-          <span>Blind Taste Panel</span>
+          <span class="trust-item"><span class="trust-icon">&#9745;</span> 90-Day Side-by-Side Test</span>
+          <span class="trust-item"><span class="trust-icon" style="font-size:17px;position:relative;top:-1px;line-height:1">&#9878;</span> Lab-Tested Results</span>
+          <span class="trust-item"><span class="trust-icon" style="font-size:12px">&#9733;</span> Blind Taste Panel</span>
         </div>
 
         <!-- PRODUCT SHOWDOWN — side-by-side with affiliate links -->
         <div class="product-showdown animate-on-scroll">
           <div class="showdown-product">
             <div class="showdown-product-img">
-              <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=400&q=70" alt="Brita Elite Water Pitcher" />
+              <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=400&q=80" alt="Brita Elite Water Pitcher" />
             </div>
             <div class="showdown-product-name">Brita Elite</div>
             <div class="showdown-product-rating">
@@ -1356,7 +1418,7 @@
                 <span class="showdown-stat-label">Contaminants</span>
                 <span class="showdown-stat-value">30+</span>
               </div>
-              <div class="showdown-stat">
+              <div class="showdown-stat hide-mobile">
                 <span class="showdown-stat-label">Filter Life</span>
                 <span class="showdown-stat-value">120 gal</span>
               </div>
@@ -1364,7 +1426,7 @@
                 <span class="showdown-stat-label">Cost/Gallon</span>
                 <span class="showdown-stat-value">$0.09</span>
               </div>
-              <div class="showdown-stat">
+              <div class="showdown-stat hide-mobile">
                 <span class="showdown-stat-label">Capacity</span>
                 <span class="showdown-stat-value">10 cups</span>
               </div>
@@ -1388,7 +1450,7 @@
           <div class="showdown-product">
             <div class="showdown-winner-badge">Our Pick</div>
             <div class="showdown-product-img">
-              <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&q=70" alt="Clearly Filtered Water Pitcher" />
+              <img src="https://images.unsplash.com/photo-1564419320461-6870880221ad?w=400&q=80" alt="Clearly Filtered Water Pitcher" />
             </div>
             <div class="showdown-product-name">Clearly Filtered</div>
             <div class="showdown-product-rating">
@@ -1400,7 +1462,7 @@
                 <span class="showdown-stat-label">Contaminants</span>
                 <span class="showdown-stat-value showdown-win">365+</span>
               </div>
-              <div class="showdown-stat">
+              <div class="showdown-stat hide-mobile">
                 <span class="showdown-stat-label">Filter Life</span>
                 <span class="showdown-stat-value">100 gal</span>
               </div>
@@ -1408,7 +1470,7 @@
                 <span class="showdown-stat-label">Cost/Gallon</span>
                 <span class="showdown-stat-value">$0.14</span>
               </div>
-              <div class="showdown-stat">
+              <div class="showdown-stat hide-mobile">
                 <span class="showdown-stat-label">Capacity</span>
                 <span class="showdown-stat-value">10 cups</span>
               </div>
@@ -1432,7 +1494,7 @@
 
         <!-- THE VERDICT -->
         <h2 id="verdict">The Verdict at a Glance</h2>
-        <p>Before we dive into the details, here's how Brita Elite and Clearly Filtered stack up across every category we tested:</p>
+        <p>Before we dive into the details, here's how Brita Elite and Clearly Filtered stack up across every category we tested. We rated each filter on a 10-point scale based on our hands-on testing:</p>
 
         <div class="comparison-table-wrap">
           <table class="vs-table">
@@ -1452,7 +1514,7 @@
                 <td class="winner-cell">Clearly Filtered</td>
               </tr>
               <tr>
-                <td>Taste</td>
+                <td>Taste (our rating)</td>
                 <td>8/10</td>
                 <td>9/10</td>
                 <td class="winner-cell">Clearly Filtered</td>
@@ -1470,7 +1532,7 @@
                 <td class="winner-cell">Brita Elite</td>
               </tr>
               <tr>
-                <td>Ease of Use</td>
+                <td>Ease of Use (our rating)</td>
                 <td>9/10</td>
                 <td>8/10</td>
                 <td class="winner-cell">Brita Elite</td>
@@ -1482,7 +1544,7 @@
                 <td>Tie</td>
               </tr>
               <tr class="winner-row">
-                <td>Overall</td>
+                <td>Overall (our rating)</td>
                 <td>8.5/10</td>
                 <td>9.6/10</td>
                 <td class="winner-cell">Clearly Filtered</td>
@@ -1585,7 +1647,7 @@
 
         <div class="key-takeaway">
           <div class="key-takeaway-label">Bottom Line</div>
-          <p><strong>Clearly Filtered</strong> wins this comparison with a 9.6/10 overall score vs. Brita's 8.5/10. It removes 365+ contaminants (vs. 30), tastes better in blind testing, and costs only $0.05 more per gallon. For most people, it's worth the upgrade.</p>
+          <p><strong>Clearly Filtered</strong> wins this comparison with our overall rating of 9.6/10 vs. Brita's 8.5/10. It removes 365+ contaminants (vs. 30), tastes better in blind testing, and costs only $0.05 more per gallon. For most people, it's worth the upgrade.</p>
         </div>
       </div>
 
@@ -1679,7 +1741,8 @@
             <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=150&q=70" alt="Clearly Filtered" loading="lazy" />
           </div>
           <div class="verdict-winner-name">Clearly Filtered</div>
-          <div class="verdict-winner-score">9.6/10</div>
+          <div class="verdict-winner-rating"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span class="rating-text">4.8 / 5</span></div>
+          <div class="verdict-winner-score">Our Rating: 9.6/10</div>
           <a href="#" class="verdict-cta">Check Price</a>
         </div>
         <div class="verdict-divider">vs.</div>
@@ -1688,8 +1751,9 @@
             <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?w=150&q=70" alt="Brita Elite" loading="lazy" />
           </div>
           <div class="verdict-loser-name">Brita Elite</div>
-          <div class="verdict-loser-score">8.5/10</div>
-          <a href="#" class="verdict-cta-secondary">Check Price</a>
+          <div class="verdict-loser-rating"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span> <span class="rating-text">4.5 / 5</span></div>
+          <div class="verdict-loser-score">Our Rating: 8.5/10</div>
+          <a href="#" class="verdict-cta">Check Price</a>
         </div>
         <div class="verdict-summary">
           <p>Clearly Filtered wins in filtration power and contaminant removal. Brita wins on price and convenience.</p>
@@ -1886,10 +1950,14 @@
   // Sidebar sticky: align with article title, stick when bottom reached
   const sidebar = document.querySelector('.sidebar');
   const articleTitle = document.querySelector('.article-title');
-  if (sidebar && articleTitle && window.innerWidth > 1024) {
+  if (sidebar && articleTitle) {
     const padding = 20;
     function setSidebarSticky() {
-      // Calculate offset from top of article-layout to article title
+      if (window.innerWidth <= 1024) {
+        sidebar.style.paddingTop = '';
+        sidebar.style.top = '';
+        return;
+      }
       const layout = document.querySelector('.article-layout');
       const titleOffset = articleTitle.offsetTop - layout.offsetTop;
       sidebar.style.paddingTop = titleOffset + 'px';

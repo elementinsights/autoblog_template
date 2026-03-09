@@ -1605,10 +1605,14 @@
   // Sidebar sticky: align with article title, stick when bottom reached
   const sidebar = document.querySelector('.sidebar');
   const articleTitle = document.querySelector('.article-title');
-  if (sidebar && articleTitle && window.innerWidth > 1024) {
+  if (sidebar && articleTitle) {
     const padding = 20;
     function setSidebarSticky() {
-      // Calculate offset from top of article-layout to article title
+      if (window.innerWidth <= 1024) {
+        sidebar.style.paddingTop = '';
+        sidebar.style.top = '';
+        return;
+      }
       const layout = document.querySelector('.article-layout');
       const titleOffset = articleTitle.offsetTop - layout.offsetTop;
       sidebar.style.paddingTop = titleOffset + 'px';
